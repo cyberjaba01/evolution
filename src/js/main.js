@@ -246,10 +246,6 @@ namelistButton.addEventListener('click', () => {
 
 
 
-
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const containerNew = document.querySelector(".market__header");
   const containerNewButton = containerNew.querySelector(".market-header__button");
