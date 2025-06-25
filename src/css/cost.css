@@ -1,0 +1,282 @@
+.cost-section {
+    position: relative;
+    z-index: 1; /* Убедимся, что секция выше фона */
+    padding: 0;
+    margin: 70px 0;
+    margin-bottom: 40px;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+}
+
+.cost-container {
+    width: 100vw;
+    padding: 40px 0;
+    padding-bottom: 60px;
+    background: rgba(23, 23, 23, 0.75); 
+    -webkit-backdrop-filter: blur(5px); 
+            backdrop-filter: blur(5px);
+    -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Легкая тень */
+
+    -webkit-box-align: center;
+
+        -ms-flex-align: center;
+
+            align-items: center;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+
+.cost-container h2 {
+    font-family: "Unbounded";
+    font-size: var(--font-section-label) !important;
+    margin-bottom: 5px;
+    color: rgba(229, 253, 255, 0.9);
+}
+
+
+.cost-container .subtitle {
+    font-size: var(--font-regular-text);
+    margin-bottom: 40px;
+    color: #e0e0e0; /* Светло-серый текст */
+}
+
+/* Форма */
+.cost-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 40px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    padding: 20px 35px;
+    border: 2px solid rgb(0, 206, 209);
+    border-radius: 15px;
+
+}
+
+/* Блок вопроса */
+.question-block {
+    display: none;
+    opacity: 0; /* Начальная прозрачность */
+    -webkit-transform: translateY(20px);
+        -ms-transform: translateY(20px);
+            transform: translateY(20px); /* Небольшое смещение вниз */
+    -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
+    transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
+    -o-transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease, -webkit-transform 0.5s ease; /* Плавный переход */
+}
+
+.question-block .question {
+    font-size: var(--font-label-text);
+    font-weight: bold;
+    color: white; /* Бирюзовый цвет */
+}
+
+/* Контейнер вариантов ответов */
+.options {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Стиль для каждого варианта ответа */
+.option {
+    font-size: var(--font-regular-text);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-transition: background-color 0.3s ease, border-color 0.3s ease;
+    -o-transition: background-color 0.3s ease, border-color 0.3s ease;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.option:hover {
+    border-color: #00CED1;
+}
+
+/* Скрытие стандартных радио-кнопок */
+.option input[type="radio"] {
+    display: none;
+}
+
+/* Кастомные радио-кнопки */
+.custom-radio {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #00CED1;
+    border-radius: 50%;
+    -webkit-transition: background-color 0.3s ease;
+    -o-transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease;
+}
+
+/* Активная радио-кнопка */
+.option input[type="radio"]:checked + .custom-radio {
+    background-color: #00CED1;
+    border-color: #00CED1;
+}
+
+/* Кнопка отправки формы */
+
+/* Стиль для кнопки отправки формы */
+.submit-btn {
+    display: none; /* Изначально скрыта */
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+        -ms-transform: translateY(20px);
+            transform: translateY(20px);
+    -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
+    transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
+    -o-transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease, -webkit-transform 0.5s ease;
+
+    padding: 14px 30px; /* Увеличенные отступы */
+    font-size: 18px;
+    font-weight: bold;
+    color: #021616; /* Темный текст */
+    background-color: #00CED1; /* Бирюзовый фон */
+    border: none;
+    border-radius: 25px; /* Закругленные углы */
+    cursor: pointer;
+    -webkit-box-shadow: 0 4px 12px rgba(0, 206, 209, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 206, 209, 0.3); /* Легкая тень */
+    -webkit-transition: background-color 0.3s ease, -webkit-transform 0.3s ease;
+    transition: background-color 0.3s ease, -webkit-transform 0.3s ease;
+    -o-transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #009999; /* Темно-бирюзовый при наведении */
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05); /* Легкое увеличение */
+}
+
+.submit-btn.show {
+    display: inline-block;
+    opacity: 1;
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
+}
+/* Скрытие всех вопросов, кроме активного */
+.question-block {
+    display: none;
+}
+
+.question-block.active {
+    display: block;
+    opacity: 1; /* Полная видимость */
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0); /* Возвращаем на место */
+}
+
+
+
+
+
+@media (max-width: 479px) {}
+
+@media (min-width: 480px) and (max-width: 767px) {}
+
+@media (min-width: 768px) and (max-width: 991px) {}
+
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+@media (min-width: 1200px) and (max-width: 1439px) {}
+
+@media (min-width: 1440px) and (max-width: 1599px) {}
+
+@media (min-width: 1600px) and (max-width: 1919px) {}
+
+@media (min-width: 1920px) and (max-width: 2559px) {}
+
+@media (min-width: 2560px) and (max-width: 3839px) {}
+
+@media (min-width: 3840px) {
+
+    
+    .cost-container {
+        margin-top: 80px;
+        padding: 80px 0;
+        padding-bottom: 100px;
+    }
+
+    .cost-container h2 {
+        margin-bottom: 0px;
+        margin: 0;
+    }
+
+
+    .cost-container .subtitle {
+        margin-bottom: 40px;
+    }
+
+    .cost-form {
+        gap: 40px;
+        padding: 0 35px 20px 35px;
+        border: 2px solid rgb(0, 206, 209);
+        border-radius: 15px;
+    }
+
+    .question-block .question {
+        margin-top: 45px;
+    }
+
+    .options {
+        gap: 10px;
+    }
+
+    .option {
+        gap: 10px;
+        padding: 30px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    /* Кастомные радио-кнопки */
+    .custom-radio {
+        width: 55px;
+        height: 55px;
+        border: 2px solid #00CED1;
+    }
+
+    .submit-btn {
+        padding: 20px 40px; 
+
+    }
+
+}

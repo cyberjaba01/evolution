@@ -20,4 +20,14 @@
     --font-card-users-amount: 38px;
 
     --line-height-p: 24px;
+
+    /* section containers sizes */
+    --lp-container-width: 100%;
+    --sg-container-width: 750px;
+    --lg-container-width: 1000px;
+    --fullhd-container-width: 1200px;
+    --quadhd-container-width: 1800px;
+    --ultrahd-container-width: 3000px;
+
+    --marker-pulse-size: 15px
 }

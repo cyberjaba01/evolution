@@ -1,0 +1,206 @@
+.faq {
+    position: relative;
+    z-index: 1;
+
+    width: 100vw;
+    padding: 20px 0;
+    margin-bottom: 20px;
+
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
+    display: flex;
+     -webkit-box-pack: center;
+         -ms-flex-pack: center;
+             justify-content: center;
+}
+
+.faq-container-new {
+    border-radius: 15px;
+    padding: 40px 50px;
+    margin-bottom: 40px;
+    width: var(--fullhd-container-width);
+
+    background: rgba(23, 23, 23, 0.75);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+}
+
+
+
+.faq-container-new p {
+    font-size: var(--font-regular-text);
+    text-align: justify;
+    text-indent: 15px;
+}
+
+.faq-container-new p:first-child {
+    margin-bottom: 45px;
+}
+
+.faq-container-new p:last-child {
+    margin-top: 45px;
+}
+
+
+.faq-title h2 {
+    margin-bottom: 40px;
+
+    color: rgb(229, 253, 255);
+
+    font-size: var(--font-section-label);
+    font-family: "Unbounded";
+    line-height: 35px;
+    text-align: center;
+}
+
+
+.faq-item-new {
+    padding-bottom: 15px;
+    font-size: var(--font-label-text);
+    text-align: justify;
+
+    border-bottom: 1px solid #C4C4C4;
+}
+
+
+.faq-question-new {
+    margin: 15px 20px 0 20px;
+
+    display:-webkit-box;
+
+    display:-ms-flexbox;
+
+    display:flex;
+    -webkit-box-pack:justify;
+        -ms-flex-pack:justify;
+            justify-content:space-between;
+
+    cursor: pointer;
+    -webkit-transition: background-color 0.8s ease;
+    -o-transition: background-color 0.8s ease;
+    transition: background-color 0.8s ease;
+
+    
+}
+
+.faq-answer-new {
+    font-size: var(--font-regular-text);
+    max-height: 0 !important;
+    overflow: hidden;
+    padding: 0;
+    padding-left: 20px !important; 
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    opacity: 0;
+}
+
+.faq-toggle {
+    width: 20px;
+    height: 20px;
+    -webkit-clip-path: polygon(0 30%, 50% 80%, 100% 30%, 100% 50%, 50% 100%, 0 50%);
+            clip-path: polygon(0 30%, 50% 80%, 100% 30%, 100% 50%, 50% 100%, 0 50%);
+    color: white;
+
+
+    cursor: pointer;
+    -webkit-transition: -webkit-transform 1s ease;
+    transition: -webkit-transform 1s ease;
+    -o-transition: transform 1s ease;
+    transition: transform 1s ease;
+    transition: transform 1s ease, -webkit-transform 1s ease;
+}
+
+
+.faq-toggle.active {
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg); 
+}
+
+.faq-answer-new.active {
+    max-height: 1600px !important;
+    padding: 20px 0 5px 20px !important; 
+
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    opacity: 1;
+}
+
+
+
+
+
+@media (max-width: 479px) {}
+
+@media (min-width: 480px) and (max-width: 767px) {}
+
+@media (min-width: 768px) and (max-width: 991px) {}
+
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+@media (min-width: 1200px) and (max-width: 1439px) {}
+
+@media (min-width: 1440px) and (max-width: 1599px) {}
+
+@media (min-width: 1600px) and (max-width: 1919px) {}
+
+@media (min-width: 1920px) and (max-width: 2559px) {}
+
+@media (min-width: 2560px) and (max-width: 3839px) {}
+
+@media (min-width: 3840px) {
+
+    .faq {
+        margin: 120px 0;
+        margin-bottom: 140px;
+    }
+
+    .faq-container-new {
+        border-radius: 25px;
+        padding: 90px 120px;
+        width: var(--ultrahd-container-width);
+    }
+
+    .faq-title {
+        margin-bottom: 80px;
+    }
+
+
+    .faq-item-new {
+        padding-bottom: 20px;
+
+        border-bottom: 2px solid #C4C4C4;
+    }
+
+
+    .faq-question-new {margin: 25px 20px 0 20px;}
+
+
+    .faq-answer-new {
+        padding: 0 20px;
+        height: 0;
+    }
+
+    .faq-toggle {
+        width: 40px;
+        height: 40px;
+    }
+
+
+    .faq-answer-new.active {
+        height: auto; 
+        padding: 40px 0 15px 0; 
+    }
+
+    .faq-title h2 {
+        line-height: 120px;
+    }
+
+    .faq-container-new p {
+        text-indent: 55px !important;
+    }
+}
