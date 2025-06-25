@@ -95,7 +95,7 @@ const companyCardTemplate = document.querySelector("[company-card-template]");
 const companyCardContainer = document.querySelector("[company-card-parent]");
 var companysData
 
-fetch("pages/card-companies-data.json")
+fetch("/src/data/card-companies-data.json")
     .then(res => res.json())
     .then(data => {
         companys = data.map(data => {
@@ -423,55 +423,55 @@ const modalTitle = document.querySelector('.map-modal-content h2'); // Заго�
 // Данные о клиентах для каждого маркера
 const clientsData = {
     "Москва": [
-      { name: "Компания 1", logo: "images/logos/company1.png" },
-      { name: "Компания 2", logo: "images/logos/company2.png" },
-      { name: "Компания 3", logo: "images/logos/company3.png" }
+      { name: "Компания 1", logo: "/src/images/logos/company1.png" },
+      { name: "Компания 2", logo: "/src/images/logos/company2.png" },
+      { name: "Компания 3", logo: "/src/images/logos/company3.png" }
     ],
     "Санкт-Петербург": [
-      { name: "Компания 4", logo: "images/logos/company4.png" },
-      { name: "Компания 5", logo: "images/logos/company5.png" }
+      { name: "Компания 4", logo: "/src/images/logos/company4.png" },
+      { name: "Компания 5", logo: "/src/images/logos/company5.png" }
     ],
     "Пенза": [
-      { name: "ООО Эволюция", logo: "images/logos/company6.png" }
+      { name: "ООО Эволюция", logo: "/src/images/logos/company6.png" }
     ],
     "Калуга": [
-      { name: "Компания 7", logo: "images/logos/company7.png" },
-      { name: "Компания 8", logo: "images/logos/company8.png" }
+      { name: "Компания 7", logo: "/src/images/logos/company7.png" },
+      { name: "Компания 8", logo: "/src/images/logos/company8.png" }
     ],
     "Екатеринбург": [
-      { name: "Компания 9", logo: "images/logos/company9.png" }
+      { name: "Компания 9", logo: "/src/images/logos/company9.png" }
     ],
     "Иркутск": [
-      { name: "Компания 10", logo: "images/logos/company10.png" }
+      { name: "Компания 10", logo: "/src/images/logos/company10.png" }
     ],
     "Красноярск": [
-      { name: "Компания 11", logo: "images/logos/company11.png" },
-      { name: "Компания 12", logo: "images/logos/company12.png" }
+      { name: "Компания 11", logo: "/src/images/logos/company11.png" },
+      { name: "Компания 12", logo: "/src/images/logos/company12.png" }
     ],
     "Чита": [
-      { name: "Компания 13", logo: "images/logos/company13.png" }
+      { name: "Компания 13", logo: "/src/images/logos/company13.png" }
     ],
     "Архангельск": [
-      { name: "Компания 14", logo: "images/logos/company14.png" }
+      { name: "Компания 14", logo: "/src/images/logos/company14.png" }
     ],
     "Эмираты (ОАЭ)": [
-      { name: "Компания 15", logo: "images/logos/company15.png" }
+      { name: "Компания 15", logo: "/src/images/logos/company15.png" }
     ],
     "Швейцария": [
-      { name: "Компания 16", logo: "images/logos/company16.png" }
+      { name: "Компания 16", logo: "/src/images/logos/company16.png" }
     ],
     "Малайзия": [
-      { name: "Компания 17", logo: "images/logos/company17.png" }
+      { name: "Компания 17", logo: "/src/images/logos/company17.png" }
     ],
     "Турция": [
-      { name: "Компания 18", logo: "images/logos/company18.png" }
+      { name: "Компания 18", logo: "/src/images/logos/company18.png" }
     ],
     "Китай": [
-      { name: "Компания 19", logo: "images/logos/company19.png" },
-      { name: "Компания 20", logo: "images/logos/company20.png" }
+      { name: "Компания 19", logo: "/src/images/logos/company19.png" },
+      { name: "Компания 20", logo: "/src/images/logos/company20.png" }
     ],
     "Остров Маврикий": [
-      { name: "Компания 21", logo: "images/logos/company21.png" }
+      { name: "Компания 21", logo: "/src/images/logos/company21.png" }
     ]
   };
 
@@ -1040,62 +1040,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-document.addEventListener("DOMContentLoaded", () => {
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-link');
-
-  window.addEventListener('scroll', () => {
-      let currentSection = '';
-
-      sections.forEach(section => {
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.clientHeight;
-
-          if (window.scrollY >= sectionTop - sectionHeight / 3) {
-              currentSection = section.getAttribute('id');
-          }
-      });
-
-      navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href').includes(currentSection)) {
-              link.classList.add('active');
-          }
-      });
-  });
-});
-
-
-
-
-
-
-
-/*
-document.addEventListener("DOMContentLoaded", () => {
-  const modal = document.getElementById("modal");
-  const openModalButton = document.getElementById("openModal");
-  const closeModalButton = document.querySelector(".close-modal");
-
-  // Открытие модального окна
-  openModalButton.addEventListener("click", () => {
-      modal.style.display = "block";
-  });
-
-  // Закрытие модального окна при клике на кнопку закрытия
-  closeModalButton.addEventListener("click", () => {
-      modal.style.display = "none";
-  });
-
-  // Закрытие модального окна при клике за его пределами
-  window.addEventListener("click", (event) => {
-      if (event.target === modal) {
-          modal.style.display = "none";
-      }
-  });
-});
-*/
 
 
 
