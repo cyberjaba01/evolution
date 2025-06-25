@@ -1,5 +1,5 @@
 :root {
-    /* initial is for 1980x1080 */
+    /* initial is for 1920x1080 */
 
     --font-regular-text: 16px;
     --font-header-links: 17px;
@@ -30,4 +30,163 @@
     --ultrahd-container-width: 3000px;
 
     --marker-pulse-size: 15px
+}
+
+
+@media (max-width: 479px) {
+:root {
+    --font-regular-text: 12px;
+    --font-header-links: 13px;
+    --font-label-text: 14px;
+    --font-header-logo: 14px;
+    --font-accent-button: 14px;
+    --font-accent-text: 15px;
+    --font-section-label: 24px;
+    --font-label-digits: 40px;
+
+    --font-card-description: 11px;
+    --font-card-users-label: 13px;
+    --font-card-button: 14px;
+    --font-card-name: 18px;
+    --font-card-old-price: 18px;
+    --font-card-weight-amount: 18px;
+    --font-card-actual-price: 22px;
+    --font-card-users-amount: 28px;
+}
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+:root {
+    --font-regular-text: 13px;
+    --font-header-links: 14px;
+    --font-label-text: 15px;
+    --font-header-logo: 15px;
+    --font-accent-button: 15px;
+    --font-accent-text: 16px;
+    --font-section-label: 28px;
+    --font-label-digits: 48px;
+
+    --font-card-description: 12px;
+    --font-card-users-label: 14px;
+    --font-card-button: 15px;
+    --font-card-name: 19px;
+    --font-card-old-price: 19px;
+    --font-card-weight-amount: 19px;
+    --font-card-actual-price: 24px;
+    --font-card-users-amount: 32px;
+}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+:root {
+    --font-regular-text: 14px;
+    --font-header-links: 15px;
+    --font-label-text: 16px;
+    --font-header-logo: 16px;
+    --font-accent-button: 16px;
+    --font-accent-text: 17px;
+    --font-section-label: 32px;
+    --font-label-digits: 56px;
+
+    --font-card-description: 13px;
+    --font-card-users-label: 15px;
+    --font-card-button: 16px;
+    --font-card-name: 20px;
+    --font-card-old-price: 20px;
+    --font-card-weight-amount: 20px;
+    --font-card-actual-price: 26px;
+    --font-card-users-amount: 36px;
+}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+:root {
+    --font-regular-text: 15px;
+    --font-header-links: 16px;
+    --font-label-text: 17px;
+    --font-header-logo: 17px;
+    --font-accent-button: 17px;
+    --font-accent-text: 18px;
+    --font-section-label: 36px;
+    --font-label-digits: 64px;
+
+    --font-card-description: 14px;
+    --font-card-users-label: 16px;
+    --font-card-button: 17px;
+    --font-card-name: 21px;
+    --font-card-old-price: 22px;
+    --font-card-weight-amount: 22px;
+    --font-card-actual-price: 28px;
+    --font-card-users-amount: 40px;
+}
+}
+
+@media (min-width: 1200px) and (max-width: 1439px) {
+:root {
+    --font-regular-text: 15px;
+    --font-header-links: 16px;
+    --font-label-text: 17px;
+    --font-header-logo: 17.5px;
+    --font-accent-button: 18px;
+    --font-accent-text: 19px;
+    --font-section-label: 38px;
+    --font-label-digits: 68px;
+
+    --font-card-description: 15px;
+    --font-card-users-label: 17px;
+    --font-card-button: 18px;
+    --font-card-name: 22px;
+    --font-card-old-price: 24px;
+    --font-card-weight-amount: 24px;
+    --font-card-actual-price: 30px;
+    --font-card-users-amount: 42px;
+}
+}
+
+@media (min-width: 2560px) and (max-width: 3839px) {
+    :root {
+        --font-regular-text: 23px;
+        --font-header-links: 24px;
+        --font-label-text: 25px;
+        --font-header-logo: 25.5px;
+        --font-accent-button: 26px;
+        --font-accent-text: 27px; 
+        --font-section-label: 47px;
+        --font-label-digits: 77px;
+
+        --font-card-description: 22px;
+        --font-card-users-label: 24px;
+        --font-card-button: 25px;
+        --font-card-name: 30px;
+        --font-card-old-price: 32px;
+        --font-card-weight-amount: 32px;
+        --font-card-actual-price: 37px;
+        --font-card-users-amount: 45px;
+
+        --line-height-p: 34px;
+    }
+}
+
+@media (min-width: 3840px) {
+    :root {
+        --font-regular-text: 30px;
+        --font-header-links: 31px;
+        --font-label-text: 32px;
+        --font-header-logo: 32.5px;
+        --font-accent-button: 33px;
+        --font-accent-text: 34px; 
+        --font-section-label: 44px;
+        --font-label-digits: 84px;
+
+        --font-card-description: 29px;
+        --font-card-users-label: 31px;
+        --font-card-button: 32px;
+        --font-card-name: 37px;
+        --font-card-old-price: 39px;
+        --font-card-weight-amount: 39px;
+        --font-card-actual-price: 44px;
+        --font-card-users-amount: 52px;
+
+        --line-height-p: 44px;
+    }
 }

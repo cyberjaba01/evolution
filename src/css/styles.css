@@ -18,6 +18,170 @@ html {
 
 
 
+
+
+:root {
+    --title-text: 2em;
+    --company-list-item-height: 90px;
+    --company-list-head-height: 10%;
+    --company-list-body-height: 90%;
+    --company-list-width: 400px;
+}
+
+@media (max-width: 1366px) {
+    :root {
+        --title-text: 1.2em;
+        --company-list-item-height: 70px;
+        --company-list-head-height: 15%;
+        --company-list-body-height: 85%;
+        --company-list-width: 300px;
+    }
+}
+
+[company-client-label] {
+    font-size: var(--title-text);
+}
+
+.companylist {
+    width: var(--company-list-width);
+    height: 60vh;
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.479);
+    padding-left: 5px;
+
+    position: absolute;
+    left: calc(var(--company-list-width)*-1);
+    top: 20%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    z-index: 4;
+    transition: all 0.4s;
+}
+
+.companylist.active {
+    left: 15px;
+}
+.companylist-head {
+    background-color: rgba(41, 41, 41, 0.671);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+    height: var(--company-list-head-height) !important;
+}
+.companylist-body {
+    position: relative;
+    height: var(--company-list-body-height) !important;
+}
+
+.companylist-body::after {
+    content: "";
+    background-color: white;
+    top: 1px;
+    left: 4px;
+    width: 2px;
+    height: 99%;
+    position: absolute;
+    border: 0px solid white;
+}
+.companylist__body-wrapper {
+    overflow-y: scroll !important;
+    padding-left: 5px;
+    height: 100% !important;
+}
+
+
+.companylist__body-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.companylist__card-info h1 {
+    color: rgb(236, 236, 236);
+}
+.companylist__card {
+    width: 100%;
+    height: var(--company-list-item-height);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+    padding-left: 20px;
+}
+
+.companylist__card.activated {
+    background: #7777772f;
+    border-bottom: 2px solid white;
+}
+.companylist__card.activated:hover {
+    background: #7777772f;
+}
+.companylist__card.activated h1 {
+    color: rgb(255, 255, 255);
+}
+.companylist__card.activated:hover h1 {
+    color: rgb(255, 255, 255);
+}
+
+
+.companylist-body.disabled h1 {
+    color: rgb(70, 70, 70) !important;
+}
+.companylist-body.disabled .companylist__card::after {
+    background-color: rgb(119, 119, 119);
+    border: 1px solid rgb(119, 119, 119);
+}
+.companylist-body.disabled .companylist__card:hover {
+    background: none;
+}
+.companylist-body.disabled .companylist__card {
+    pointer-events: none;
+}
+
+
+.companylist__card:hover {
+    background: #5f5f5f2f;
+}
+.companylist__card:hover h1 {
+    color: rgb(207, 207, 207);
+}
+.companylist__card::after {
+    content: "";
+    background-color: white;
+    bottom: -4px;
+    left: -4px;
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    border: 1px solid white;
+    border-radius: 100%;
+}
+
+.companylist__card-info span {
+    color: rgb(153, 153, 153);
+    font-family: "Open Sans";
+}
+
+
+.companylist-head h2 {
+    padding-right: 15px;
+}
+
+
+
 .company-list__line {
     -webkit-transform-origin: left center;
     -ms-transform-origin: left center;
@@ -28,8 +192,6 @@ html {
     line-height:1px; 
     position:absolute; 
 }
-
-
 .company-list__line::after {
     content: "";
     position: absolute;
@@ -343,9 +505,7 @@ background-color: rgb(93, 148, 151);
 
 @media (min-width: 1200px) and (max-width: 1439px) {}
 
-@media (min-width: 1440px) and (max-width: 1599px) {}
-
-@media (min-width: 1600px) and (max-width: 1919px) {
+@media (min-width: 1440px) and (max-width: 1599px) {
 /* sections wideness */
     .info-container {
         width: var(--lg-container-width); 
@@ -411,6 +571,10 @@ background-color: rgb(93, 148, 151);
         width: 250px;
         height: 250px;
     }
+}
+
+@media (min-width: 1600px) and (max-width: 1910px) {
+
 
 }
 

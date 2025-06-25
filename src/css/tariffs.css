@@ -49,10 +49,9 @@
 
 .button-container__top-wrapper *, 
 .button-container__bottom-wrapper * {
-
     background: rgb(116, 190, 195);
     color: rgb(240, 240, 240);
-    padding: 15px 50px;
+    padding: 10px 25px;
     font-size: var(--font-accent-button);
     border-radius: 15px;
     -webkit-transition: 0.5s;
@@ -1225,129 +1224,6 @@
 @media (min-width: 1200px) and (max-width: 1439px) {}
 
 @media (min-width: 1440px) and (max-width: 1599px) {
-    .swiper-card__title h2, .swiper-card__title h4, .card__title h2, .card__title h4 {margin: 0;}
-    .card__title {height: 70px !important; line-height: 10px;}
-    .swiper-card__description, .swiper-card__no-description, 
-    .card__description {gap: 5px !important}
-    .swiper-card__no-description {margin-top: 14.5px;}
-    .users-amount {height: auto;}
-    .marketplace__swiper-card, .marketplace__card {
-        padding: 20px 0;
-        border-radius: 10px;
-    }
-    .swiper-card__title h2 {
-        line-height: 28px;
-    }
-    .card__title h2 {
-        line-height: 20px;
-    }
-    .swiper-card__title h4 {
-        padding: 0 10px;
-        line-height: 15px;
-        color: gainsboro;
-        font-weight: 200;
-    }
-    .card__title h4 {
-        padding: 0 10px;
-        color: gainsboro;
-        font-weight: 200;
-    }
-    .swiper-card__title, .card__title {
-        height: 90px;
-        margin-bottom: 20px;
-        padding: 15px 0;
-    }
-    .marketplace__swiper-card button, .marketplace__card button, .swiper-card__button-container button {
-
-        height: 33px;
-        margin-top: auto;
-
-        border-radius: 25px;
-    }
-    .user-btn {
-        margin: -12px 1px !important;
-        padding: 5px !important;
-        background: none !important;
-        border-radius: 0 !important;
-        color: white !important;
-        border-bottom: solid 1px rgb(167, 234, 255) !important;
-    }
-    .marketplace-box-container .user-btn {
-        padding: 0 5px !important;
-        height: auto;
-    }
-    .useramount-buttons {
-        margin-top: 12px;
-        margin-bottom: 18px;
-    }
-    .swiper-users__no-quantity {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center;
-        margin-bottom: 10px;
-        margin-top: -15px;
-    }
-    .swiper-card__price.canceled, .card__price.canceled {
-        margin: 15px 0 0 0 !important;
-    }
-    .swiper-card__weight {
-        margin: 0px 0 20px 0;
-    }
-
-    .swiper-card__price, .card__price, .card__price-promo {
-        margin: 0px 0 20px 0;
-    }
-
-    .swiper-card__no-price {
-        margin: 20px 0;
-        margin-bottom: 36px;
-    }
-
-    .users__quantity-buttons {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        gap: 10px;
-        
-   
-    }
-/* and those ones for choosing amount of users */
-    .users__quantity-buttons div {
-        width: 23%;
-        height: auto;
-        margin: 0 0 10px 0;
-        border-radius: 0;
-        border-bottom: 1px solid rgb(116, 190, 195);
-    }
-    .select-items div, .select-selected {
-        padding: 0px 32px;
-    }
-
-    .select-selected:after {
-        position: absolute;
-        content: "";
-        top: 10px;
-        right: 10px;
-        width: 0;
-        height: 0;
-        border: 12px solid transparent;
-        border-color: #fff transparent transparent transparent;
-    }
-    .select-selected.select-arrow-active:after {
-        border-color: transparent transparent #fff transparent;
-        top: 7px;
-    }
-    .to-enterprize {
-        right: -430px !important;
-        top: 100px !important;
-    }
-    .to-free {
-        left: -430px !important;
-        top: 100px !important;
-    }
     .tariff-new .swiper-card__price {
         margin-bottom: -10px !important;
         margin-top: 15px !important;
@@ -1378,7 +1254,6 @@
 }
 
 @media (min-width: 1600px) and (max-width: 1919px) {
-
 }
 
 @media (min-width: 2560px) and (max-width: 3839px) {
