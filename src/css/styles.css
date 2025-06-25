@@ -203,14 +203,21 @@ body {
     margin: 8px 0 8px 0;
 }
 
+.nav-link {
+    font-size: var(--font-header-links);
+    color: #ffffff; 
+    text-decoration: none;
+    -webkit-transition: color 0.3s;
+    -o-transition: color 0.3s;
+    transition: color 0.3s;
+}
+
 .logo-text h2 {
-    font-size: 1.14rem;
+    font-size: var(--font-header-logo);
+    font-family: 'Unbounded';
     margin: 0 0 5px 0;
-
     display: -webkit-box;
-
     display: -ms-flexbox;
-
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -219,13 +226,10 @@ body {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
-    
-    font-family: 'Unbounded';
 }
 
 
 .logo {
-    font-size: 24px;
     margin-bottom: 5px;
 
     color: #ffffff;; 
@@ -256,33 +260,15 @@ body {
     gap: 40px;
 
     list-style: none;
-    font-size: var(--fullhd-text);
 }
 
 .nav ul li {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    
 }
 
-.nav ul li a {
-    color: #ffffff; 
-    text-decoration: none;
 
-
-    -webkit-transition: color 0.3s;
-
-
-    -o-transition: color 0.3s;
-
-
-    transition: color 0.3s;
-}
-
-.nav ul li a:hover {
-    color: #009999; 
-}
 
 /* Эффект при скролле */
 .header.scrolled {
@@ -317,7 +303,7 @@ body {
     left: 50%; /* Центрируем по горизонтали */
     width: 100vw; /* Занимает всю ширину экрана */
     height: 100vh; /* Занимает всю высоту экрана */
-    background-image: url('images/map.png'); /* Путь к карте */
+    background-image: url('/src/images/map.png'); /* Путь к карте */
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -2713,25 +2699,10 @@ html {
     margin: 0;
 }
 
-.nav-link {
-    font-size: 16px;
-    color: #00CED1; /* Бирюзовый цвет */
-    text-decoration: none;
-    -webkit-transition: color 0.3s ease;
-    -o-transition: color 0.3s ease;
-    transition: color 0.3s ease;
-}
 
 .nav-link:hover {
     color: #009999; /* Темно-бирюзовый при наведении */
 }
-
-.nav-link.active {
-    color: #009999; /* Темно-бирюзовый для активной ссылки */
-    font-weight: bold;
-}
-
-
 
 
 
@@ -3003,7 +2974,7 @@ html {
         margin: 30px 55px 15px 10px;
         float: left;
     
-        background-image: url("images/logo_evolution.png");
+        background-image: url("/src/images/logo_evolution.png");
         background-size: cover;
         background-repeat: no-repeat;
     
@@ -3551,7 +3522,7 @@ html {
         margin: 130px 55px 95px 10px;
         float: left;
     
-        background-image: url("images/logo_evolution.png");
+        background-image: url("/src/images/logo_evolution.png");
         background-size: cover;
         background-repeat: no-repeat;
     
@@ -4270,7 +4241,7 @@ html {
     left: 50%; /* Центрируем по горизонтали */
     width: 120vw !important; /* Занимает всю ширину экрана */
     height: 100vh; /* Занимает всю высоту экрана */
-    background-image: url('images/map.png'); /* Путь к карте */
+    background-image: url('/src/images/map.png'); /* Путь к карте */
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
