@@ -1,0 +1,122 @@
+{
+    "companies": [
+        {
+            "name": "Ташир пицца",
+            "img": "/src/images/tashir.png",
+            "link": "/pages/companys/tashir.html",
+            "category": "Услуги",
+            "location": "г. Калуга, Россия",
+            "marker": "kaluga",
+            "description": "Ресторан быстрого обслуживания «Ташир Пицца» предлагает доставку еды, в том числе и доставка пиццы, на дом или в офис самого высокого качества."
+        },
+        {
+            "name": "Сфера+",
+            "img": "/src/images/sphere.png",
+            "link": "/pages/companys/sphere.html",
+            "category": "Логистика",
+            "location": "г. Санкт-Петербург, Россия",
+            "marker": "st-petersburg",
+            "description": "Группа компаний Сфера+ более 13 лет на рынке организации логистических цепочек, а также погрузо-разгрузочных работ техники и имущества."
+        },
+        {
+            "name": "RVI",
+            "img": "/src/images/RVI.png",
+            "link": "/",
+            "category": "Услуги",
+            "location": "о. Маврикий",
+            "marker": "mavriki",
+            "description": "Компания занимается продажей и арендой недвижимости на острове Маврикий"
+        },
+        {
+            "name": "Benefit",
+            "img": "/src/images/avatec_logo.png",
+            "link": "/",
+            "category": "Логистика",
+            "location": "г. Москва, Россия",
+            "marker": "marker-msc",
+            "description": "Компания оказывает полный спектр услуг по доставке грузов, включая оформление документов, таможенное и складское хранение."
+        },
+        {
+            "name": "Oulin",
+            "img": "/src/images/berotek_logo.png",
+            "link": "/",
+            "category": "Логистика",
+            "location": "г. Владивосток, Россия",
+            "marker": "vladivostok",
+            "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sed deleniti reprehenderit"
+        },
+        {
+            "name": "Free Lines",
+            "img": "/src/images/free.png",
+            "link": "/",
+            "category": "Логистика",
+            "location": "г. Москва, Россия",
+            "marker": "marker-msc",
+            "description": "Free Lines Company осуществляет импортные перевозки с 2003 года и является одним из лидеров на рынке международной транспортировки сборных грузов в Россию."
+        },
+        {
+            "name": "РУДН",
+            "img": "/src/images/Logo_rudn_znak.png",
+            "link": "/",
+            "category": "Институт",
+            "location": "г. Москва, Россия",
+            "marker": "marker-msc",
+            "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sed deleniti reprehenderit"
+        },
+        {
+            "name": "Без пробега по РФ",
+            "img": "/src/images/bezprobega_logo.png",
+            "link": "/",
+            "category": "Торговля",
+            "location": "г. Екатеринбург, Россия",
+            "marker": "ekaterinburg",
+            "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sed deleniti reprehenderit"
+        },
+        {
+            "name": "Больше чем спорт",
+            "img": "/src/images/morethansport_logo.png",
+            "link": "/",
+            "category": "Услуги",
+            "location": "г. Пенза, Россия",
+            "marker": "penza",
+            "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sed deleniti reprehenderit"
+        },
+        {
+            "name": "Scan code",
+            "img": "/src/images/scancode_logo.png",
+            "link": "/",
+            "category": "Услуги",
+            "location": "г. Москва, Россия",
+            "marker": "marker-msc",
+            "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sed deleniti reprehenderit"
+        },
+        {
+            "name": "Транспортал",
+            "img": "/src/images/transportal.png",
+            "link": "/",
+            "category": "Логистика",
+            "location": "г. Москва, Россия",
+            "marker": "marker-msc",
+            "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sed deleniti reprehenderit"
+        },
+        {
+            "name": "Артконфи",
+            "img": "/src/images/artconfi.png",
+            "link": "/",
+            "category": "Торговля",
+            "location": "г. Тверь, Россия",
+            "marker": "tver",
+            "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sed deleniti reprehenderit"
+        },
+        {
+            "name": "Люксстрой",
+            "img": "/src/images/luxstroy.png",
+            "link": "/",
+            "category": "Строительство",
+            "location": "г. Москва, Россия",
+            "marker": "marker-msc",
+            "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sed deleniti reprehenderit"
+        }
+    ],
+    "tariffs": []
+}

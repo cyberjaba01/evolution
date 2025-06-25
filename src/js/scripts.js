@@ -1,104 +1,81 @@
-function changeMarketButtonsState() {
-  marketWrapperButtons.forEach(element => {
-    element.classList.toggle("activated");
-  });
-
-  marketPrices.forEach(element => {
-    element.classList.toggle("disabled");
-  });
-}
-
-function changeMarketState(buttonContainer, arrWrapper) {
-  buttonContainer.classList.toggle("disabled");
-  arrWrapper.forEach(el => {
-    el.classList.toggle("disabled");
-  });
-}
-
-function toggleClass(divEl, classEl) {
-
-  if (divEl.classList.contains(classEl)) divEl.classList.remove(classEl)
-    else divEl.classList.add(classEl)
-}
 
 
 function createDescription(data, coords) {
-  const cardPopupTemplate = document.querySelector("[card-popup-template]");
-  const cardPopup = cardPopupTemplate.content.cloneNode(true).children[0];
+	const cardPopupTemplate = document.querySelector("[card-popup-template]");
+	const cardPopup = cardPopupTemplate.content.cloneNode(true).children[0];
 
-  if (window.scrollY > 150) {cardPopup.remove()}
-  else {
-    const cardImg = cardPopup.querySelector("[card-popup-img]");
-    const cardName = cardPopup.querySelector("[card-popup-name]");
-    const cardLocation = cardPopup.querySelector("[card-popup-location]")
-    const cardDesc = cardPopup.querySelector("[card-popup-desc]")
-    const cardLink = cardPopup.querySelector("[card-popup-link]");
+	if (window.scrollY > 150) {cardPopup.remove()}
+	else {
+		const cardImg = cardPopup.querySelector("[card-popup-img]");
+		const cardName = cardPopup.querySelector("[card-popup-name]");
+		const cardLocation = cardPopup.querySelector("[card-popup-location]")
+		const cardDesc = cardPopup.querySelector("[card-popup-desc]")
+		const cardLink = cardPopup.querySelector("[card-popup-link]");
 
-    cardImg.src = data.img;
-    cardName.textContent = data.name;
-    cardLocation.textContent = data.location;
-    cardDesc.textContent = data.description;
-  
-    cardLink.href = data.link;
-    if (data.link == "/") {
-      cardLink.classList.add("disabled");
-    }
+		cardImg.src = data.img;
+		cardName.textContent = data.name;
+		cardLocation.textContent = data.location;
+		cardDesc.textContent = data.description;
 
-    document.body.appendChild(cardPopup);
+		cardLink.href = data.link;
+		if (data.link == "/") {
+			cardLink.classList.add("disabled");
+		}
 
-    let x, y = 0;
+		document.body.appendChild(cardPopup);
 
-    if ((coords[1]+(cardPopup.offsetHeight)) > window.screen.height-15) {
-      //console.log("Clipping by Y");
-      y = coords[1] - cardPopup.offsetHeight*1.2;
-    } else y = coords[1] + cardPopup.offsetHeight/4
-    
-    if (window.screen.width - coords[0] < cardPopup.offsetWidth) {
-      //console.log("Clipping by X" + window.screen.width, coords[0]);
-      x = window.screen.width - cardPopup.offsetWidth*1.05;
-    } else x = coords[0];
+		let x, y = 0;
 
-    cardPopup.style.cssText = `
-    left: ${x}px;
-    top: ${y}px;`;
-  }
+		if ((coords[1]+(cardPopup.offsetHeight)) > window.screen.height-15) {
+			y = coords[1] - cardPopup.offsetHeight*1.2;
+		} else y = coords[1] + cardPopup.offsetHeight/4
+
+		if (window.screen.width - coords[0] < cardPopup.offsetWidth) {
+			x = window.screen.width - cardPopup.offsetWidth*1.05;
+		} else x = coords[0];
+
+		cardPopup.style.cssText = `
+		left: ${x}px;
+		top: ${y}px;`;
+	}
 }
 
 
 function drawLine(divXY, markerXY) {
-  let width = (markerXY.x + (markerXY.width - 7) - divXY.right);
-  let height = (markerXY.y + (Math.sqrt(markerXY.height) + 5) - divXY.bottom);
+	let width = (markerXY.x + (markerXY.width - 7) - divXY.right);
+	let height = (markerXY.y + (Math.sqrt(markerXY.height) + 5) - divXY.bottom);
 
-  let angle = Math.atan2((height),(width))*(180/Math.PI);
-  width = width / Math.cos(Math.abs(angle) * Math.PI / 180);
-  const line = document.createElement('div');
-  line.style.cssText = `
-    left:${divXY.right}px;
-    top: ${divXY.bottom-2+window.scrollY}px;
-    min-width: ${width}px !important;
-    -moz-transform:rotate(${angle}deg);
-    -webkit-transform:rotate(${angle}deg); 
-    -o-transform:rotate(${angle}deg);
-    -ms-transform:rotate(${angle}deg);
-    transform:rotate(${angle}deg);
-  `;
-  line.classList.add("company-list__line")
-  document.body.appendChild(line);
+	let angle = Math.atan2((height),(width))*(180/Math.PI);
+	width = width / Math.cos(Math.abs(angle) * Math.PI / 180);
+	const line = document.createElement('div');
+	line.style.cssText = `
+		left:${divXY.right}px;
+		top: ${divXY.bottom-2+window.scrollY}px;
+		min-width: ${width}px !important;
+		-moz-transform:rotate(${angle}deg);
+		-webkit-transform:rotate(${angle}deg); 
+		-o-transform:rotate(${angle}deg);
+		-ms-transform:rotate(${angle}deg);
+		transform:rotate(${angle}deg);
+	`;
+	line.classList.add("company-list__line")
+	document.body.appendChild(line);
 
-  return {
-    0: markerXY.x,
-    1: markerXY.y+window.scrollY
-  } 
+	return {
+		0: markerXY.x,
+		1: markerXY.y+window.scrollY
+	} 
 }
 
 const companyCardTemplate = document.querySelector("[company-card-template]");
 const companyCardContainer = document.querySelector("[company-card-parent]");
-var companysData
+var companiesData
 
-fetch("/src/data/card-companies-data.json")
+fetch("/src/data/evolution_db.json")
     .then(res => res.json())
     .then(data => {
-        companys = data.map(data => {
+		companies = data['companies'].map(data => {
+			
             const card = companyCardTemplate.content.cloneNode(true).children[0];
             const cardName = card.querySelector("[company-client-label]");
             cardName.textContent = data.name;   
@@ -106,7 +83,7 @@ fetch("/src/data/card-companies-data.json")
             cardLocation.textContent = data.location;         
             companyCardContainer.append(card);
         })
-        companysData = data
+        companiesData = data['companies'];
     })
     .then(() => {
 		const companyCards = document.querySelectorAll(".companylist__card")
@@ -136,7 +113,7 @@ fetch("/src/data/card-companies-data.json")
 			const cardName = card.querySelector("[company-client-label]");
 			let name = cardName.textContent;    
 
-			const mrk = companysData.find(object => object.name === name)?.marker;
+			const mrk = companiesData.find(object => object.name === name)?.marker;
 			marker = document.getElementById(`${mrk}`);
 			if (!marker) console.log("Marker with matching company name not found")
 			else {
@@ -144,7 +121,7 @@ fetch("/src/data/card-companies-data.json")
 				const divXY = card.getBoundingClientRect();
 				const markerXY = marker.getBoundingClientRect();
 				coords = drawLine(divXY, markerXY);
-				createDescription(companysData[index], coords);
+				createDescription(companiesData[index], coords);
 
 				let wrapper = document.querySelector(".companylist__body-wrapper"); 
 
@@ -154,69 +131,51 @@ fetch("/src/data/card-companies-data.json")
 		});
     });
 
-      function documentScroll(index) {
-        let card = currentCard 
-        const drawedLines = document.querySelectorAll(".company-list__line")
-        const drawedCards = document.querySelectorAll(".card-popup-container")
+	function documentScroll(index) {
+		let card = currentCard 
+		const drawedLines = document.querySelectorAll(".company-list__line")
+		const drawedCards = document.querySelectorAll(".card-popup-container")
 
-        if (window.scrollY > 150) {
-          drawedLines.forEach(el => {
-            el.remove();
-          });
-          drawedCards.forEach(el => {
-            el.remove();
-          });
-        } else {
-          drawedLines.forEach(el => {
-            el.remove();
-          });
-          drawedCards.forEach(el => {
-            el.remove();
-          });
+		if (window.scrollY > 150) {
+			[...drawedLines, ...drawedCards].forEach(el => el.remove());
+		} else {
+			[...drawedLines, ...drawedCards].forEach(el => el.remove());
+			
+			const currentCard = document.querySelector(".companylist__card.activated");
+			const companyList = document.querySelector(".companylist.active");
+			if (currentCard && companyList) {
+				const divXY = card.getBoundingClientRect();
+				const markerXY = marker.getBoundingClientRect();
+				coords = drawLine(divXY, markerXY);
+				createDescription(companiesData[index], coords);
+			}
+		}
+	}
 
-          const currentCard = document.querySelector(".companylist__card.activated");
-          const companyList = document.querySelector(".companylist.active");
-          if (currentCard && companyList) {
-            const divXY = card.getBoundingClientRect();
-            const markerXY = marker.getBoundingClientRect();
-            coords = drawLine(divXY, markerXY);
-            createDescription(companysData[index], coords);
-          }
-        }
-      }
-
-      function wrapperScroll() {
-        let card = currentCard
-        const drawedLines = document.querySelectorAll(".company-list__line")
-        let divXY = card.getBoundingClientRect();
-        let markerXY = marker.getBoundingClientRect();
-        let containerXY = companyCardContainer.getBoundingClientRect()  
-        let divTopY = divXY.bottom-2+window.scrollY
-        let containerTopY = containerXY.bottom
-        let containerBottomY = containerXY.top
+	function wrapperScroll() {
+		let card = currentCard
+		const drawedLines = document.querySelectorAll(".company-list__line")
+		let divXY = card.getBoundingClientRect();
+		let markerXY = marker.getBoundingClientRect();
+		let containerXY = companyCardContainer.getBoundingClientRect()  
+		let divTopY = divXY.bottom-2+window.scrollY
+		let containerTopY = containerXY.bottom
+		let containerBottomY = containerXY.top
 
 
-        if (drawedLines.length != 0) {
-          const drawedCards = document.querySelectorAll(".card-popup-container")
-          const drawedLines = document.querySelectorAll(".company-list__line")
-          drawedLines.forEach(el => {
-            el.remove();
-          });
-        
-          if (divTopY > containerTopY || divTopY < containerBottomY) {
-            const currentCard = document.querySelector(".companylist__card.activated");
-            if (currentCard) currentCard.classList.remove("activated"); 
-            
-
-            drawedLines.forEach(el => {
-              el.remove();
-            });
-            drawedCards.forEach(el => {
-              el.remove();
-            });
-          } else coords = drawLine(divXY, markerXY);
-        }
-      }
+		if (drawedLines.length != 0) {
+			const drawedCards = document.querySelectorAll(".card-popup-container")
+			const drawedLines = document.querySelectorAll(".company-list__line")
+			drawedLines.forEach(el => {el.remove();});
+		
+			if (divTopY > containerTopY || divTopY < containerBottomY) {
+				const currentCard = document.querySelector(".companylist__card.activated");
+				if (currentCard) currentCard.classList.remove("activated"); 
+			
+				[...drawedLines, ...drawedCards].forEach(el => el.remove());
+			} else coords = drawLine(divXY, markerXY);
+		}
+	}
 });
 
 
@@ -269,6 +228,13 @@ window.addEventListener('scroll', () => {
     }
 });
 
+function toggleClass(divEl, classEl) {
+
+  if (divEl.classList.contains(classEl)) divEl.classList.remove(classEl)
+    else divEl.classList.add(classEl)
+}
+
+
 const namelistButton = document.querySelector(".namelist-container__activation-button");
 const namelistContainer = document.querySelector(".companylist");
 namelistButton.addEventListener('click', () => {
@@ -306,6 +272,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const marketContainer = marketButtons.querySelector(".button-container__bottom-wrapper");
   const marketWrapper = marketContainer.querySelectorAll("div");
   const specialButtons = marketButtons.querySelector(".bottom-wrapper__left-button");
+
+
+  
+
+function changeMarketState(buttonContainer, arrWrapper) {
+	buttonContainer.classList.toggle("disabled");
+	arrWrapper.forEach(el => {
+		el.classList.toggle("disabled");
+	});
+}
+
 
     containerNewButton.addEventListener("click", () => {
       containerNew.style.display = "none";
@@ -1025,55 +1002,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+const tariffSection = document.querySelector(".tariffs-section-new");
+const topWrapper = tariffSection.querySelector(".button-container__top-wrapper");
+const topWrapperButtons = topWrapper.querySelectorAll("div");
+const topRightButton = topWrapper.querySelector(".top-wrapper__right-button");
+const topLeftButton = topWrapper.querySelector(".top-wrapper__left-button");
+
+
+const boxSection = document.getElementById("market-container");
+const cloudSection = document.getElementById("market-container-example");
+const marketContainer = document.querySelector(".market__button-container");
+const marketSection = document.querySelector(".marketplace-swiper-container");
 
 
 
+const marketWrapper = marketContainer.querySelector(".button-container__bottom-wrapper");
+const marketWrapperButtons = marketWrapper.querySelectorAll("div");
+const marketPrices = marketSection.querySelectorAll(".card__price");
 
+marketWrapper.addEventListener("click", (event) => {
+	const target = event.target.closest('.market-button');
 
+	if (target && !event.target.classList.contains("activated")) {
+		marketWrapperButtons.forEach(element => {
+			element.classList.toggle("activated");
+		});
 
-  const tariffSection = document.querySelector(".tariffs-section-new");
-  const topWrapper = tariffSection.querySelector(".button-container__top-wrapper");
-
-  const topWrapperButtons = topWrapper.querySelectorAll("div");
-
-  const topRightButton = topWrapper.querySelector(".top-wrapper__right-button");
-  const topLeftButton = topWrapper.querySelector(".top-wrapper__left-button");
-
-
-
-
-
-
-
-  const boxSection = document.getElementById("market-container");
-  const cloudSection = document.getElementById("market-container-example");
-
-
-
-  const marketContainer = document.querySelector(".market__button-container");
-  const marketWrapper = marketContainer.querySelector(".button-container__bottom-wrapper");
-
-  const marketWrapperButtons = marketWrapper.querySelectorAll("div");
-
-  const marketRightButton = marketWrapper.querySelector(".bottom-wrapper__right-button");
-  const marketLeftButton = marketWrapper.querySelector(".bottom-wrapper__left-button");
-
-
-  const marketSection = document.querySelector(".marketplace-swiper-container");
-  const marketPrices = marketSection.querySelectorAll(".card__price");
-
-
-
-
-  marketWrapper.addEventListener("click", (event) => {
-    if (event.target == marketRightButton && !event.target.classList.contains("activated")) {
-      changeMarketButtonsState();
-    } 
-
-    if (event.target == marketLeftButton && !event.target.classList.contains("activated")) {
-      changeMarketButtonsState();
-    } 
-  });
+		marketPrices.forEach(element => {
+			element.classList.toggle("disabled");
+		});
+	} 
+});
 
   const bottomWrapper = document.querySelector(".button-container__bottom-wrapper");
 
