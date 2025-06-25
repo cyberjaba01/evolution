@@ -95,8 +95,21 @@
 
 @media (min-width: 1600px) and (max-width: 1919px) {}
 
-@media (min-width: 1920px) and (max-width: 2559px) {}
-
-@media (min-width: 2560px) and (max-width: 3839px) {}
+@media (min-width: 2560px) and (max-width: 3839px) {
+    .map-background {
+        position: fixed; /* Фиксированный фон */
+        top: 54%; /* Центрируем по вертикали */
+        left: 50%; /* Центрируем по горизонтали */
+        width: 120vw !important; /* Занимает всю ширину экрана */
+        height: 100vh; /* Занимает всю высоту экрана */
+        background-image: url('/src/images/map.png'); /* Путь к карте */
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        -webkit-transform: translate(-50%, -50%) scale(1);
+            -ms-transform: translate(-50%, -50%) scale(1);
+                transform: translate(-50%, -50%) scale(1); 
+    }
+}
 
 @media (min-width: 3840px) {}

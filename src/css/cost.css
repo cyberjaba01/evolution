@@ -218,13 +218,76 @@
 
 @media (min-width: 1200px) and (max-width: 1439px) {}
 
-@media (min-width: 1440px) and (max-width: 1599px) {}
+@media (min-width: 1440px) and (max-width: 1599px) {
+    .custom-radio {width: 30px; height: 30px;}
+    .cost-container {padding: 20px 0 30px 0;}
+    .options {gap: 10px;}
+    .cost-form {padding: 0 35px 20px 35px;}
+    .cost-container h2 {
+        margin-bottom: 5px;
+    }
+    .cost-container .subtitle {
+        margin-bottom: 20px;
+    }
+    .question-block .question {
+        margin: 15px 0;
+    }
+    .option {
+        gap: 10px;
+        padding: 5px 10px;
+    }
+}
 
 @media (min-width: 1600px) and (max-width: 1919px) {}
 
-@media (min-width: 1920px) and (max-width: 2559px) {}
+@media (min-width: 2560px) and (max-width: 3839px) {
+    .cost-container {
+        padding: 40px 0;
+    }
 
-@media (min-width: 2560px) and (max-width: 3839px) {}
+    .cost-container h2 {
+        margin-bottom: 20px;
+    }
+
+
+    .cost-container .subtitle {
+        margin-bottom: 40px;
+    }
+
+    .cost-form {
+        gap: 40px;
+        padding: 0 35px 20px 35px;
+        border: 2px solid rgb(0, 206, 209);
+        border-radius: 15px;
+    }
+
+    .question-block .question {
+        margin-top: 45px;
+    }
+
+    .options {
+        gap: 10px;
+    }
+
+    .option {
+        gap: 10px;
+        padding: 30px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    /* Кастомные радио-кнопки */
+    .custom-radio {
+        width: 45px;
+        height: 45px;
+        border: 2px solid #00CED1;
+    }
+
+    .submit-btn {
+
+        padding: 20px 40px; 
+    }
+}
 
 @media (min-width: 3840px) {
 

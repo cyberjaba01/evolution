@@ -516,26 +516,13 @@ const clientsData = {
 
 
   
-  // Функция для закрытия модального окна
-  function closeMapModal() {
-    mapModal.classList.remove('active');
-  }
   
   // Добавляем обработчик клика для каждого маркера
   markers.forEach(marker => {
     marker.addEventListener('click', openMapModal);
   });
   
-  // Закрываем модальное окно при клике на кнопку закрытия
-  mapCloseBtn.addEventListener('click', closeMapModal);
-  
-  // Закрываем модальное окно при клике вне его области
-  window.addEventListener('click', (event) => {
-    if (event.target === mapModal) {
-      closeMapModal();
-    }
-  });
-
+ 
 
 
 

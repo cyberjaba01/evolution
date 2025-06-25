@@ -71,13 +71,52 @@
 
 @media (min-width: 1200px) and (max-width: 1439px) {}
 
-@media (min-width: 1440px) and (max-width: 1599px) {}
+@media (min-width: 1440px) and (max-width: 1599px) {
+    .footer {
+        padding: 40px 0;
+        padding-bottom: 80px;
+    }
+}
 
 @media (min-width: 1600px) and (max-width: 1919px) {}
 
-@media (min-width: 1920px) and (max-width: 2559px) {}
+@media (min-width: 2560px) and (max-width: 3839px) {
+    .footer {
+        padding: 70px 20px;
+        padding-bottom: 110px;
+    }
 
-@media (min-width: 2560px) and (max-width: 3839px) {}
+    .footer-container {
+        max-width: 1200px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        gap: 20px;
+    }
+
+    /* Информация о компании */
+    .footer-info {
+        line-height: 2;
+        color: #e0e0e0; /* Светло-серый текст */
+    }
+
+    .footer-info p {
+        margin: 0;
+    }
+
+    /* Контакты */
+    .footer-contacts {
+        line-height: 2;
+    }
+
+}
 
 @media (min-width: 3840px) {
 

@@ -123,13 +123,36 @@
 
 @media (min-width: 1200px) and (max-width: 1439px) {}
 
-@media (min-width: 1440px) and (max-width: 1599px) {}
+@media (min-width: 1440px) and (max-width: 1599px) {
+    .header {padding: 5px 40px;}
+    .header.scrolled {padding: 5px 180px;}
+    .logo-img {width: 45px; margin-right: 0px;}
+    .phone img {height: 12px;}
+    .nav ul {
+        gap: 60px;
+    }
+    .logo-text h2 {
+        display: block;
+        margin: 0 0 -5px 0;
+    }
+}
 
 @media (min-width: 1600px) and (max-width: 1919px) {}
 
-@media (min-width: 1920px) and (max-width: 2559px) {}
+@media (min-width: 2560px) and (max-width: 3839px) {
 
-@media (min-width: 2560px) and (max-width: 3839px) {}
+    .logo-img {width: 75px; margin-right: 12px;}
+    
+    .logo {margin-bottom: 5px;}
+    
+
+    .phone img {
+        width: auto;
+        height: 25px;
+    }
+    
+    .nav ul {gap: 60px;}
+}
 
 @media (min-width: 3840px) {
 
