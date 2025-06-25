@@ -1036,7 +1036,7 @@ background-color: rgb(93, 148, 151);
 
 
 .faq-container-new p {
-    font-size: var(--fullhd-text);
+    font-size: var(--font-regular-text);
     text-align: justify;
     text-indent: 15px;
 }
@@ -1425,14 +1425,14 @@ background-color: rgb(93, 148, 151);
 }
 
 .swiper-button-prev {
-    background-image: url(/assets/icons/arrow-circle-left.svg) !important;
+    background-image: none !important;
     background-repeat: no-repeat;
     background-size: 100% auto;
     background-position: center;
 }
     
 .swiper-button-next {
-    background-image: url(/assets/icons/arrow-circle-right.svg) !important;
+    background-image: none !important;
     background-repeat: no-repeat;
     background-size: 100% auto;
     background-position: center;
@@ -1661,7 +1661,7 @@ background-color: rgb(93, 148, 151);
 
 
 .swiper-card__price-description {
-    font-size: var(--fullhd-text);
+    font-size: var(--font-regular-text);
     color: #aaa;
 }
 
@@ -1682,7 +1682,7 @@ background-color: rgb(93, 148, 151);
     margin: -7px 2px !important;
     padding: 2px 7.5px !important;
     height: auto;
-    font-size: calc(var(--fullhd-quantity) - 10px) !important;
+    font-size: calc(var(--font-card-users-amount) - 8px) !important;
     background: none !important;
     border-radius: 15px !important;
     color: white !important;
@@ -1692,7 +1692,7 @@ background-color: rgb(93, 148, 151);
 .marketplace-box-container .user-btn {
     padding: 2px 7.5px !important;
     height: auto;
-    font-size: calc(var(--fullhd-quantity) - 8px) !important;
+    font-size: calc(var(--font-card-users-amount) - 8px) !important;
 }
 
 .useramount-buttons {
@@ -1867,7 +1867,7 @@ background-color: rgb(93, 148, 151);
 
 
 .swiper-users__quantity {
-    font-size: var(--font-card-value) !important;
+    font-size: var(--font-card-users-amount) !important;
     padding: 0;
     margin: 0;
     border: none;
@@ -1875,7 +1875,7 @@ background-color: rgb(93, 148, 151);
 
 
 .swiper-users__no-quantity {
-    font-size: var(--font-card-value) !important;
+    font-size: var(--font-card-users-amount) !important;
     border: none;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1889,7 +1889,7 @@ background-color: rgb(93, 148, 151);
 .tariff-new .swiper-card__users:first-child {margin-top: 0px;}
 
 .swiper-users__label {
-    font-size: var(--font-card-value-name) !important;
+    font-size: var(--font-card-users-label) !important;
 }
 
 .swiper-card__price.canceled, .card__price-promo.canceled {
@@ -1904,7 +1904,7 @@ background-color: rgb(93, 148, 151);
 
 .swiper-card__weight {
     margin: 0px 0 20px 0;
-    font-size: var(--font-card-value) !important;
+    font-size: var(--font-card-weight-amount) !important;
 
     position: relative;
     opacity: 1;
@@ -2078,7 +2078,7 @@ background-color: rgb(93, 148, 151);
     width: 80%;
     height: 40px;
     margin-top: auto;
-
+    font-size: var(--font-card-button);
 
     background-color: rgb(116, 190, 195);
     color: white;
@@ -2134,19 +2134,19 @@ background-color: rgb(93, 148, 151);
   
 
 .users__quantity, .select-selected {
-    font-size: var(--fullhd-quantity) !important;
+    font-size: var(--font-card-users-amount) !important;
     padding: 0;
     margin: 0;
     border: none;
 }
 
 .users__label {
-    font-size: 1.4rem;
+    font-size: var(--font-card-users-label)
 }
 
 .card__price.canceled {
     margin: 15px 0 0 0 !important;
-    font-size: var(--fullhd-canceled-price) !important;
+    font-size: var(--font-card-old-price) !important;
 
     color: gray;
     text-decoration: line-through;
@@ -2156,7 +2156,7 @@ background-color: rgb(93, 148, 151);
 
 .card__price, .card__price-promo {
     margin: 0px 0 20px 0;
-    font-size: var(--fullhd-discount-price) !important;
+    font-size: var(--font-card-actual-price) !important;
 
     position: relative;
     opacity: 1;
@@ -2236,8 +2236,8 @@ background-color: rgb(93, 148, 151);
 
 
 .market__header h4 {
-    margin-top: 30px;
-    font-size: calc(var(--fullhd-title) - 10px) !important;
+    margin-top: 10px;
+    font-size: calc(var(--font-section-label) - 10px) !important;
     font-family: "Unbounded";
 }
 
@@ -2257,7 +2257,7 @@ background-color: rgb(93, 148, 151);
 }
 
 .market__header-old-clients span {
-    font-size: calc(var(--fullhd-text) + 5px) !important;
+    font-size: var(--font-regular-text) !important;
     margin-bottom: 20px;
     display: block;
 }
@@ -2267,12 +2267,12 @@ background-color: rgb(93, 148, 151);
     padding: 6px 20px !important;
     width: 45%;
     border-radius: 12px;
-    font-size: calc(var(--fullhd-text) + 0px) !important;
+    font-size: var(--font-regular-text) !important;
     cursor: pointer;
 }
 
 .market__header div {
-    font-size: calc(var(--fullhd-text) + 5px) !important;
+    font-size: var(--font-regular-text) !important;
     display: -webkit-box !important;
     display: -ms-flexbox !important;
     display: flex !important;
@@ -2287,7 +2287,7 @@ background-color: rgb(93, 148, 151);
 }
 
 .market-header__button {
-    font-size: calc(var(--fullhd-text) + 0px) !important;
+    font-size: var(--font-regular-text) !important;
     background: rgb(109, 196, 211);
     padding: 6px 20px;
     border-radius: 12px;
@@ -2295,7 +2295,7 @@ background-color: rgb(93, 148, 151);
 }
 
 .market__header span {
-    font-size: calc(var(--fullhd-text) + 0px) !important;
+    font-size: var(--font-regular-text) !important;
 }
 
 
@@ -2318,7 +2318,7 @@ background-color: rgb(93, 148, 151);
     cursor: pointer;
     padding: 6px 20px;
     border-radius: 12px;
-    font-size: calc(var(--fullhd-text) + 0px) !important;
+    font-size: var(--font-regular-text) !important;
 }
 .market__bottom-text-wrapper {
     -ms-grid-rows: 1fr;
@@ -2347,7 +2347,7 @@ background-color: rgb(93, 148, 151);
 .market__bottom-text {
     width: 100%;
     text-align: left;
-    font-size: var(--fullhd-text);
+    font-size: var(--font-regular-text);
 
     overflow: hidden;
 }
@@ -2613,7 +2613,7 @@ background-color: rgb(93, 148, 151);
 
 /* Информация о компании */
 .footer-info {
-    font-size: 14px;
+    font-size: var(--font-regular-text);
     line-height: 1.6;
     color: #e0e0e0; /* Светло-серый текст */
 }
@@ -2624,7 +2624,7 @@ background-color: rgb(93, 148, 151);
 
 /* Контакты */
 .footer-contacts {
-    font-size: 16px;
+    font-size: var(--font-regular-text);
     line-height: 1.6;
 }
 
@@ -2893,31 +2893,20 @@ html {
 /* quad hd media request */
 @media (min-width: 2560px) {
     .market__bottom-container {width: 1500px !important}
-    .market__bottom-text {font-size: var(--quadhd-text) !important}
-    .market__bottom-button {font-size: var(--quadhd-text) !important}
-
-    
-    .button-container__top-wrapper *, 
-    .button-container__bottom-wrapper * {
-        font-size: calc(var(--quadhd-text) - 2px);
-    }
 
 
 
     .logo-img {width: 75px; margin-right: 12px;}
     
-    .logo-text h2 {font-size: calc(var(--quadhd-text) + 2px);}
+    .logo {margin-bottom: 5px;}
     
-    .logo {font-size: 60px; margin-bottom: 5px;}
-    
-    .phone {font-size: calc(var(--quadhd-text) - 1.9px);}
 
     .phone img {
         width: auto;
         height: 25px;
     }
     
-    .nav ul {gap: 60px; font-size: var(--quadhd-text);}
+    .nav ul {gap: 60px;}
 
     /* header end */
     
@@ -2940,11 +2929,9 @@ html {
     
     }
     
-    .company-info {font-size: 1.6rem;}
     
     .text-block h4 {
         margin-top: 30px;
-        font-size: 2rem;
     }
     
 
@@ -2956,7 +2943,6 @@ html {
 
     .contact-button {
         padding: 20px 120px;
-        font-size: var(--quadhd-text);
 
         border-radius: 55px;
     }
@@ -2994,15 +2980,6 @@ html {
         height: 280px;
     }
     
-    .counter-number {font-size: 6rem; margin: 0; padding: 0;}
-    
-    #middle-size-counter {font-size: 6rem; margin: 0; padding: 0;}
-    
-    #lesser-size-counter {font-size: 6rem; margin: 0; padding: 0;}
-    
-    .counter-text {font-size: var(--quadhd-text); margin: 0; padding: 0;}
-    
-    .counter-number span {font-size: 6rem; margin: 0; padding: 0;}
 
 
     
@@ -3016,8 +2993,6 @@ html {
         margin-bottom: 35px;
     }
 
-
-    .carousel-header h2 {font-size: var(--quadhd-title) !important;}
 
     .swiper-container {
         width: 2000px;
@@ -3045,13 +3020,11 @@ html {
     .faq-title h2{
         margin-bottom: 30px;
 
-        font-size: var(--quadhd-title);
     }
 
 
     .faq-item-new {
         padding-bottom: 20px;
-        font-size: var(--quadhd-text);
 
         border-bottom: 2px solid #C4C4C4;
     }
@@ -3062,7 +3035,6 @@ html {
 
     .faq-answer-new {
         padding: 0 20px;
-        font-size: var(--quadhd-text);
         height: 0;
     }
 
@@ -3103,17 +3075,14 @@ html {
     .swiper-card__title h2, .swiper-card__title h4, .card__title h2, .card__title h4 {margin: 0;}
 
     .swiper-card__title h2 {
-        font-size: var(--quadhd-title-h2); 
         line-height: 40px;
     }
     
     .card__title h2 {
-        font-size: var(--quadhd-title-h2) !important; 
         line-height: 30px;
     }
 
     .swiper-card__title h4 {
-        font-size: var(--quadhd-title-h4);
         padding: 0 10px;
         line-height: 25px;
         color: gainsboro;
@@ -3121,7 +3090,6 @@ html {
     }
     
     .card__title h4 {
-        font-size: var(--quadhd-title-h4);
         padding: 0 10px;
         color: gainsboro;
         font-weight: 200;
@@ -3147,7 +3115,6 @@ html {
 
     /* button from the bottom of every card */
     .marketplace__swiper-card button, .marketplace__card button, .swiper-card__button-container button {
-        font-size: calc(var(--quadhd-text) - 5px);
 
         height: 50px;
         margin-top: auto;
@@ -3155,12 +3122,10 @@ html {
         border-radius: 25px;
     }
     
-    .swiper-users__quantity, .users__quantity {font-size: var(--quadhd-quantity) !important;}
     
     .user-btn {
         margin: -12px 1px !important;
         padding: 3.5px !important;
-        font-size: var(--quadhd-quantity) !important;
         background: none !important;
         border-radius: 0 !important;
         color: white !important;
@@ -3169,7 +3134,6 @@ html {
     
     .marketplace-box-container .user-btn {
         height: auto;
-        font-size: calc(var(--quadhd-quantity) - 15px) !important;
     }
     
     .useramount-buttons {
@@ -3180,7 +3144,6 @@ html {
 
 
     .swiper-users__no-quantity {
-        font-size: var(--quadhd-quantity-label);
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -3189,29 +3152,22 @@ html {
                 justify-content: center;
         margin-bottom: 18px;
     }
-    
-    .swiper-users__label, .users__label {
-        font-size: 1.5rem !important;
-    }
+
     
     .swiper-card__price.canceled, .card__price.canceled {
         margin: 15px 0 0 0 !important;
-        font-size: 1.9rem !important;
     }
 
     .swiper-card__weight {
         margin: 0px 0 20px 0;
-        font-size: var(--quadhd-weight);
     }
     
     .swiper-card__price, .card__price, .card__price-promo {
         margin: 0px 0 20px 0;
-        font-size: var(--quadhd-discount-price) !important;
     }
     
     .swiper-card__no-price {
         margin: 32.6px 0;
-        font-size: 3rem;
     }
 
     .users__quantity-buttons {
@@ -3220,7 +3176,6 @@ html {
         display: flex;
         gap: 10px;
         
-        font-size: 3.6rem;
     }
     /* and those ones for choosing amount of users */
     .users__quantity-buttons div {
@@ -3234,11 +3189,9 @@ html {
     /* style the items (options), including the selected item: */
     .select-items div, .select-selected {
         padding: 0px 32px;
-        font-size: var(--quadhd-quantity) !important;
     }
     .select-items div {
         padding: 0;
-        font-size: 4rem !important;
     }
 
     
@@ -3274,11 +3227,9 @@ html {
 
     .faq-title {
         line-height: 80px;
-        font-size: var(--quadhd-title) !important;
     }
 
     .faq-container-new p {
-        font-size: var(--quadhd-text) !important;
         text-indent: 35px !important;
     }
 
@@ -3286,7 +3237,6 @@ html {
         color: rgb(229, 253, 255);
         margin-top: 0px;
         margin-bottom: 20px;
-        font-size: var(--quadhd-title) !important;
     }
     
 
@@ -3303,13 +3253,11 @@ html {
     }
 
     .cost-container h2 {
-        font-size: var(--quadhd-title) !important;
         margin-bottom: 20px;
     }
 
 
     .cost-container .subtitle {
-        font-size: var(--quadhd-text);
         margin-bottom: 40px;
     }
 
@@ -3321,7 +3269,6 @@ html {
     }
 
     .question-block .question {
-        font-size: calc(var(--quadhd-text) + 5px);
         margin-top: 45px;
     }
 
@@ -3334,7 +3281,6 @@ html {
         padding: 30px 20px;
         border-radius: 5px;
         cursor: pointer;
-        font-size: var(--quadhd-text);
     }
 
     /* Кастомные радио-кнопки */
@@ -3347,8 +3293,6 @@ html {
     .submit-btn {
 
         padding: 20px 40px; 
-        font-size: calc(var(--quadhd-text) + 5px);
-
     }
 
 
@@ -3381,7 +3325,6 @@ html {
 
     /* Информация о компании */
     .footer-info {
-        font-size: var(--quadhd-text);
         line-height: 2;
         color: #e0e0e0; /* Светло-серый текст */
     }
@@ -3392,7 +3335,6 @@ html {
 
     /* Контакты */
     .footer-contacts {
-        font-size: calc(var(--quadhd-text) + 2px);
         line-height: 2;
     }
 
@@ -3417,23 +3359,14 @@ html {
 
 
 
-    .market__header h4 {font-size: var(--ultrahd-title-h2) !important;}
-
-    .market__header div {font-size: var(--ultrahd-title-h4) !important;}
-
-    .market__header span {font-size: calc(var(--ultrahd-text) - 5px) !important;}
-
-
 
     .market__bottom-container {
         width: 3725px !important;
     }
     .market__bottom-button {
-        font-size: calc(var(--ultrahd-text) + 5px) !important;
         padding: 20px 80px !important;
     }
     .market__bottom-text {
-        font-size: var(--ultrahd-text) !important;
         padding: 15px 90px !important;
     }
 
@@ -3446,23 +3379,16 @@ html {
         right: -290px;
         top: -95px;
     }
-    .button-container__top-wrapper *, 
-    .button-container__bottom-wrapper * {
-        font-size: calc(var(--ultrahd-text) + 5px);
-    }
 
     .logo-img {width: 90px;}
     
-    .logo-text h2 {font-size: calc(var(--ultrahd-text));}
-    
-    .phone {font-size: calc(var(--ultrahd-text) - 5px);}
 
     .phone img {
         width: auto;
         height: 30px;
     }
     
-    .nav ul {gap: 60px; font-size: calc(var(--ultrahd-text));}
+    .nav ul {gap: 60px;}
 
     /* header end */
 
@@ -3487,12 +3413,10 @@ html {
         background-repeat: no-repeat;
     
     }
-    
-    .company-info {font-size: var(--ultrahd-text);}
+
     
     .text-block h4 {
         margin: 60px 0;
-        font-size: calc(var(--ultrahd-text) + 10px);
     }
 
     .button-block {
@@ -3503,7 +3427,6 @@ html {
 
     .contact-button {
         padding: 25px 150px; 
-        font-size: calc(var(--ultrahd-text) + 5px);
 
         border-radius: 55px;
     }
@@ -3542,15 +3465,6 @@ html {
         height: 420px;
     }
     
-    .counter-number {font-size: 8rem; margin: 0; padding: 0;}
-    
-    #middle-size-counter {font-size: 8rem; margin: 0; padding: 0;}
-    
-    #lesser-size-counter {font-size: 8rem; margin: 0; padding: 0;}
-    
-    .counter-text {font-size: 40px; margin: 0; padding: 0;}
-    
-    .counter-number span {font-size: 8rem; margin: 0; padding: 0;}
 
     /* about us end */
 
@@ -3560,8 +3474,6 @@ html {
         padding: 30px 0 40px 0;
         margin-bottom: 35px;
     }
-
-    .carousel-header h2 {font-size: var(--ultrahd-title) !important}
 
 
     .swiper-container {
@@ -3590,14 +3502,11 @@ html {
 
     .faq-title {
         margin-bottom: 80px;
-
-        font-size: var(--ultrahd-title) !important;
     }
 
 
     .faq-item-new {
         padding-bottom: 20px;
-        font-size: var(--ultrahd-text);
 
         border-bottom: 2px solid #C4C4C4;
     }
@@ -3608,7 +3517,6 @@ html {
 
     .faq-answer-new {
         padding: 0 20px;
-        font-size: var(--ultrahd-text);
         height: 0;
     }
 
@@ -3667,20 +3575,16 @@ html {
     }
 
     .card__title h2, .type-box h2 {
-        font-size: var(--ultrahd-title-h2) !important;
         line-height: 80px;
     }
     .card__title h4 {
-        font-size: var(--ultrahd-title-h4) !important;
         line-height: 70px;
     }
 
     .swiper-card__title h2 {
-        font-size: var(--ultrahd-title-h2);
         line-height: 120px;
     }
     .swiper-card__title h4 {
-        font-size: var(--ultrahd-title-h4);
         line-height: 50px;
     }
 
@@ -3695,12 +3599,6 @@ html {
 
 
 
-
-    
-    .swiper-users__quantity, .users__quantity, .users-possible {
-        font-size: var(--ultrahd-quantity) !important;
-    }
-
     .swiper-users__quantity {
         margin-top: 55px;
         margin-bottom: 20px;
@@ -3713,7 +3611,6 @@ html {
     }
     
     .swiper-users__no-quantity {
-        font-size: calc(var(--ultrahd-quantity-label)) !important;
         line-height: 105px;
         color: rgb(160, 225, 255);
         border-bottom: 2px solid rgb(160, 225, 255);
@@ -3723,18 +3620,13 @@ html {
     }
     
     .swiper-users__label, .users__label, .just-users-label {
-        font-size: var(--ultrahd-quantity-label) !important;
         display: inline-block;
         padding-bottom: 45px !important;
     }
 
-    .swiper-card__price-description {
-        font-size: calc(var(--ultrahd-quantity) - 5px) !important;
-    }
-    
+
     .swiper-card__price.canceled, .card__price.canceled {
         margin: 15px 0 0 0 !important;
-        font-size: var(--ultrahd-canceled-price) !important;
     }
 
     .swiper-card__price.canceled {
@@ -3771,7 +3663,6 @@ html {
         line-height: 85px !important;
     }
     .swiper-card__price-description {
-        font-size: var(--ultrahd-text) !important;
         margin-bottom: 65px !important;
     }
 
@@ -3779,12 +3670,10 @@ html {
 
     .swiper-card__weight {
         margin: 15px 0;
-        font-size: var(--ultrahd-weight) !important;
     }
     
     .swiper-card__price, .card__price, .box-price span {
         margin: 0;
-        font-size: var(--ultrahd-discount-price) !important;
     }
     
     .swiper-card__price {
@@ -3793,7 +3682,6 @@ html {
     
     .swiper-card__no-price {
         margin: 55px 0;
-        font-size: calc(var(--ultrahd-discount-price) - 15px) !important;
     }
 
     .users__quantity-buttons {
@@ -3802,7 +3690,6 @@ html {
         display: flex;
         gap: 35px;
         
-        font-size: calc(var(--ultrahd-quantity) - 5px) !important;
     }
 
     .card__description .card__price:nth-child(2) {
@@ -3816,7 +3703,6 @@ html {
 
    /* button from the bottom of every card */
    .marketplace__swiper-card button, .marketplace__card button, .swiper-card__button-container button {
-    font-size: 3rem;
 
     padding: 25px 80px;
     height: auto;
@@ -3832,7 +3718,6 @@ html {
         display: flex;
         gap: 30px;
         
-        font-size: 3.6rem;
     }
     /* and those ones for choosing amount of users */
     .users__quantity-buttons div {
@@ -3845,7 +3730,6 @@ html {
 
     .user-btn {
         margin: 24px 1px !important;
-        font-size: var(--ultrahd-quantity) !important;
         background: none !important;
         border-radius: 35px !important;
         color: white !important;
@@ -3855,7 +3739,6 @@ html {
     .marketplace-box-container .user-btn {
         padding: 0 7px;
         height: auto;
-        font-size: calc(var(--ultrahd-quantity) - 15px) !important;
     }
     
     .useramount-buttons {
@@ -3873,11 +3756,9 @@ html {
     /* style the items (options), including the selected item: */
     .select-items div, .select-selected {
         padding: 0px 32px;
-        font-size: var(--ultrahd-quantity) !important;
     }
     .select-items div {
         padding: 0;
-        font-size: 5rem !important;
     }
 
     
@@ -3903,7 +3784,6 @@ html {
         right: -2180px !important;
         top: 220px !important;
 
-        font-size: 4rem;
         width: auto !important;
         height: auto !important;
         padding: 25px 70px;
@@ -3913,7 +3793,6 @@ html {
         left: -2180px !important;
         top: 220px !important;
 
-        font-size: 4rem;
         width: auto !important;
         height: auto !important;
         padding: 25px 70px;
@@ -3930,11 +3809,9 @@ html {
 
     .faq-title h2 {
         line-height: 120px;
-        font-size: var(--ultrahd-title) !important;
     }
 
     .faq-container-new p {
-        font-size: var(--ultrahd-text) !important;
         text-indent: 55px !important;
     }
 
@@ -3942,7 +3819,6 @@ html {
         color: rgb(229, 253, 255);
         
         margin: 100px;
-        font-size: var(--ultrahd-title) !important;
     }
     
     .tariffs-section-new .title-h2 {margin: 30px 0 -40px 0;}
@@ -3971,7 +3847,6 @@ html {
         top: 190px;
         background: rgb(178, 178, 178);
         color: black;
-        font-size: 3.4rem;
         padding: 20px 60px;
         -webkit-transition: 1s;
         -o-transition: 1s;
@@ -3993,7 +3868,6 @@ html {
     .market-button-monthly {
         padding: 30px 100px;
         text-wrap: nowrap;
-        font-size: 3.5rem;
         border-radius: 35px;
         background: rgb(116, 190, 195);
         position: absolute;
@@ -4005,7 +3879,6 @@ html {
     .tariff-button-box, .tariff-button-year, .market-button-year {
         padding: 30px 100px;
         text-wrap: nowrap;
-        font-size: 3.5rem;
         border-radius: 35px;
 
         color: rgb(116, 190, 195);
@@ -4059,14 +3932,12 @@ html {
     }
 
     .cost-container h2 {
-        font-size: var(--ultrahd-title) !important;
         margin-bottom: 0px;
         margin: 0;
     }
 
 
     .cost-container .subtitle {
-        font-size: var(--ultrahd-text);
         margin-bottom: 40px;
     }
 
@@ -4078,7 +3949,6 @@ html {
     }
 
     .question-block .question {
-        font-size: calc(var(--ultrahd-text) + 15px);
         margin-top: 45px;
     }
 
@@ -4091,7 +3961,6 @@ html {
         padding: 30px 20px;
         border-radius: 5px;
         cursor: pointer;
-        font-size: var(--ultrahd-text);
     }
 
     /* Кастомные радио-кнопки */
@@ -4102,9 +3971,7 @@ html {
     }
 
     .submit-btn {
-
         padding: 20px 40px; 
-        font-size: calc(var(--ultrahd-text) + 5px);
 
     }
 
@@ -4134,7 +4001,6 @@ html {
 
     /* Информация о компании */
     .footer-info {
-        font-size: var(--ultrahd-text);
         line-height: 2;
         color: #e0e0e0; /* Светло-серый текст */
     }
@@ -4145,7 +4011,6 @@ html {
 
     /* Контакты */
     .footer-contacts {
-        font-size: calc(var(--ultrahd-text) + 2px);
         line-height: 2;
     }
 }
@@ -4190,8 +4055,6 @@ html {
         display: block;
     }
     .market__bottom-container {width: 1100px !important}
-    .market__bottom-text {font-size: var(--lg-text) !important}
-    .market__bottom-button {font-size: var(--lg-text) !important}
 
 
     /* Фон карты */
@@ -4244,30 +4107,16 @@ html {
 }
 
 
-/*<h2>Наши клиенты:</h2>
-<ul>
-    <li>Москва</li>
-    <li>Китай</li>
-    <li>Швейцария</li>
-    <li>Эмираты</li>
-</ul>
-</div>*/
-
-
 
 /* header */
     .header {padding: 5px 40px;}
     .header.scrolled {padding: 5px 180px;}
     .logo-img {width: 45px; margin-right: 0px;}
     .phone img {height: 12px;}
-    .logo {font-size: 12px;}
-    .phone {font-size: 13px;}
     .nav ul {
         gap: 60px;
-        font-size: var(--lg-text);
     }
     .logo-text h2 {
-        font-size: 0.92rem;
         display: block;
         margin: 0 0 -5px 0;
     }
@@ -4318,23 +4167,15 @@ html {
     
 /* about us */
     .button-block {right: 80px; bottom: -17px;}    
-    .counter-number {font-size: 3rem; margin: 0; padding: 0;}
-    #middle-size-counter {font-size: 3rem; margin: 0; padding: 0;}
-    #lesser-size-counter {font-size: 3rem; margin: 0; padding: 0;}
-    .counter-number span {font-size: 3rem; margin: 0; padding: 0;}
-    .counter-text {font-size: var(--lg-text); margin: 0; padding: 0;}
-    .company-info {font-size: var(--lg-text);}
     .company-logo-test {
         height: 220px;
         margin: 25px 27px -25px 10px;
     }
     .text-block h4 {
         margin-top: 10px;
-        font-size: calc(var(--lg-text) + 5px);
     }
     .contact-button {
         padding: 15px 80px;
-        font-size: var(--lg-text);
 
         border-radius: 55px;
     }
@@ -4362,7 +4203,6 @@ html {
     
 /* carousel */
     .carousel-header h2 {
-        font-size: var(--lg-title) !important;
         margin: 15px 0;
     }
     .swiper-slide {border-radius: 15px;}
@@ -4378,26 +4218,21 @@ html {
     
 /* cost form */
     .custom-radio {width: 30px; height: 30px;}
-    .submit-btn {font-size: calc(var(--lg-text) + 5px);}
     .cost-container {padding: 20px 0 30px 0;}
     .options {gap: 10px;}
     .cost-form {padding: 0 35px 20px 35px;}
     .cost-container h2 {
-        font-size: var(--lg-title) !important;
         margin-bottom: 5px;
     }
     .cost-container .subtitle {
-        font-size: var(--lg-text);
         margin-bottom: 20px;
     }
     .question-block .question {
-        font-size: calc(var(--lg-text) + 5px);
         margin: 15px 0;
     }
     .option {
         gap: 10px;
         padding: 5px 10px;
-        font-size: var(--lg-text);
     }
 /* cost form end */
     
@@ -4409,11 +4244,9 @@ html {
     .faq-question-new {margin: 15px 20px 0 20px;}
     .faq-item-new {
         padding-bottom: 20px;
-        font-size: var(--lg-text);
     }
     .faq-answer-new {
         padding: 0 20px;
-        font-size: var(--lg-text);
     }
 /* faq end */
     
@@ -4424,29 +4257,24 @@ html {
     .swiper-card__description, .swiper-card__no-description, 
     .card__description {gap: 5px !important}
     .swiper-card__no-description {margin-top: 14.5px;}
-    .swiper-users__quantity, .users__quantity {font-size: var(--lg-quantity) !important;}
     .users-amount {height: auto;}
     .marketplace__swiper-card, .marketplace__card {
         padding: 20px 0;
         border-radius: 10px;
     }
     .swiper-card__title h2 {
-        font-size: var(--lg-title-h2); 
         line-height: 28px;
     }
     .card__title h2 {
-        font-size: var(--lg-title-h2) !important; 
         line-height: 20px;
     }
     .swiper-card__title h4 {
-        font-size: var(--lg-title-h4);
         padding: 0 10px;
         line-height: 15px;
         color: gainsboro;
         font-weight: 200;
     }
     .card__title h4 {
-        font-size: var(--lg-title-h4);
         padding: 0 10px;
         color: gainsboro;
         font-weight: 200;
@@ -4457,7 +4285,6 @@ html {
         padding: 15px 0;
     }
     .marketplace__swiper-card button, .marketplace__card button, .swiper-card__button-container button {
-        font-size: calc(var(--lg-text) - 2px);
 
         height: 33px;
         margin-top: auto;
@@ -4467,7 +4294,6 @@ html {
     .user-btn {
         margin: -12px 1px !important;
         padding: 5px !important;
-        font-size: var(--lg-quantity) !important;
         background: none !important;
         border-radius: 0 !important;
         color: white !important;
@@ -4476,14 +4302,12 @@ html {
     .marketplace-box-container .user-btn {
         padding: 0 5px !important;
         height: auto;
-        font-size: var(--lg-quantity) !important;
     }
     .useramount-buttons {
         margin-top: 12px;
         margin-bottom: 18px;
     }
     .swiper-users__no-quantity {
-        font-size: calc(var(--lg-quantity) - 8px) !important;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -4493,25 +4317,20 @@ html {
         margin-bottom: 10px;
         margin-top: -15px;
     }
-    .swiper-users__label, .users__label {font-size: var(--lg-quantity-label) !important;}
     .swiper-card__price.canceled, .card__price.canceled {
         margin: 15px 0 0 0 !important;
-        font-size: var(--lg-canceled-price) !important;
     }
     .swiper-card__weight {
         margin: 0px 0 20px 0;
-        font-size: var(--lg-weight) !important;
     }
 
     .swiper-card__price, .card__price, .card__price-promo {
         margin: 0px 0 20px 0;
-        font-size: var(--lg-discount-price) !important;
     }
 
     .swiper-card__no-price {
         margin: 20px 0;
         margin-bottom: 36px;
-        font-size: calc(var(--lg-discount-price) + 5px) !important;
     }
 
     .users__quantity-buttons {
@@ -4532,7 +4351,6 @@ html {
     }
     .select-items div, .select-selected {
         padding: 0px 32px;
-        font-size: var(--lg-quantity) !important;
     }
 
     .select-selected:after {
@@ -4562,14 +4380,12 @@ html {
 
 /* bottom faq */
     .faq-container-new p {
-        font-size: var(--lg-text) !important;
         text-indent: 20px !important;
     }
     .tariffs-section-new .title-h2, .title2-h2, .title3-h2 {
         color: rgb(229, 253, 255);
         margin-top: 0px;
         margin-bottom: 20px;
-        font-size: var(--lg-title) !important;
     }
 /* bottom faq end */
     
@@ -4578,8 +4394,6 @@ html {
         padding: 40px 0;
         padding-bottom: 80px;
     }
-    .footer-info {font-size: calc(var(--lg-text) - 2px);}
-    .footer-contacts {font-size: var(--lg-text); line-height: 20px;}
     
 }
 /* notebook lg end */
@@ -4598,8 +4412,6 @@ html {
         margin-top: 30px;
     }
     .market__bottom-container {width: 1100px !important}
-    .market__bottom-text {font-size: var(--lg-text) !important}
-    .market__bottom-button {font-size: var(--lg-text) !important}
 }
 
 
@@ -4614,7 +4426,6 @@ html {
     
     .swiper-card__price-description {
         margin-bottom: 15px !important;
-        font-size: calc(var(--sg-discount-price) - 2px);
     }
     
     .tariff-new .useramount-buttons {
@@ -4638,22 +4449,16 @@ html {
     }
 
     .market__bottom-container {width: 800px !important}
-    .market__bottom-text {font-size: var(--sg-text) !important}
-    .market__bottom-button {font-size: var(--sg-text) !important}
 
 /* header */
     .header {padding: 5px 40px !important;}
     .header.scrolled {padding: 5px 100px !important}
     .logo-img {width: 35px !important; margin-right: 0px !important}
     .phone img {height: 8.8px !important;}
-    .logo {font-size: 12px;}
-    .phone {font-size: 10px !important;}
     .nav ul {
         gap: 60px;
-        font-size: var(--sg-text);
     }
     .logo-text h2 {
-        font-size: 0.73rem !important;
         display: block !important;
         margin: 0 0 -10px 0 !important;
     }
@@ -4702,23 +4507,20 @@ html {
     
 /* about us */
     .button-block {right: 80px; bottom: -17px;}    
-    .counter-number {font-size: 3rem; margin: 0; padding: 0;}
-    #middle-size-counter {font-size: 3rem; margin: 0; padding: 0;}
-    #lesser-size-counter {font-size: 3rem; margin: 0; padding: 0;}
-    .counter-number span {font-size: 3rem; margin: 0; padding: 0;}
-    .counter-text {font-size: var(--sg-text); margin: 0; padding: 0;}
-    .company-info {font-size: var(--sg-text);}
+    .counter-number {margin: 0; padding: 0;}
+    #middle-size-counter {margin: 0; padding: 0;}
+    #lesser-size-counter {margin: 0; padding: 0;}
+    .counter-number span {margin: 0; padding: 0;}
+    .counter-text {margin: 0; padding: 0;}
     .company-logo-test {
         height: 165px;
         margin: 35px 27px 20px 10px;
     }
     .text-block h4 {
         margin-top: 10px;
-        font-size: calc(var(--sg-text) + 5px);
     }
     .contact-button {
         padding: 15px 80px;
-        font-size: var(--sg-text);
 
         border-radius: 55px;
     }
@@ -4746,7 +4548,6 @@ html {
     
 /* carousel */
     .carousel-header h2 {
-        font-size: var(--sg-title) !important;
         margin: 15px 0;
     }
     .swiper-slide {border-radius: 15px;}
@@ -4763,26 +4564,21 @@ html {
     
 /* cost form */
     .custom-radio {width: 20px; height: 20px;}
-    .submit-btn {font-size: calc(var(--sg-text) + 5px);}
     .cost-container {padding: 20px 0 30px 0;}
     .options {gap: 10px;}
     .cost-form {padding: 0 35px 20px 35px;}
     .cost-container h2 {
-        font-size: var(--sg-title) !important;
         margin-bottom: 5px;
     }
     .cost-container .subtitle {
-        font-size: var(--sg-text);
         margin-bottom: 20px;
     }
     .question-block .question {
-        font-size: calc(var(--sg-text) + 5px);
         margin: 15px 0;
     }
     .option {
         gap: 10px;
         padding: 5px 10px;
-        font-size: var(--sg-text);
     }
 /* cost form end */
     
@@ -4790,15 +4586,12 @@ html {
 /* faq */
     .faq {margin: 60px 0;}
     .faq-toggle {width: 15px; height: 15px;}
-    .faq-title h2{font-size: var(--sg-title);}
     .faq-question-new {margin: 15px 20px 0 20px;}
     .faq-item-new {
         padding-bottom: 20px;
-        font-size: var(--sg-text);
     }
     .faq-answer-new {
         padding: 0 20px;
-        font-size: var(--sg-text);
     }
 /* faq end */
     
@@ -4811,9 +4604,6 @@ html {
         gap: 15px;
     }
 
-    .tariffs__button-container div, .market__button-container div {
-        font-size: var(--sg-text) !important;
-    }
 
     .market__button-container {
         width: 383px;
@@ -4935,29 +4725,24 @@ html {
     .swiper-card__description, .swiper-card__no-description, 
     .card__description {gap: 5px;}
     .swiper-card__no-description {margin-top: 14.5px;}
-    .swiper-users__quantity, .users__quantity {font-size: var(--sg-quantity) !important;}
     .users-amount {height: auto;}
     .marketplace__swiper-card, .marketplace__card {
         padding: 15px 0;
         border-radius: 10px;
     }
     .swiper-card__title h2 {
-        font-size: var(--sg-title-h2); 
         line-height: 20px;
     }
     .card__title h2 {
-        font-size: var(--sg-title-h2) !important; 
         line-height: 20px;
     }
     .swiper-card__title h4 {
-        font-size: var(--sg-title-h4);
         padding: 0 10px;
         line-height: 15px;
         color: gainsboro;
         font-weight: 200;
     }
     .card__title h4 {
-        font-size: var(--sg-title-h4);
         padding: 0 10px;
         color: gainsboro;
         font-weight: 200;
@@ -4968,8 +4753,6 @@ html {
         padding: 15px 0;
     }
     .marketplace__swiper-card button, .marketplace__card button, .swiper-card__button-container button {
-        font-size: calc(var(--sg-text) - 0px);
-
         height: 24px;
         margin-top: auto;
 
@@ -4978,7 +4761,6 @@ html {
     .user-btn {
         margin: -16px 1px !important;
         padding: 0 5px !important;
-        font-size: var(--sg-quantity) !important;
         background: none !important;
         border-radius: 0 !important;
         color: white !important;
@@ -4987,14 +4769,12 @@ html {
     .marketplace-box-container .user-btn {
         padding: 0 5px !important;
         height: auto;
-        font-size: calc(var(--sg-quantity) - 5px) !important;
     }
     .useramount-buttons {
         margin-top: 12px;
         margin-bottom: 23px;
     }
     .swiper-users__no-quantity {
-        font-size: calc(var(--sg-quantity) - 10px) !important;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -5004,25 +4784,20 @@ html {
         margin-bottom: 10px;
         margin-top: -14px;
     }
-    .swiper-users__label, .users__label {font-size: var(--sg-quantity-label) !important;}
     .swiper-card__price.canceled, .card__price.canceled {
         margin: 15px 0 0 0 !important;
-        font-size: var(--sg-canceled-price) !important;
     }
     .swiper-card__weight {
         margin: 0px 0 20px 0;
-        font-size: var(--sg-weight) !important;
     }
 
     .swiper-card__price, .card__price, .card__price-promo {
         margin: 0px 0 20px 0;
-        font-size: var(--sg-discount-price) !important;
     }
 
     .swiper-card__no-price {
         margin: 12px 0;
         margin-bottom: 10px;
-        font-size: calc(var(--sg-discount-price) + 5px) !important;
     }
 
     .users__quantity-buttons {
@@ -5030,8 +4805,6 @@ html {
         display: -ms-flexbox;
         display: flex;
         gap: 10px;
-        
-        font-size: 3.6rem;
     }
     /* and those ones for choosing amount of users */
     .users__quantity-buttons div {
@@ -5043,11 +4816,9 @@ html {
     }
     .select-items div, .select-selected {
         padding: 0px 32px;
-        font-size: var(--sg-quantity) !important;
     }
     .select-items div {
         padding: 0;
-        font-size: calc(var(--sg-quantity) - 7px) !important;
     }
     .select-selected:after {
         position: absolute;
@@ -5072,7 +4843,6 @@ html {
         top: 70px !important;
     }
     .to-enterprize, .to-free {
-        font-size: 1rem !important;
         width: 130px !important;
         height: 40px !important;
 
@@ -5082,7 +4852,6 @@ html {
     
 /* bottom faq */
     .faq-container-new p {
-        font-size: var(--sg-text) !important;
         text-indent: 20px !important;
     }
     .faq-container-new p:first-child {
@@ -5103,7 +4872,6 @@ html {
         color: rgb(229, 253, 255);
         margin-top: 0px;
         margin-bottom: 20px;
-        font-size: var(--sg-title) !important;
     }
 /* bottom faq end */
     
@@ -5112,9 +4880,7 @@ html {
         padding: 25px 0;
         padding-bottom: 60px;
     }
-    .footer-info {font-size: calc(var(--sg-text) - 2px);}
     .footer-contacts {
-        font-size: var(--sg-text);
         line-height: 15px;
     }
     
@@ -5141,7 +4907,6 @@ html {
         
         .swiper-card__price-description {
             margin-bottom: 15px !important;
-            font-size: calc(var(--sg-discount-price) - 2px);
         }
         
         .tariff-new .useramount-buttons {
@@ -5159,8 +4924,6 @@ html {
 
 
     .market__bottom-container {width: 520px !important}
-    .market__bottom-text {font-size: var(--lp-text) !important}
-    .market__bottom-button {font-size: var(--lp-text) !important}
 
     #market-container {
         width: 100vw !important;
@@ -5265,7 +5028,6 @@ html {
 
     }
     .header.scrolled .logo-text h2 {
-        font-size: 1.9rem !important;
         font-weight: 500;
         display: -webkit-box !important;
         display: -ms-flexbox !important;
@@ -5273,7 +5035,6 @@ html {
         margin: 0 !important;
     }
     .logo h2 {
-        font-size: 1rem !important;
         font-weight: 500;
         display: -webkit-box !important;
         display: -ms-flexbox !important;
@@ -5296,7 +5057,6 @@ html {
         width: 35px;
     }
     .phone img {height: 16px !important;}
-    .phone {font-size: 1rem !important;}
     .nav {display: none;}
     .nav-phone {
         position: fixed;
@@ -5361,7 +5121,6 @@ html {
             -ms-flex-align: center;
                 align-items: center;
         gap: 50px;
-        font-size: calc(var(--lp-text) + 5px);
     }
 
     .nav-phone a {
@@ -5473,7 +5232,6 @@ html {
 /* about us */
     .company-info h4, .company-info {display: none !important;}
 
-    .company-info {font-size: var(--lp-text);}
     .company-info-preview {
         width: 550px;
         display: -webkit-box !important;
@@ -5495,12 +5253,11 @@ html {
 
 
     .button-block {right: 80px; bottom: -17px;}    
-    .counter-number {font-size: 3rem; margin: 0; padding: 0;}
-    #middle-size-counter {font-size: 3rem; margin: 0; padding: 0;}
-    #lesser-size-counter {font-size: 3rem; margin: 0; padding: 0;}
-    .counter-number span {font-size: 3rem; margin: 0; padding: 0;}
-    .counter-text {font-size: calc(var(--lp-text) - 3px); margin: 0; padding: 0;}
-    .company-info {font-size: var(--lp-text);}
+    .counter-number {margin: 0; padding: 0;}
+    #middle-size-counter {margin: 0; padding: 0;}
+    #lesser-size-counter {margin: 0; padding: 0;}
+    .counter-number span {margin: 0; padding: 0;}
+    .counter-text {margin: 0; padding: 0;}
     .company-logo-test {
         width: 365px;
         height: auto;
@@ -5553,11 +5310,10 @@ html {
 
     .text-block h4 {
         margin-top: 10px;
-        font-size: calc(var(--lp-text) + 5px);
     }
     .contact-button {
         padding: 15px 80px;
-        font-size: var(--lp-text);
+        
 
         border-radius: 55px;
     }
@@ -5592,7 +5348,6 @@ html {
     
 /* carousel */
     .carousel-header h2 {
-        font-size: var(--lp-title) !important;
         margin: 15px 0;
     }
     .swiper-slide {border-radius: 15px;}
@@ -5612,7 +5367,6 @@ html {
     
 /* cost form */
     .custom-radio {width: 20px; height: 20px;}
-    .submit-btn {font-size: calc(var(--lp-text) + 5px);}
     .cost-container {padding: 20px 0 30px 0;}
     .options {gap: 10px;}
     .cost-form {
@@ -5620,21 +5374,19 @@ html {
         margin: 0 30px;
     }
     .cost-container h2 {
-        font-size: var(--lp-title) !important;
         margin-bottom: 5px;
     }
     .cost-container .subtitle {
-        font-size: var(--lp-text);
+        
         margin-bottom: 20px;
     }
     .question-block .question {
-        font-size: calc(var(--lp-text) + 5px);
         margin: 15px 0;
     }
     .option {
         gap: 10px;
         padding: 5px 10px;
-        font-size: var(--lp-text);
+        
     }
 /* cost form end */
     
@@ -5642,18 +5394,17 @@ html {
 /* faq */
     .faq {margin: 60px 0;}
     .faq-toggle {width: 15px; height: 15px;}
-    .faq-title h2{font-size: var(--lp-title);}
     .faq-question-new {
         margin: 15px 20px 0 20px;
         text-align: left !important;
     }
     .faq-item-new {
         padding-bottom: 20px;
-        font-size: var(--lp-text);
+        
     }
     .faq-answer-new {
         padding: 0 20px;
-        font-size: var(--lp-text);
+        
     }
 /* faq end */
     
@@ -5666,9 +5417,6 @@ html {
         gap: 15px;
     }
 
-    .tariffs__button-container div, .market__button-container div {
-        font-size: var(--lp-text) !important;
-    }
 
     .market__button-container {
         width: 383px;
@@ -5790,7 +5538,6 @@ html {
     .swiper-card__description, .swiper-card__no-description, 
     .card__description {gap: 5px;}
     .swiper-card__no-description {margin-top: 14.5px;}
-    .swiper-users__quantity, .users__quantity {font-size: var(--lp-quantity) !important;}
     .users-amount {height: auto;}
     .marketplace__swiper-card, .marketplace__card {
         padding: 30px 0;
@@ -5799,22 +5546,18 @@ html {
     .martketplace-tariff {padding: 0 !important;}
     .marketplace-swiper-container, .marketplace-box-container {padding-left: 50px;}
     .swiper-card__title h2 {
-        font-size: var(--lp-title-h2); 
         line-height: 20px;
     }
     .card__title h2 {
-        font-size: var(--lp-title-h2) !important; 
         line-height: 20px;
     }
     .swiper-card__title h4 {
-        font-size: var(--lp-title-h4);
         padding: 0 10px;
         line-height: 15px;
         color: gainsboro;
         font-weight: 200;
     }
     .card__title h4 {
-        font-size: var(--lp-title-h4);
         padding: 0 10px;
         color: gainsboro;
         font-weight: 200;
@@ -5825,8 +5568,6 @@ html {
         padding: 15px 0;
     }
     .marketplace__swiper-card button, .marketplace__card button, .swiper-card__button-container button {
-        font-size: calc(var(--lp-text) - 0px);
-
         height: 24px;
         margin-top: auto;
 
@@ -5836,7 +5577,6 @@ html {
         height: 40px !important;
         margin: -16px 1px !important;
         padding: 5px !important;
-        font-size: var(--lp-quantity) !important;
         background: none !important;
         border-radius: 0 !important;
         color: white !important;
@@ -5846,14 +5586,12 @@ html {
     .marketplace-box-container .user-btn {
         padding: 0 5px !important;
         height: auto;
-        font-size: var(--lp-quantity) !important;
     }
     .useramount-buttons {
         margin-top: 12px;
         margin-bottom: 23px;
     }
     .swiper-users__no-quantity {
-        font-size: calc(var(--lp-quantity) - 10px) !important;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -5863,25 +5601,20 @@ html {
         margin-bottom: 10px;
         margin-top: -15px !important;
     }
-    .swiper-users__label, .users__label {font-size: var(--lp-quantity-label) !important;}
     .swiper-card__price.canceled, .card__price.canceled {
         margin: 15px 0 0 0 !important;
-        font-size: var(--lp-canceled-price) !important;
     }
     .swiper-card__weight {
         margin: 0px 0 20px 0;
-        font-size: var(--lp-weight) !important;
     }
 
     .swiper-card__price, .card__price, .card__price-promo {
         margin: 0px 0 20px 0 !important;
-        font-size: var(--lp-discount-price) !important;
     }
 
     .swiper-card__no-price {
         margin: 10px 0;
         margin-bottom: 14px;
-        font-size: calc(var(--lp-discount-price) + 5px) !important;
     }
 
     .users__quantity-buttons {
@@ -5890,7 +5623,6 @@ html {
         display: flex;
         gap: 10px;
         
-        font-size: 3.6rem;
     }
     /* and those ones for choosing amount of users */
     .users__quantity-buttons div {
@@ -5902,11 +5634,9 @@ html {
     }
     .select-items div, .select-selected {
         padding: 0px 32px;
-        font-size: var(--lp-quantity) !important;
     }
     .select-items div {
         padding: 0;
-        font-size: calc(var(--lp-quantity) - 7px) !important;
     }
     .select-selected:after {
         position: absolute;
@@ -5937,7 +5667,6 @@ html {
     
 /* bottom faq */
     .faq-container-new p {
-        font-size: var(--lp-text) !important;
         text-indent: 20px !important;
     }
     .faq-container-new p:first-child {
@@ -5958,7 +5687,6 @@ html {
         color: rgb(229, 253, 255);
         margin-top: 0px;
         margin-bottom: 20px;
-        font-size: var(--lp-title) !important;
     }
 /* bottom faq end */
     
@@ -5967,11 +5695,7 @@ html {
         padding: 25px 0;
         padding-bottom: 60px;
     }
-    .footer-info {font-size: calc(var(--lp-text) - 2px);}
-    .footer-contacts {
-        font-size: var(--lp-text);
-        line-height: 35px;
-    }
+    .footer-contacts {line-height: 35px;}
 }
 
 @media (max-width: 850px) {
@@ -5981,9 +5705,7 @@ html {
 @media (max-width: 560px) {
 
     .market__bottom-container {width: 350px !important}
-    .market__bottom-text {font-size: var(--sp-text) !important;
-    text-align: justify;}
-    .market__bottom-button {font-size: var(--sp-text) !important}
+    .market__bottom-text {text-align: justify;}
     .market__bottom-text-wrapper {padding: 20px 20px;}
 
 
@@ -6061,9 +5783,7 @@ html {
 
 
     .market__bottom-container {width: 200px !important}
-    .market__bottom-text {font-size: var(--sp-text) !important;
-    text-align: justify;}
-    .market__bottom-button {font-size: var(--sp-text) !important}
+    .market__bottom-text {text-align: justify;}
 
 
 
@@ -6114,9 +5834,6 @@ html {
         overflow: hidden !important;
 
     }
-    .box-tariff .user-btn {
-        font-size: 25px !important;
-    }
 
 }
 
@@ -6125,12 +5842,6 @@ html {
     .tariffs-section-new, .info-section {
         overflow: hidden !important;
 
-    }
-    .logo h2 {
-        font-size: 0.9rem !important;
-    }
-    .phone span {
-        font-size: 0.9rem;
     }
     .phone img {width: 10px !important;
     height: auto !important;}
