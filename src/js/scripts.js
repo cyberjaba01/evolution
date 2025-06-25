@@ -1,5 +1,3 @@
-
-
 function createDescription(data, coords) {
 	const cardPopupTemplate = document.querySelector("[card-popup-template]");
 	const cardPopup = cardPopupTemplate.content.cloneNode(true).children[0];

@@ -1,0 +1,115 @@
+
+.map-section {
+    position: relative; 
+    width: 80%;
+    height: 100vh; 
+    z-index: 1; 
+    margin: 0 auto; 
+}
+
+.map-background {
+    position: fixed; 
+    top: 54%; 
+    left: 50%; 
+    width: 100vw; 
+    height: 100vh; 
+    background-image: url('/src/images/map.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.8; 
+    z-index: -1; 
+    -webkit-transform: translate(-50%, -50%) scale(1);
+        -ms-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1); 
+}
+
+
+.marker {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background-color: #00CED1;
+    border-radius: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    z-index: 0;
+    cursor: pointer;
+    -webkit-transition: opacity 2s;
+    -o-transition: opacity 2s;
+    transition: opacity 2s;
+}
+
+.marker::after {
+    content: attr(data-city);
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+    -o-transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+    pointer-events: all;
+}
+
+.marker.scrolled {
+    -webkit-transition: opacity 2s;
+    -o-transition: opacity 2s;
+    transition: opacity 2s;
+    opacity: 0.5;
+    pointer-events: none;
+}
+  
+.marker:hover::after {
+    z-index: 10;
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+
+
+@media (max-width: 479px) {}
+
+@media (min-width: 480px) and (max-width: 767px) {}
+
+@media (min-width: 768px) and (max-width: 991px) {}
+
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+@media (min-width: 1200px) and (max-width: 1439px) {}
+
+@media (min-width: 1440px) and (max-width: 1599px) {}
+
+@media (min-width: 1600px) and (max-width: 1919px) {}
+
+@media (min-width: 2560px) and (max-width: 3839px) {
+    .map-background {
+        position: fixed; /* Фиксированный фон */
+        top: 54%; /* Центрируем по вертикали */
+        left: 50%; /* Центрируем по горизонтали */
+        width: 120vw !important; /* Занимает всю ширину экрана */
+        height: 100vh; /* Занимает всю высоту экрана */
+        background-image: url('/src/images/map.png'); /* Путь к карте */
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        -webkit-transform: translate(-50%, -50%) scale(1);
+            -ms-transform: translate(-50%, -50%) scale(1);
+                transform: translate(-50%, -50%) scale(1); 
+    }
+}
+
+@media (min-width: 3840px) {}

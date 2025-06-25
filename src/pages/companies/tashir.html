@@ -3,439 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Эволюция - Битрикс 24. Автоматизация бизнеса, создание сайтов, внедрение CRM систем</title>
+    <link rel="icon" href="/src/images/icon_evolution.png" type="/src/images/icon_evolution.png">
+
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <title>Эволюция - Битрикс 24. Автоматизация бизнеса, создание сайтов, внедрение CRM систем</title>
-    <link rel="icon" href="/images/icon_evolution.png" type="/images/icon_evolution.png">
+
+    <link rel="stylesheet" href="/src/css/cases/companies/tashir.css">
+    <link rel="stylesheet" href="/src/css/_var.css">
+
+    <link rel="stylesheet" href="/src/css/components/Header/Header.css">
+    <link rel="stylesheet" href="/src/css/components/Footer/Footer.css">
+    <link rel="stylesheet" href="/src/css/components/Background/Background.css">
+
+    <script defer src="/src/js/components/Header/Header.js"></script>
+    <script defer src="/src/js/components/Footer/Footer.js"></script>
+    <script defer src="/src/js/components/Background/Background.js"></script>
 </head>
 <body>
-    <style>
-              body {
-            margin: 0;
-            font-family: 'Open Sans';
-            background-color: rgb(35, 37, 45);
-            overflow-x: hidden;
-            color: white;
-        }
-        h1, h2, h3, h4, h5 {
-            text-align: center;
-            font-family: 'Unbounded';
-        }
-        a {
-            text-decoration: none;
-            color: white;
-        }
-        * {
-            -webkit-box-sizing: border-box;
-                    box-sizing: border-box;
-            border: none;
-            margin: 0;
-        }
 
-
-            
-        .header {
-            padding: 15px 100px;
-            z-index: 10; 
-
-            top: 0;
-            left: 0;
-            right: 0;
-
-            position: fixed; 
-            display: -webkit-box; 
-            display: -ms-flexbox; 
-            display: flex;
-            -webkit-box-pack: justify;
-                -ms-flex-pack: justify;
-                    justify-content: space-between;
-            -webkit-box-align: center;
-                -ms-flex-align: center;
-                    align-items: center;
-
-            background-color: rgba(26, 26, 26, 0.466); 
-            -webkit-backdrop-filter: blur(5px); 
-                    backdrop-filter: blur(5px); 
-
-            -webkit-transition: 0.5s;
-            -o-transition: 0.5s;
-            transition: 0.5s; 
-        }
-        .nav-phone {display: none;}
-
-        .logo-container {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-align: center;
-                -ms-flex-align: center;
-                    align-items: center;
-        }
-
-        .logo-img {
-            width: 50px;
-            height: auto; 
-            padding-right: 5px;
-        }
-
-        .logo-text {
-            margin: 8px 0 8px 0;
-        }
-
-        .logo-text h2 {
-            font-size: 1.14rem;
-            margin: 0 0 5px 0;
-
-            display: -webkit-box;
-
-            display: -ms-flexbox;
-
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-                -ms-flex-direction: column;
-                    flex-direction: column;
-            -webkit-box-align: start;
-                -ms-flex-align: start;
-                    align-items: flex-start;
-            
-            font-family: 'Unbounded';
-        }
-
-
-        .logo {
-            font-size: 24px;
-            margin-bottom: 5px;
-
-            color: #ffffff;; 
-        }
-
-        .phone {
-            font-size: 16px;
-            text-decoration: none;
-            color: #ffffff;
-        }
-
-        .nav {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-pack: center;
-                -ms-flex-pack: center;
-                    justify-content: center;
-            -webkit-box-align: center;
-                -ms-flex-align: center;
-                    align-items: center;
-        }
-
-        .nav ul {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            gap: 70px;
-
-            list-style: none;
-            font-size: var(--fullhd-text);
-        }
-
-        .nav ul li {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            
-        }
-
-        .nav ul li a {
-            color: #ffffff; 
-            text-decoration: none;
-
-
-            -webkit-transition: color 0.3s;
-
-
-            -o-transition: color 0.3s;
-
-
-            transition: color 0.3s;
-        }
-
-        .nav ul li a:hover {
-            color: #009999; 
-        }
-
-        /* Эффект при скролле */
-        .header.scrolled {
-            padding: 15px 250px; 
-            z-index: 5;
-        }
-
-        .header.took-off {
-            -webkit-transition: 1s;
-            -o-transition: 1s;
-            transition: 1s;
-            top: -100px;
-        }
-
-
-        section {
-            min-width: 350px;
-            max-width: 1600px;
-            min-height: 800px;
-
-            margin: 150px auto 40px auto;
-            background: rgba(0, 0, 0, 0.438);
-            -webkit-backdrop-filter: blur(15px);
-                    backdrop-filter: blur(15px);
-            border-radius: 15px;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-                -ms-flex-direction: column;
-                    flex-direction: column;
-        }
-
-        .hero-body {
-            padding: 30px 50px;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        
-        .hero-head {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            position: relative;
-            border-top-left-radius: 25px;
-            border-top-right-radius: 25px;
-            overflow: hidden;
-        }
-        .hero-head__background {
-            width: 100%;
-            height: 45vh;
-            background-image: url("/pages/companys/tashir-images/first.jpg");
-            margin: 0;
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            position: relative;
-            border-top-left-radius: 25px;
-            border-top-right-radius: 25px;
-        }
-        .hero-head__background::after {
-            content: "";
-            border: 0px solid rgb(194, 62, 62);
-            background: #000000;
-            background: -webkit-gradient(linear,left top, left bottom,from(rgba(0, 0, 0, 0)), color-stop(30%, rgba(0, 0, 0, 0.39)), to(rgba(0, 0, 0, 1)));
-            background: -o-linear-gradient(top,rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.39) 30%, rgba(0, 0, 0, 1) 100%);
-            background: linear-gradient(180deg,rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.39) 30%, rgba(0, 0, 0, 1) 100%);
-            position: absolute;
-            width: 100%;
-            height: 20px;
-            bottom: 0;
-            height: 5vh;
-        }
-
-        
-
-        .hero-head__description {
-            position: absolute;
-            top: 30px;
-            right: 0;
-            width: 27vw;
-            padding: 5px 15px 5px 5px;
-            background-color: #0000002a;
-            -webkit-backdrop-filter: blur(5px);
-                    backdrop-filter: blur(5px);
-            border-top: 2px solid white;
-        }
-        .hero-head__description h3 {
-            text-align: right;
-        }
-        .hero-head__title {
-            position: absolute;
-            bottom: 55px;
-            left: 35px;
-            padding: 15px;
-        }
-        .hero-head__title::after {
-            position: absolute;
-            content: "";
-            border: 0px solid white;
-            background: #000000;
-            background: -webkit-gradient(linear,left top, left bottom,from(rgba(0, 0, 0, 0)), color-stop(20%, rgba(0, 0, 0, 0.69)), to(rgba(0, 0, 0, 1)));
-            background: -o-linear-gradient(top,rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.69) 20%, rgba(0, 0, 0, 1) 100%);
-            background: linear-gradient(180deg,rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.69) 20%, rgba(0, 0, 0, 1) 100%);
-            width: 140%;
-            height: 120%;
-            -webkit-transform: rotate(15deg);
-                -ms-transform: rotate(15deg);
-                    transform: rotate(15deg);
-            left: -70px;
-            z-index: 0 !important;
-        }
-        .hero-head__title h3, .hero-head__title h2 {
-            text-align: left;
-            z-index: 1 !important;
-            position: relative;
-        }
-        .hero-head__title h3 {
-            background-color: #7be5ec;
-            width: -webkit-fit-content;
-            width: -moz-fit-content;
-            width: fit-content;
-            padding: 5px;
-            border-radius: 15px;
-        }
-        .hero-head__title h2 { 
-            color: #ffffff;
-        }
-
-        .hero-body div ul {list-style: none; text-align: center;}
-        .hero-body ul {font-size: 1.4rem;}
-        section h2 {font-size: 3rem;}
-        section h3 {font-size: 2rem; text-align: center;}
-        .body__about-client img {
-            height: auto !important; 
-            width: 70% !important; 
-            background-size: contain !important;
-            float: left !important;
-            margin: 0 60px 30px 0;
-        }
-
-        .hero-body ul {margin: 15px;}
-        section label {
-            font-size: 1.6rem;
-            margin: 15px;
-            text-align: center;
-        }
-        section span {font-size: 1.5rem; margin: 15px;}
-        section p, .hero-body cite {font-size: 1.3rem;}
-        .hero-body cite {text-align: justify;}
-        .hero-body li {font-size: 1.3rem;}
-
-        .hero-body .screenshot {
-            width: 70%; 
-            margin: 25px auto;
-        }
-        .screenshot__toggled {
-            position: fixed;
-            z-index: 9999999;
-
-            min-width: 80%;
-            max-width: 90%;
-            left: 50%;
-            bottom: 50%;
-            -webkit-transform: translate(-50%, 50%);
-                -ms-transform: translate(-50%, 50%);
-                    transform: translate(-50%, 50%);
-        }
-
-
-        .abut-client__description {
-            background-color: #16beca;
-            width: 600px;
-            text-align: justify;
-            padding: 15px;
-            border-radius: 15px;
-        }
-
-
-        .about-client__d-list {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            width: 100%;
-            -webkit-box-pack: center;
-                -ms-flex-pack: center;
-                    justify-content: center;
-            gap: 15px;
-            margin: 25px 0;
-        }
-
-        .d-list__card {
-            background-color: #3a3a3a65;
-            width: 450px;
-            height: 200px;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            text-align: justify;
-            -webkit-box-align: center;
-                -ms-flex-align: center;
-                    align-items: center;
-            -webkit-box-pack: center;
-                -ms-flex-pack: center;
-                    justify-content: center;
-        }
-
-    </style>
-    
-
-    <header class="header" id="header">
-        <div class="logo-container">
-            <a href="https://evolution-soft.ru/index.html"><img src="/images/icon_evolution.png" class="logo-img"></a> 
-            <div class="logo-text">
-                <div class="logo"><a href="https://evolution-soft.ru/index.html" style="text-decoration: none; color: white;"><h2>ЭВОЛЮЦИЯ</h2></a></div>
-                <a href="tel:+79960505045" class="phone"><img src="/images/phone2.png" alt="modal_phone"><span> +7 996 050 50 45</span></a>
-            </div>
-        </div>
-        <div class="header__burger-icon">
-            <div class="burger-icon__menu-icon">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-
-        </div>
-        <nav class="nav">
-            <ul>
-                <li><a href="https://evolution-soft.ru/index.html#about">О компании</a></li>
-                <li><a href="https://evolution-soft.ru/index.html#clients">Наши клиенты</a></li>
-                <li><a href="https://evolution-soft.ru/index.html#faq">Частые вопросы</a></li>
-                <li><a href="https://evolution-soft.ru/index.html#tariffs">Тарифы Битрикс24</a></li>
-                <li><a href="https://evolution-soft.ru/pages/portfolio.html">Наши работы</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <nav class="nav-phone disabled">
-        <div class="burger-icon__menu-close">+</div>
-        <ul>         
-            <li><a href="https://evolution-soft.ru/index.html#about">О компании</a></li>
-            <li><a href="https://evolution-soft.ru/index.html#clients">Наши клиенты</a></li>
-            <li><a href="https://evolution-soft.ru/index.html#faq">Частые вопросы</a></li>
-            <li><a href="https://evolution-soft.ru/index.html#tariffs">Тарифы Битрикс24</a></li>
-            <li><a href="https://evolution-soft.ru/pages/portfolio.html">Наши работы</a></li>
-        </ul>
-    </nav>
-
-
-    <div class="map-background" 
-    style=
-        "
-        position: fixed; 
-        top: 54%;
-        left: 50%; 
-        width: 100vw; 
-        height: 100vh; 
-        background-image: url('/images/map.png');
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-        opacity: 0.8;
-        z-index: -1; 
-        -webkit-transform: translate(-50%, -50%) scale(1);
-            -ms-transform: translate(-50%, -50%) scale(1);
-                transform: translate(-50%, -50%) scale(1);
-        ">
-    </div>
-
+    <component-header></component-header>
+    <component-background></component-background>
 
     <section>
         <div class="hero-head">
@@ -605,7 +194,7 @@
                 По ним двигается не сделка с клиентом, а карточка кандидата.
             </p>
 
-            <img class="screenshot" src="/pages/companys/tashir-images/second.jpg" alt="">
+            <img class="screenshot" src="/src/images/tashir/second.jpg" alt="">
 
             <p><b>Карточка смарт-процесса</b> в этом процессе переделана под досье кандидата, которое содержит:</p>
             <ul>
@@ -623,8 +212,8 @@
             назначенные дата и время прохождения тестового дня и испытательного срока, а также обратная связь в виде заполненных опросов от кандидата.
         </p>
 
-        <img class="screenshot" src="/pages/companys/tashir-images/third.jpg" alt="">
-        <img class="screenshot" src="/pages/companys/tashir-images/fourth.jpg" alt="">
+        <img class="screenshot" src="/src/images/tashir/third.jpg" alt="">
+        <img class="screenshot" src="/src/images/tashir/fourth.jpg" alt="">
 
         <p>
             Функциональность позволяет настроить разный уровень доступов. Управляющий и HR видят только своих кандидатов: 
@@ -639,7 +228,7 @@
             <li>Автоматизацию направления сообщений кандидату (например, сообщение о том, что не смогли связаться, 
                 или приглашение на собеседование с напоминанием за 24 часа).</li>
         </ul>
-        <img class="screenshot" src="/pages/companys/tashir-images/fivth.jpg" alt="">
+        <img class="screenshot" src="/src/images/tashir/fivth.jpg" alt="">
         <label>Уведомления через роботов</label>
         <p>
             Чтобы не пропустить важные этапы в подборе, для каждого участника процесса предусмотрены уведомления, которые настраиваются 
@@ -668,9 +257,9 @@
         </ul>
         </p>
 
-        <img class="screenshot" src="/pages/companys/tashir-images/sixth.jpg" alt="">
-        <img class="screenshot" src="/pages/companys/tashir-images/seventh.jpg" alt="">
-        <img class="screenshot" src="/pages/companys/tashir-images/eighth.jpg" alt="">
+        <img class="screenshot" src="/src/images/tashir/sixth.jpg" alt="">
+        <img class="screenshot" src="/src/images/tashir/seventh.jpg" alt="">
+        <img class="screenshot" src="/src/images/tashir/eighth.jpg" alt="">
 
         <p>
             У воронки открытия вакансии есть свои этапы, которые позволяют отслеживать статус поданной заявки от управляющего.
@@ -681,8 +270,8 @@
             их и заново подать на согласование. В этот момент HR-менеджеру приходит задача на внесение изменений в вакансию.
         </p>
 
-        <img class="screenshot" src="/pages/companys/tashir-images/nineth.jpg" alt="">
-        <img class="screenshot" src="/pages/companys/tashir-images/tenth.jpg" alt="">
+        <img class="screenshot" src="/src/images/tashir/nineth.jpg" alt="">
+        <img class="screenshot" src="/src/images/tashir/tenth.jpg" alt="">
 
         <label>Откуда берутся кандидаты в Битрикс24?</label>
         <p>
@@ -711,20 +300,20 @@
             EXIT-интервью направляется автоматически сотруднику который был помечен как уволенный, при этом направление и сбор информации происходит без участия HR-менеджеров или управляющего. Все что остается сделать вышеперечисленным это проанализировать причины увольнения за интересующий их период.
         </p>
         
-        <img class="screenshot" src="/pages/companys/tashir-images/eleventh.jpg" alt="">
-        <img class="screenshot" src="/pages/companys/tashir-images/twelveth.jpg" alt="">
+        <img class="screenshot" src="/src/images/tashir/eleventh.jpg" alt="">
+        <img class="screenshot" src="/src/images/tashir/twelveth.jpg" alt="">
 
         <p>В отдельной воронке смарт-процесса агрегируется информация об причинах увольнения. А как сотрудник получает данный опросник?
             Все просто, ему в мессенджер направляется ссылка на заполнение формы, которую он может заполнить как с компьютера, так и с телефона.
         </p>
 
-        <img class="screenshot" src="/pages/companys/tashir-images/thirteenth.png" alt="">
+        <img class="screenshot" src="/src/images/tashir/thirteenth.png" alt="">
 
         <p>
             Адаптация кандидатов происходит по аналогичному принципу, при переходе кандидата на Испытательный срок ему направляются CRM-формы на заполнение спустя 1, 5, 10, 15, 30 ,45 дней после того, как он оказался на этапе Испытательный срок. Это позволяет отслеживать процесс адаптации кандидата и подключаться в рамках живого общения HR-менеджера и кандидата.
         </p>
 
-        <img class="screenshot" src="/pages/companys/tashir-images/fourteenth.jpg" alt="">
+        <img class="screenshot" src="/src/images/tashir/fourteenth.jpg" alt="">
 
         <p>Вся информация накапливается в карточке кандидата по адаптации. Хранение данных за определенный день находится в разных разделах для удобства просмотра в формате карточки. Также есть возможность выгрузки в Excel или же формирования BI-отчёта по нужным компании показателям.</p>
 
@@ -759,6 +348,8 @@
 
         <p>Система гибко настраивается под любые изменения, а интеграции с внешними сервисами делают её <b>масштабируемым решением</b> для распределенного бизнеса.</p>
     </div>
+
+    <component-footer></component-footer>
         
 </section>
 

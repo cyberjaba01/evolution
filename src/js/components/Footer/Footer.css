@@ -1,0 +1,158 @@
+
+/* Основные стили для подвала */
+.footer {
+    position: relative;
+    z-index: 1; /* Убедимся, что подвал выше фона */
+    padding: 40px 20px;
+    background-color: rgba(15, 15, 15, 0.5); /* Черный фон с прозрачностью */
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px); /* Эффект размытия */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Полупрозрачная рамка сверху */
+    color: white;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 20px;
+}
+
+/* Информация о компании */
+.footer-info {
+    font-size: var(--font-regular-text);
+    line-height: 1.6;
+    color: #e0e0e0; /* Светло-серый текст */
+}
+
+.footer-info p {
+    margin: 0;
+}
+
+/* Контакты */
+.footer-contacts {
+    font-size: var(--font-regular-text);
+    line-height: 1.6;
+}
+
+.footer-contacts a {
+    color: rgb(163, 223, 227); /* Бирюзовый цвет ссылок */
+    text-decoration: none;
+    -webkit-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+}
+
+.footer-contacts a:hover {
+    color: #009999; /* Темно-бирюзовый при наведении */
+}
+
+
+
+
+
+@media (max-width: 479px) {}
+
+@media (min-width: 480px) and (max-width: 767px) {}
+
+@media (min-width: 768px) and (max-width: 991px) {}
+
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+@media (min-width: 1200px) and (max-width: 1439px) {}
+
+@media (min-width: 1440px) and (max-width: 1599px) {
+    .footer {
+        padding: 40px 0;
+        padding-bottom: 80px;
+    }
+}
+
+@media (min-width: 1600px) and (max-width: 1919px) {}
+
+@media (min-width: 2560px) and (max-width: 3839px) {
+    .footer {
+        padding: 70px 20px;
+        padding-bottom: 110px;
+    }
+
+    .footer-container {
+        max-width: 1200px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        gap: 20px;
+    }
+
+    /* Информация о компании */
+    .footer-info {
+        line-height: 2;
+        color: #e0e0e0; /* Светло-серый текст */
+    }
+
+    .footer-info p {
+        margin: 0;
+    }
+
+    /* Контакты */
+    .footer-contacts {
+        line-height: 2;
+    }
+
+}
+
+@media (min-width: 3840px) {
+
+    .footer {
+        padding: 70px 20px;
+        padding-bottom: 110px;
+    }
+
+    .footer-container {
+        max-width: 1500px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        gap: 20px;
+    }
+
+    /* Информация о компании */
+    .footer-info {
+        line-height: 2;
+        color: #e0e0e0; /* Светло-серый текст */
+    }
+
+    .footer-info p {
+        margin: 0;
+    }
+
+    /* Контакты */
+    .footer-contacts {
+        line-height: 2;
+    }
+
+}
