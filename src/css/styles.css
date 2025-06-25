@@ -776,13 +776,14 @@ background-color: rgb(93, 148, 151);
 
 
 .company-info {
-    font-size: var(--fullhd-text); 
+    font-size: var(--font-regular-text);
+    line-height: var(--line-height-p); 
     color: rgb(231, 231, 231);
 }
 
 .text-block h4 {
     margin-top: 20px;
-    font-size: 1.3rem;
+    font-size: var(--font-accent-text);
     text-align: center;
 }
 
@@ -795,37 +796,23 @@ background-color: rgb(93, 148, 151);
 
 .contact-button {
     background-color: rgb(116, 190, 195); 
-    padding: 19px 70px; 
-    font-size: 1.4rem;
+    padding: 15px 80px; 
+    font-size: var(--font-accent-button);
     color: white; 
-
     border: none;
     border-radius: 35px;
     cursor: pointer; 
-
-
-    -webkit-transition: background-color 0.3s ease, -webkit-transform 0.3s ease;
-    transition: background-color 0.3s ease, -webkit-transform 0.3s ease;
-    -o-transition: background-color 0.3s ease, transform 0.3s ease;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    transition: background-color 0.3s ease, transform 0.3s ease, -webkit-transform 0.3s ease; /* Плавные эффекты */
-    -webkit-box-shadow: 0 4px 6px rgba(0, 206, 209, 0.3);
-            box-shadow: 0 4px 6px rgba(0, 206, 209, 0.3); /* Тень */
+    transition: all 0.3s ease; 
+    box-shadow: 0 4px 6px rgba(0, 206, 209, 0.3); 
+    transform: translateY(-9px); 
 
 }
 
 .contact-button:hover {
     background-color: #009999; /* Темно-бирюзовый при наведении */
-    -webkit-transform: translateY(-2px);
-        -ms-transform: translateY(-2px);
-            transform: translateY(-2px); /* Легкий подъем */
+    transform: translateY(-13px); 
 }
 
-.contact-button:active {
-    -webkit-transform: translateY(0);
-        -ms-transform: translateY(0);
-            transform: translateY(0); /* Возврат в исходное положение */
-}
 
 
 
@@ -852,70 +839,45 @@ background-color: rgb(93, 148, 151);
             backdrop-filter: blur(5px);
     border-radius: 15px; 
 
-
-
-
     display: -ms-grid; 
-
-
-
 
     display: grid;
     -ms-grid-rows: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
 
-
     margin: 0; 
     padding: 30px 10px 0px 10px;
 
-
-
-
-    -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    -webkit-transition: -webkit-transform 0.3s ease;
-    transition: -webkit-transform 0.3s ease;
-    -o-transition: transform 0.3s ease;
-    transition: transform 0.3s ease;
-    transition: transform 0.3s ease, -webkit-transform 0.3s ease; /* Плавный эффект при наведении */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
 .counter-block:hover {
     -webkit-transform: translateY(-10px);
         -ms-transform: translateY(-10px);
-            transform: translateY(-10px); /* Легкий подъем при наведении */
+            transform: translateY(-10px); 
 }
 
 /* Стили для чисел */
 .counter-number {
-    font-size: 5rem;
+    font-size: var(--font-label-digits);
     color: rgb(116, 190, 195); /* Бирюзовый цвет */
 
     margin: 0;
     padding: 0;
 }
 
-#middle-size-counter {
-    font-size: 5rem;
-}
-
-#lesser-size-counter {
-    font-size: 5rem;
-}
-
-
-
 
 /* Стили для текста под числами */
 .counter-text {
-    font-size: 1.4rem;
+    font-size: var(--font-label-text);
     color: #e0e0e0; /* Светло-серый текст */
     margin: 0;
 }
 
 
 .counter-number span {
-    font-size: 4rem;
+    font-size: calc(var(--font-label-digits) - 5px);
     margin-left: 5px; /* Отступ между числом и + */
     color: rgb(116, 190, 195);; /* Цвет такой же, как у числа */
 }
@@ -965,7 +927,7 @@ background-color: rgb(93, 148, 151);
 
 .carousel-header h2 {
     font-family: "Unbounded";
-    font-size: var(--fullhd-title) !important;
+    font-size: var(--font-section-label) !important;
     margin-bottom: 20px;
 
     color: rgb(229, 253, 255); /* Бирюзовый цвет */
@@ -1093,7 +1055,7 @@ background-color: rgb(93, 148, 151);
 
     color: rgb(229, 253, 255);
 
-    font-size: var(--fullhd-title);
+    font-size: var(--font-section-label);
     font-family: "Unbounded";
     line-height: 35px;
     text-align: center;
@@ -1101,9 +1063,8 @@ background-color: rgb(93, 148, 151);
 
 
 .faq-item-new {
-    
     padding-bottom: 15px;
-    font-size: var(--fullhd-text);
+    font-size: var(--font-label-text);
     text-align: justify;
 
     border-bottom: 1px solid #C4C4C4;
@@ -1131,13 +1092,15 @@ background-color: rgb(93, 148, 151);
 }
 
 .faq-answer-new {
+    font-size: var(--font-regular-text);
     max-height: 0 !important;
     overflow: hidden;
     padding: 0;
-
+    padding-left: 20px !important; 
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
+    opacity: 0;
 }
 
 .faq-toggle {
@@ -1170,6 +1133,7 @@ background-color: rgb(93, 148, 151);
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
+    opacity: 1;
 }
 
 
@@ -1202,7 +1166,7 @@ background-color: rgb(93, 148, 151);
     color: rgb(229, 253, 255);
     margin-top: 0px;
     margin-bottom: 20px;
-    font-size: var(--fullhd-title);
+    font-size: var(--font-section-label);
     font-family: "Unbounded";
 }
 
@@ -1233,7 +1197,7 @@ background-color: rgb(93, 148, 151);
     background: rgb(116, 190, 195);
     color: rgb(240, 240, 240);
     padding: 15px 50px;
-    font-size: calc(var(--fullhd-text) - 2px);
+    font-size: var(--font-accent-button);
     border-radius: 15px;
     -webkit-transition: 0.5s;
     -o-transition: 0.5s;
@@ -1242,6 +1206,9 @@ background-color: rgb(93, 148, 151);
     cursor: pointer;
 }
 
+.bottom-wrapper__discount-cloud {
+    font-size: var(--font-label-text);
+}
 
 .top-wrapper__left-button:not(.activated):hover,
 .bottom-wrapper__left-button:not(.activated):hover {
@@ -1869,7 +1836,7 @@ background-color: rgb(93, 148, 151);
     width: 80%;
     height: 40px;
     margin-top: auto;
-
+    font-size: var(--font-card-button);
     background-color: rgb(116, 190, 195);
     color: white;
     border-radius: 17px;
@@ -1900,7 +1867,7 @@ background-color: rgb(93, 148, 151);
 
 
 .swiper-users__quantity {
-    font-size: var(--fullhd-quantity) !important;
+    font-size: var(--font-card-value) !important;
     padding: 0;
     margin: 0;
     border: none;
@@ -1908,7 +1875,7 @@ background-color: rgb(93, 148, 151);
 
 
 .swiper-users__no-quantity {
-    font-size: calc(var(--fullhd-quantity) - 10px) !important;
+    font-size: var(--font-card-value) !important;
     border: none;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1917,18 +1884,17 @@ background-color: rgb(93, 148, 151);
     margin-bottom: 14px;
 
     color: rgb(160, 225, 255);
-    border-bottom: 2px solid rgb(160, 225, 255);
 }
 
 .tariff-new .swiper-card__users:first-child {margin-top: 0px;}
 
 .swiper-users__label {
-    font-size: var(--fullhd-quantity-label) !important;
+    font-size: var(--font-card-value-name) !important;
 }
 
 .swiper-card__price.canceled, .card__price-promo.canceled {
     margin: 15px 0 0 0 !important;
-    font-size: var(--fullhd-canceled-price) !important;
+    font-size: var(--font-card-old-price) !important;
 
     color: gray;
     text-decoration: line-through;
@@ -1938,15 +1904,15 @@ background-color: rgb(93, 148, 151);
 
 .swiper-card__weight {
     margin: 0px 0 20px 0;
-    font-size: var(--fullhd-weight) !important;
+    font-size: var(--font-card-value) !important;
 
     position: relative;
     opacity: 1;
 }
 
-.swiper-card__price {
+.swiper-card__price, .swiper-card__no-price {
     margin: 0px 0 20px 0 !important;
-    font-size: var(--fullhd-discount-price) !important;
+    font-size: var(--font-card-actual-price) !important;
 
     position: relative;
     opacity: 1;
@@ -1955,13 +1921,6 @@ background-color: rgb(93, 148, 151);
 
 
 .swiper-card__no-price {
-    margin: 15px 0;
-    margin-bottom: 24px;
-    font-size: calc(var(--fullhd-discount-price) + 10px) !important;
-
-    position: relative;
-    opacity: 1;
-
     color: rgb(160, 225, 255);
     border-bottom: 2px solid rgb(160, 225, 255);
 }
@@ -2053,7 +2012,7 @@ background-color: rgb(93, 148, 151);
 }
 
 
-.marketplace__swiper-card .swiper-card__description .swiper-card__price:first-of-type {
+.marketplace__swiper-card .swiper-card__description .swiper-card__price:first-of-type, .swiper-card__no-price {
     margin: 24px !important;
     margin-top: 32px !important;
     display: block;
@@ -2071,17 +2030,17 @@ background-color: rgb(93, 148, 151);
 .swiper-card__title h2, .swiper-card__title h4, .card__title h2, .card__title h4 {margin: 0;}
 
 .swiper-card__title h2 {
-    font-size: var(--fullhd-title-h2); 
+    font-size: var(--font-card-name); 
     line-height: 40px !important;
 }
 
 .card__title h2 {
-    font-size: var(--fullhd-title-h2) !important; 
+    font-size: var(--font-card-name) !important; 
     line-height: 30px;
 }
 
 .swiper-card__title h4 {
-    font-size: var(--fullhd-title-h4);
+    font-size: var(--font-card-description);
     padding: 0 10px;
     line-height: 18px;
     color: gainsboro;
@@ -2089,7 +2048,7 @@ background-color: rgb(93, 148, 151);
 }
 
 .card__title h4 {
-    font-size: var(--fullhd-title-h4);
+    font-size: var(--font-card-description);
     padding: 0 10px;
     color: gainsboro;
     font-weight: 200;
@@ -2451,14 +2410,14 @@ background-color: rgb(93, 148, 151);
 
 .cost-container h2 {
     font-family: "Unbounded";
-    font-size: var(--fullhd-title) !important;
+    font-size: var(--font-section-label) !important;
     margin-bottom: 5px;
     color: rgba(229, 253, 255, 0.9);
 }
 
 
 .cost-container .subtitle {
-    font-size: 18px;
+    font-size: var(--font-regular-text);
     margin-bottom: 40px;
     color: #e0e0e0; /* Светло-серый текст */
 }
@@ -2480,7 +2439,7 @@ background-color: rgb(93, 148, 151);
         -ms-flex-align: center;
             align-items: center;
     text-align: center;
-    padding: 0 35px 20px 35px;
+    padding: 20px 35px;
     border: 2px solid rgb(0, 206, 209);
     border-radius: 15px;
 
@@ -2501,7 +2460,7 @@ background-color: rgb(93, 148, 151);
 }
 
 .question-block .question {
-    font-size: 20px;
+    font-size: var(--font-label-text);
     font-weight: bold;
     color: white; /* Бирюзовый цвет */
 }
@@ -2518,6 +2477,7 @@ background-color: rgb(93, 148, 151);
 
 /* Стиль для каждого варианта ответа */
 .option {
+    font-size: var(--font-regular-text);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

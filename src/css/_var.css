@@ -1,7 +1,25 @@
 :root {
     /* initial is for 1980x1080 */
 
+
+    --font-regular-text: 16px;
     --font-header-links: 17px;
+    --font-label-text: 18px;
     --font-header-logo: 18.5px;
-    
+    --font-accent-button: 19px;
+    --font-accent-text: 20px; 
+    --font-section-label: 40px;
+    --font-label-digits: 70px;
+
+
+    --font-card-description: 17px;
+    --font-card-value-name: 23px;
+    --font-card-name: 25px;
+    --font-card-button: 25px;
+    --font-card-old-price: 25px;
+    --font-card-actual-price: 30px;
+    --font-card-value: 40px;
+
+    --line-height-p: 24px;
+
 }
