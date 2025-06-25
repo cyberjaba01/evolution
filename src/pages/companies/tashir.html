@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <title>Эволюция - Битрикс 24. Автоматизация бизнеса, создание сайтов, внедрение CRM систем</title>
+    <link rel="icon" href="/images/icon_evolution.png" type="/images/icon_evolution.png">
+</head>
+<body>
+    <style>
+              body {
+            margin: 0;
+            font-family: 'Open Sans';
+            background-color: rgb(35, 37, 45);
+            overflow-x: hidden;
+            color: white;
+        }
+        h1, h2, h3, h4, h5 {
+            text-align: center;
+            font-family: 'Unbounded';
+        }
+        a {
+            text-decoration: none;
+            color: white;
+        }
+        * {
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
+            border: none;
+            margin: 0;
+        }
+
+
+            
+        .header {
+            padding: 15px 100px;
+            z-index: 10; 
+
+            top: 0;
+            left: 0;
+            right: 0;
+
+            position: fixed; 
+            display: -webkit-box; 
+            display: -ms-flexbox; 
+            display: flex;
+            -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+
+            background-color: rgba(26, 26, 26, 0.466); 
+            -webkit-backdrop-filter: blur(5px); 
+                    backdrop-filter: blur(5px); 
+
+            -webkit-transition: 0.5s;
+            -o-transition: 0.5s;
+            transition: 0.5s; 
+        }
+        .nav-phone {display: none;}
+
+        .logo-container {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+        }
+
+        .logo-img {
+            width: 50px;
+            height: auto; 
+            padding-right: 5px;
+        }
+
+        .logo-text {
+            margin: 8px 0 8px 0;
+        }
+
+        .logo-text h2 {
+            font-size: 1.14rem;
+            margin: 0 0 5px 0;
+
+            display: -webkit-box;
+
+            display: -ms-flexbox;
+
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            -webkit-box-align: start;
+                -ms-flex-align: start;
+                    align-items: flex-start;
+            
+            font-family: 'Unbounded';
+        }
+
+
+        .logo {
+            font-size: 24px;
+            margin-bottom: 5px;
+
+            color: #ffffff;; 
+        }
+
+        .phone {
+            font-size: 16px;
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .nav {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+        }
+
+        .nav ul {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            gap: 70px;
+
+            list-style: none;
+            font-size: var(--fullhd-text);
+        }
+
+        .nav ul li {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            
+        }
+
+        .nav ul li a {
+            color: #ffffff; 
+            text-decoration: none;
+
+
+            -webkit-transition: color 0.3s;
+
+
+            -o-transition: color 0.3s;
+
+
+            transition: color 0.3s;
+        }
+
+        .nav ul li a:hover {
+            color: #009999; 
+        }
+
+        /* Эффект при скролле */
+        .header.scrolled {
+            padding: 15px 250px; 
+            z-index: 5;
+        }
+
+        .header.took-off {
+            -webkit-transition: 1s;
+            -o-transition: 1s;
+            transition: 1s;
+            top: -100px;
+        }
+
+
+        section {
+            min-width: 350px;
+            max-width: 1600px;
+            min-height: 800px;
+
+            margin: 150px auto 40px auto;
+            background: rgba(0, 0, 0, 0.438);
+            -webkit-backdrop-filter: blur(15px);
+                    backdrop-filter: blur(15px);
+            border-radius: 15px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+        }
+
+        .hero-body {
+            padding: 30px 50px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        
+        .hero-head {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            position: relative;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+            overflow: hidden;
+        }
+        .hero-head__background {
+            width: 100%;
+            height: 45vh;
+            background-image: url("/pages/companys/tashir-images/first.jpg");
+            margin: 0;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+        }
+        .hero-head__background::after {
+            content: "";
+            border: 0px solid rgb(194, 62, 62);
+            background: #000000;
+            background: -webkit-gradient(linear,left top, left bottom,from(rgba(0, 0, 0, 0)), color-stop(30%, rgba(0, 0, 0, 0.39)), to(rgba(0, 0, 0, 1)));
+            background: -o-linear-gradient(top,rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.39) 30%, rgba(0, 0, 0, 1) 100%);
+            background: linear-gradient(180deg,rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.39) 30%, rgba(0, 0, 0, 1) 100%);
+            position: absolute;
+            width: 100%;
+            height: 20px;
+            bottom: 0;
+            height: 5vh;
+        }
+
+        
+
+        .hero-head__description {
+            position: absolute;
+            top: 30px;
+            right: 0;
+            width: 27vw;
+            padding: 5px 15px 5px 5px;
+            background-color: #0000002a;
+            -webkit-backdrop-filter: blur(5px);
+                    backdrop-filter: blur(5px);
+            border-top: 2px solid white;
+        }
+        .hero-head__description h3 {
+            text-align: right;
+        }
+        .hero-head__title {
+            position: absolute;
+            bottom: 55px;
+            left: 35px;
+            padding: 15px;
+        }
+        .hero-head__title::after {
+            position: absolute;
+            content: "";
+            border: 0px solid white;
+            background: #000000;
+            background: -webkit-gradient(linear,left top, left bottom,from(rgba(0, 0, 0, 0)), color-stop(20%, rgba(0, 0, 0, 0.69)), to(rgba(0, 0, 0, 1)));
+            background: -o-linear-gradient(top,rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.69) 20%, rgba(0, 0, 0, 1) 100%);
+            background: linear-gradient(180deg,rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.69) 20%, rgba(0, 0, 0, 1) 100%);
+            width: 140%;
+            height: 120%;
+            -webkit-transform: rotate(15deg);
+                -ms-transform: rotate(15deg);
+                    transform: rotate(15deg);
+            left: -70px;
+            z-index: 0 !important;
+        }
+        .hero-head__title h3, .hero-head__title h2 {
+            text-align: left;
+            z-index: 1 !important;
+            position: relative;
+        }
+        .hero-head__title h3 {
+            background-color: #7be5ec;
+            width: -webkit-fit-content;
+            width: -moz-fit-content;
+            width: fit-content;
+            padding: 5px;
+            border-radius: 15px;
+        }
+        .hero-head__title h2 { 
+            color: #ffffff;
+        }
+
+        .hero-body div ul {list-style: none; text-align: center;}
+        .hero-body ul {font-size: 1.4rem;}
+        section h2 {font-size: 3rem;}
+        section h3 {font-size: 2rem; text-align: center;}
+        .body__about-client img {
+            height: auto !important; 
+            width: 70% !important; 
+            background-size: contain !important;
+            float: left !important;
+            margin: 0 60px 30px 0;
+        }
+
+        .hero-body ul {margin: 15px;}
+        section label {
+            font-size: 1.6rem;
+            margin: 15px;
+            text-align: center;
+        }
+        section span {font-size: 1.5rem; margin: 15px;}
+        section p, .hero-body cite {font-size: 1.3rem;}
+        .hero-body cite {text-align: justify;}
+        .hero-body li {font-size: 1.3rem;}
+
+        .hero-body .screenshot {
+            width: 70%; 
+            margin: 25px auto;
+        }
+        .screenshot__toggled {
+            position: fixed;
+            z-index: 9999999;
+
+            min-width: 80%;
+            max-width: 90%;
+            left: 50%;
+            bottom: 50%;
+            -webkit-transform: translate(-50%, 50%);
+                -ms-transform: translate(-50%, 50%);
+                    transform: translate(-50%, 50%);
+        }
+
+
+        .abut-client__description {
+            background-color: #16beca;
+            width: 600px;
+            text-align: justify;
+            padding: 15px;
+            border-radius: 15px;
+        }
+
+
+        .about-client__d-list {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            width: 100%;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .d-list__card {
+            background-color: #3a3a3a65;
+            width: 450px;
+            height: 200px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            text-align: justify;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+        }
+
+    </style>
+    
+
+    <header class="header" id="header">
+        <div class="logo-container">
+            <a href="https://evolution-soft.ru/index.html"><img src="/images/icon_evolution.png" class="logo-img"></a> 
+            <div class="logo-text">
+                <div class="logo"><a href="https://evolution-soft.ru/index.html" style="text-decoration: none; color: white;"><h2>ЭВОЛЮЦИЯ</h2></a></div>
+                <a href="tel:+79960505045" class="phone"><img src="/images/phone2.png" alt="modal_phone"><span> +7 996 050 50 45</span></a>
+            </div>
+        </div>
+        <div class="header__burger-icon">
+            <div class="burger-icon__menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="https://evolution-soft.ru/index.html#about">О компании</a></li>
+                <li><a href="https://evolution-soft.ru/index.html#clients">Наши клиенты</a></li>
+                <li><a href="https://evolution-soft.ru/index.html#faq">Частые вопросы</a></li>
+                <li><a href="https://evolution-soft.ru/index.html#tariffs">Тарифы Битрикс24</a></li>
+                <li><a href="https://evolution-soft.ru/pages/portfolio.html">Наши работы</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <nav class="nav-phone disabled">
+        <div class="burger-icon__menu-close">+</div>
+        <ul>         
+            <li><a href="https://evolution-soft.ru/index.html#about">О компании</a></li>
+            <li><a href="https://evolution-soft.ru/index.html#clients">Наши клиенты</a></li>
+            <li><a href="https://evolution-soft.ru/index.html#faq">Частые вопросы</a></li>
+            <li><a href="https://evolution-soft.ru/index.html#tariffs">Тарифы Битрикс24</a></li>
+            <li><a href="https://evolution-soft.ru/pages/portfolio.html">Наши работы</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="map-background" 
+    style=
+        "
+        position: fixed; 
+        top: 54%;
+        left: 50%; 
+        width: 100vw; 
+        height: 100vh; 
+        background-image: url('/images/map.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.8;
+        z-index: -1; 
+        -webkit-transform: translate(-50%, -50%) scale(1);
+            -ms-transform: translate(-50%, -50%) scale(1);
+                transform: translate(-50%, -50%) scale(1);
+        ">
+    </div>
+
+
+    <section>
+        <div class="hero-head">
+            <div class="hero-head__background"></div>
+
+            <div class="hero-head__description">
+                <h3>Как автоматизировать подбор персонала,<br><u style="text-decoration-color: #7be5ec;">при этом</u> не забыв об адаптации<a style="color: #7be5ec;">?</a></h3>
+            </div>
+
+            <div class="hero-head__title">
+                <h3>Кейс</h3><h2>мк «Гранд Фуд»</h2>
+            </div>
+
+        </div>
+
+
+        <div class="hero-body">
+  
+        
+            <div class="body__about-client">
+
+                <label style="font-weight: 600;">О компании</label>
+
+                <div class="abut-client__description">
+                    <p>
+                        Международная корпорация <u>«Гранд Фуд»</u> — лидер в сегменте сетевых ресторанов быстрого обслуживания в России. 
+                        В составе холдинга Tashir Group компания управляет мультибрендовой сетью, включающей:
+                    </p>
+                </div>
+
+                <div class="about-client__d-list">
+                    <div class="d-list__card">«Ташир Пицца» — итальянская кухня;</div>
+                    <div class="d-list__card">Гастропорт — корнеры в фудмаркетах;</div>
+                    <div class="d-list__card">Hello Green — проекты здорового питания;</div>
+                    <div class="d-list__card">«Мерцен» — рестораны премиум-класса.</div>
+                </div>
+            </div>
+
+            <p>
+                На сегодня сеть насчитывает более 130 ресторанов в 45 городах России, а численность сотрудников 
+                превышает 3000 человек. Компания делает ставку на профессиональный рост команды, поэтому 
+                особое внимание уделяется подбору и адаптации новых сотрудников.
+            </p>
+
+            <p>
+                Сотрудники Корпорации – важный актив компании, успех которой – заслуга всех ее работников.
+                В компании внимательно подходят к адаптации новичков, стремятся сделать онбординг наиболее комфортным 
+                и эффективным, в том числе и с помощью технологий – об этом дальше.
+            </p>
+            <label>Ситуация до старта проекта</label>
+
+            <p>МК «Гранд Фуд» постоянно растет, и поэтому потребность в новых сотрудниках росла вместе с компанией. 
+                Процесс адаптации новых сотрудников в компании ранее был выстроен, но не автоматизирован. 
+                Требовался постоянный контроль HR, своевременное направление опросов, напоминаний руководителям и прочее.
+            </p>
+            <span>Важно было найти современное решение, чтобы:</span>
+
+            <ul>
+                <li>HR-отдел справлялся с возрастающей нагрузкой;</li>
+                <li>Новые сотрудники комфортно и успешно проходили первые непростые месяцы в непривычной обстановке.</li>
+            </ul>
+
+            <span>
+                Портал Битрикс24 на тот момент уже внедрялся в компанию по направлению IT, помогая решать 
+                разные задачи и объединяя сотрудников, такие как:
+            </span>
+
+            <ul>
+                <li>Реализация процессов постановки задач отделам через смарт-процессы с автоматизацией 
+                    бизнес-процессами выбора исполнителей и проектов;</li>
+                <li>Смарт-процессы согласования счетов с автоматизацией бизнес-процессами (выбор путей 
+                    согласования ответственными лицами в зависимости от постановщика, видов счетов, сумм, выбора юрлиц 
+                    – более 50 вариантов путей согласования) и постановкой задач и подзадач на нужных бухгалтеров и в 
+                    соответствующих проектах;</li>
+                <li>Смарт-процессы документов с автоматизацией через бизнес-процессы с постановкой задач ознакомления 
+                    на пул сотрудников и отделов (до 300 пользователей) с отслеживанием процесса ознакомления и 
+                    ведением журнала ознакомившихся лиц;</li>
+                <li>Согласования и расторжения договоров в смарт-процессах с автоматизацией через бизнес-процессы с 
+                    одновременным независимым друг от друга процессом согласования разными пользователями;</li>
+                <li>Приложения для запроса согласования и запроса реестров внутри самих задач;</li>
+                <li>Остальные процессы реализованы через смарт-процессы с бизнес-процессами согласованиями и 
+                    постановкой задач (акции, кадровые процессы, поручения);</li>
+                <li>Использование универсальных списков для создания базы данных связанных элементов и пользователей, 
+                    а также списки отделов и пользователей по группам для работы с постановкой задач;</li>
+                <li>Использование вебхуков для запуска бизнес-процессов и изменения элементов в местах, где это не 
+                    предусмотрено (запуск бизнес-процесса с параметрами в смарт-процессах из задач и т.п.).</li>
+            </ul>
+
+            <label>Причины выбора</label>
+            <p>МК «Гранд Фуд» комментирует HRD Максим Маленков так:</p>
+            <cite>«Выбор Битрикс24 в качестве основной платформы для автоматизации HR-процессов оправдал наши ожидания. 
+                Главной задачей было создание единой системы для всех заказчиков – управляющих ресторанов по всей России 
+                с режимом "одного окна", и мы успешно реализовали это, охватив все ключевые этапы работы с персоналом: 
+                подбор, адаптацию, обучение и выходное интервью».</cite>
+
+            <label>Автоматизация подбора персонала</label>
+
+            <ol>
+                <li>Сбор и обработка заявок
+                    <ul>
+                        <li>Заявки от руководителей поступают в систему, автоматически распределяются
+                            по ответственным HR-специалистам.</li>
+                        <li>Реализовано подтверждение вакансий через согласование в CRM, что 
+                            исключает дублирование и потерю заявок.</li>
+                    </ul>
+                </li>
+                <li>Работа с воронкой подбора
+                    <ul>
+                        <li>Настроены статусы кандидатов (от первичного контакта до оффера), что позволяет 
+                            отслеживать прогресс по каждой вакансии.</li>
+                        <li>Автоматические напоминания и задачи для рекрутеров сократили время закрытия позиций.</li>
+                    </ul>
+                </li>
+                <li>Интеграция с job-сайтами 
+                    <ul>
+                        <li>Автоматическая выгрузка откликов с популярных платформ (Авито, HH.ru) в CRM.</li>
+                        <li>Кандидаты сразу попадают в карточки с историей взаимодействия.</li>
+                    </ul>
+                </li>
+                <li>Автоматизированные коммуникации
+                    <ul>
+                        <li>Рассылки в WhatsApp (через интеграцию с сервисами рассылок) для информирования кандидатов о этапах отбора.</li>
+                        <li>Модуль автообзвона (на базе телефонии Манго) ускорил первичный контакт и сократил рутинные звонки.</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <label>Адаптация и обучение (интеграция с Ispring)</label>
+            <ul>
+                <li>Настроена синхронизация с LMS ISpring:
+                    <ul>
+                        <li>После найма сотрудник автоматически попадает в систему обучения</li>
+                        <li>Назначение курсов по должности и адаптационному плану</li>
+                    </ul>
+                </li>
+                <li>Сбор обратной связи на период испытательного срока:
+                    <ul>
+                        <li>Автоматические опросы через заданные интервалы (1, 5, 15, 30, 45 дней).</li>
+                        <li>Анализ удовлетворенности новичков и своевременное реагирование</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <label>Exit-интервью и аналитика</label>
+            <ul>
+                <li>Автоматизированный процесс увольнения:
+                    <ul>
+                        <li>Запуск анкетирования при изменении статуса сотрудника</li>
+                        <li>Анализ причин ухода и формирование отчетов</li>
+                    </ul>
+                </li>
+                <li>BI-аналитика:
+                    <ul>
+                        <li>Дашборды по ключевым метрикам.</li>
+                        <li>Гибкие отчеты под запросы руководства.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p>Как автоматизировали подбор персонала в Битрикс24</p>
+
+            <p>Для реализации проекта решили адаптировать CRM-функциональность под процесс подбора персонала.</p>
+
+            <p>Если базово раздел CRM используют для автоматизации воронки продаж, то в данном кейсе воронку заменяет 
+                <b>Цифровое рабочее место</b>
+                , содержащее в себе смарт-процессы с автоматизированными воронками от заявки на подбор до выхода сотрудника на работу. 
+                По ним двигается не сделка с клиентом, а карточка кандидата.
+            </p>
+
+            <img class="screenshot" src="/pages/companys/tashir-images/second.jpg" alt="">
+
+            <p><b>Карточка смарт-процесса</b> в этом процессе переделана под досье кандидата, которое содержит:</p>
+            <ul>
+                <li>Основную информацию о кандидате</li>
+                <li>Резюме</li>
+                <li>Вакансию, по который был отклик</li>
+                <li>Информацию об ответственных лицах (управляющий ТТ)</li>
+                <li>Даты и время собеседования, приглашения и прохождения испытательного срока</li>
+                <li>Результат прохождения испытательного срока и очного собеседования в ресторане.</li>
+            </ul>
+
+        <p>
+            В процессе прохождения кандидата по этапам в карточке кандидата заполняется необходимая для HR-менеджера информация. 
+            Спустя 2 часа от назначенного времени собеседования управляющему приходит уточнение информации о том, пришел кандидат или нет, 
+            назначенные дата и время прохождения тестового дня и испытательного срока, а также обратная связь в виде заполненных опросов от кандидата.
+        </p>
+
+        <img class="screenshot" src="/pages/companys/tashir-images/third.jpg" alt="">
+        <img class="screenshot" src="/pages/companys/tashir-images/fourth.jpg" alt="">
+
+        <p>
+            Функциональность позволяет настроить разный уровень доступов. Управляющий и HR видят только своих кандидатов: 
+            сколько всего кандидатов находится в подборе, кто на каком этапе и как идут дела.
+        </p>
+
+    
+        <ul>
+        Каждый этап подбора включает в себя:
+        
+            <li>Обязательное заполнение данных о кандидате, необходимых для последующих этапов;</li>
+            <li>Автоматизацию направления сообщений кандидату (например, сообщение о том, что не смогли связаться, 
+                или приглашение на собеседование с напоминанием за 24 часа).</li>
+        </ul>
+        <img class="screenshot" src="/pages/companys/tashir-images/fivth.jpg" alt="">
+        <label>Уведомления через роботов</label>
+        <p>
+            Чтобы не пропустить важные этапы в подборе, для каждого участника процесса предусмотрены уведомления, которые настраиваются 
+            и отправляются с помощью <b>роботов</b>. Они позволяют заранее спланировать сценарий действий, который воспроизводится автоматически по заданному триггеру.
+        </p>
+
+        <p>Примеры:
+
+            <ul>
+                <li>Роботы отправляют напоминание управляющему, что у него на определенный день назначено собеседование с кандидатом;</li>
+                <li>Кандидат получает сообщение в мессенджере о собеседовании, тестовом дне или выходе на испытательный срок;</li>
+                <li>HR-менеджер получает напоминание о необходимости связаться с кандидатом, если он находится на этапе 
+                    телефонного интервью или задерживается на испытательном сроке.</li>
+            </ul>
+        </p>
+
+        <label><b>Подача заявки на открытие вакансии</b></label>
+
+        <p>Необходимость в подаче заявки на подбор нужного сотрудника возникает постоянно, особенно при большом количестве точек.</p>
+
+        <p>Для решения этой проблемы был создан <b>смарт-процесс (воронка открытия вакансии)</b>, позволяющий:
+        
+        <ul>
+            <li>Размещать заявку на подбор персонала с предварительным согласованием со стороны территориального управляющего;</li>
+            <li>Проводить еженедельные сверки актуальности для оптимизации затрат на размещение вакансий и рабочего времени HR-менеджера.</li>
+        </ul>
+        </p>
+
+        <img class="screenshot" src="/pages/companys/tashir-images/sixth.jpg" alt="">
+        <img class="screenshot" src="/pages/companys/tashir-images/seventh.jpg" alt="">
+        <img class="screenshot" src="/pages/companys/tashir-images/eighth.jpg" alt="">
+
+        <p>
+            У воронки открытия вакансии есть свои этапы, которые позволяют отслеживать статус поданной заявки от управляющего.
+        </p>
+
+        <p>
+            При этом по расписанию проводится <b>сверка (уточнение актуальности)</b>. Если появляются изменения, управляющий может внести 
+            их и заново подать на согласование. В этот момент HR-менеджеру приходит задача на внесение изменений в вакансию.
+        </p>
+
+        <img class="screenshot" src="/pages/companys/tashir-images/nineth.jpg" alt="">
+        <img class="screenshot" src="/pages/companys/tashir-images/tenth.jpg" alt="">
+
+        <label>Откуда берутся кандидаты в Битрикс24?</label>
+        <p>
+
+            Кандидаты напрямую поступают из порталов подбора персонала, а именно при отклике кандидата на вакансию. Они автоматически поступают в систему и распределяются в зависимости от вакансии, города, области на нужного HR-менеджера и закрепляются за ним.
+            <br><br>
+            При необходимости HR-менеджер может добавлять вакансии в избранное в Avito/HH (холодная база) далее эти отмеченные кандидаты попадают в отдельную воронку Кандидат где с ним можно работать как с холодной базой кандидатов.
+            <br><br>
+            Также, есть возможность автоматического проставление ответа кандидата для HH.ru для избегания падения рейтинга компании на площадке. При перемещении кандидата на определенный этап ему в том числе на площадке HH.ru будет приходить ответ от лица вашей компании (ваша кандидатура на рассмотрении, вам отказано и так далее).
+            
+        </p>
+
+        <label>Высокая нагрузка на HR-менеджера при обзвоне кандидатов?</label>
+        <p>
+            В рамках Битрикс24 и его возможностей интеграции это совсем не проблема!
+            <br><br>
+            Решение было найдено и использовался автоматический обзвон ВАТС Mango при условии попадания кандидата на этап телефонное интервью робот автоматически звонит кандидату и при успешном дозвоне сообщает HR-менеджеру что кандидат готов к телефонному интервью. 
+            <br><br>
+            В этом случае нагрузка HR-менеджеров при обзвоне пустых/недоступных кандидатов уменьшается. При этом, при недозвоне мы не упускаем кандидата, а автоматически при недозвоне направляем ему сообщение в мессенджер о том, что не смогли связаться с ним.
+        </p>
+
+        <label>EXIT-интервью и адаптация кандидатов в компании</label>
+        <p>
+            Часто при работе с большим потоком кандидатов и сотрудников возникает потребность в сборе информации об причинах увольнения и анализе этих причин в рамках улучшения процессов адаптации и взаимодействия сотрудника и его руководителя. Для решение данной задачи в систему подбора персонала были внедрены два смарт -процесса, который позволяют закрыть данные потребности.
+            <br><br>
+            EXIT-интервью направляется автоматически сотруднику который был помечен как уволенный, при этом направление и сбор информации происходит без участия HR-менеджеров или управляющего. Все что остается сделать вышеперечисленным это проанализировать причины увольнения за интересующий их период.
+        </p>
+        
+        <img class="screenshot" src="/pages/companys/tashir-images/eleventh.jpg" alt="">
+        <img class="screenshot" src="/pages/companys/tashir-images/twelveth.jpg" alt="">
+
+        <p>В отдельной воронке смарт-процесса агрегируется информация об причинах увольнения. А как сотрудник получает данный опросник?
+            Все просто, ему в мессенджер направляется ссылка на заполнение формы, которую он может заполнить как с компьютера, так и с телефона.
+        </p>
+
+        <img class="screenshot" src="/pages/companys/tashir-images/thirteenth.png" alt="">
+
+        <p>
+            Адаптация кандидатов происходит по аналогичному принципу, при переходе кандидата на Испытательный срок ему направляются CRM-формы на заполнение спустя 1, 5, 10, 15, 30 ,45 дней после того, как он оказался на этапе Испытательный срок. Это позволяет отслеживать процесс адаптации кандидата и подключаться в рамках живого общения HR-менеджера и кандидата.
+        </p>
+
+        <img class="screenshot" src="/pages/companys/tashir-images/fourteenth.jpg" alt="">
+
+        <p>Вся информация накапливается в карточке кандидата по адаптации. Хранение данных за определенный день находится в разных разделах для удобства просмотра в формате карточки. Также есть возможность выгрузки в Excel или же формирования BI-отчёта по нужным компании показателям.</p>
+
+        <label>Результаты и дальнейшие планы</label>
+
+        <p>Раньше процесс подбора требовал <b>больше ручного труда</b>: заполнение таблиц, сверка вакансий, контроль этапов.</p>
+
+        <ul><b>Битрикс24 позволил:</b>
+            <li>Автоматизировать рутину</li>
+            <li>Обрабатывать больше откликов в одном окне</li>
+            <li>Собирать данные об увольнениях и адаптации</li>
+            <li>Сократить расходы на подбор за счет сверки актуальности вакансий</li>
+        </ul>
+
+        <ul><b>Дальнейшие планы:</b>
+            <li>Масштабирование системы на новые проекты</li>
+            <li>Углубление аналитики</li>
+            <li>Дополнительные интеграции с HR-сервисами</li>
+        </ul>
+
+        <p>
+            <b>Вывод:</b><br>
+            Битрикс24 стал единой цифровой экосистемой для HR, объединив все процессы от найма до увольнения. Благодаря автоматизации:
+        </p>
+
+        <ul>
+            <li>Сократилось время подбора</li>
+            <li>Улучшилось качество адаптации</li>
+            <li>Повысилась прозрачность данных;</li>
+            <li>Руководители получили удобный инструмент контроля.</li>
+        </ul>
+
+        <p>Система гибко настраивается под любые изменения, а интеграции с внешними сервисами делают её <b>масштабируемым решением</b> для распределенного бизнеса.</p>
+    </div>
+        
+</section>
+
+    <script>
+        const scr = document.querySelectorAll(".screenshot");
+
+        document.addEventListener('click', (event) => {
+            let toggledImage = document.querySelector(".screenshot__toggled");
+
+            if (event.target.classList.contains("screenshot")) {
+                const img =  event.target.cloneNode(true);
+                img.className = "screenshot__toggled";
+                document.body.append(img);
+                document.body.style.overflow = "hidden";
+            }    
+            else if (toggledImage) {
+                document.body.style.overflowY = "scroll";
+                toggledImage.remove();
+            }
+        });
+    </script>
+</body>
+</html>

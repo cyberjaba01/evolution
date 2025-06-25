@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Эволюция - Битрикс 24. Автоматизация бизнеса, создание сайтов, внедрение CRM систем</title>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=2">
+
+    <link rel="stylesheet" href="swiper-bundle.min.css"/>
+    
+    <link rel="icon" href="images/icon_evolution.png" type="images/icon_evolution.png">
+
+    <script type="text/javascript" > 
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; 
+        m[i].l=1*new Date(); 
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }} 
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) 
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); 
+    
+        ym(98757917, "init", { 
+            clickmap:true, 
+            trackLinks:true, 
+            accurateTrackBounce:true 
+        }); 
+    </script> 
+
+    <noscript><div><img src="https://mc.yandex.ru/watch/98757917" style="position:absolute; left:-9999px;" alt="" /></div></noscript> 
+</head>
+
+
+<body>
+
+    <header class="header" id="header">
+        <div class="logo-container">
+            <a href="https://evolution-soft.ru/index.html"><img src="images/icon_evolution.png" class="logo-img"></a> 
+            <div class="logo-text">
+                <div class="logo"><a href="https://evolution-soft.ru/index.html" style="text-decoration: none; color: white;"><h2>ЭВОЛЮЦИЯ</h2></a></div>
+                <a href="tel:+79960505045" class="phone"><img src="images/phone2.png" alt="modal_phone"><span> +7 996 050 50 45</span></a>
+            </div>
+        </div>
+        <div class="header__burger-icon">
+            <div class="burger-icon__menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="https://evolution-soft.ru/index.html#about">О компании</a></li>
+                <li><a href="https://evolution-soft.ru/index.html#clients">Наши клиенты</a></li>
+                <li><a href="https://evolution-soft.ru/index.html#faq">Частые вопросы</a></li>
+                <li><a href="https://evolution-soft.ru/index.html#tariffs">Тарифы Битрикс24</a></li>
+                <li><a href="https://evolution-soft.ru/pages/portfolio.html">Наши работы</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <nav class="nav-phone disabled">
+        <div class="burger-icon__menu-close">+</div>
+        <ul>         
+            <li><a href="https://evolution-soft.ru/index.html#about">О компании</a></li>
+            <li><a href="https://evolution-soft.ru/index.html#clients">Наши клиенты</a></li>
+            <li><a href="https://evolution-soft.ru/index.html#faq">Частые вопросы</a></li>
+            <li><a href="https://evolution-soft.ru/index.html#tariffs">Тарифы Битрикс24</a></li>
+            <li><a href="https://evolution-soft.ru/pages/portfolio.html">Наши работы</a></li>
+        </ul>
+    </nav>
+
+
+
+    <script>
+        (function(w,d,u){
+            var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/60000|0);
+            var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+        })(window,document,'https://cdn-ru.bitrix24.ru/b24162178/crm/site_button/loader_2_p343mi.js');
+    </script>
+    <div id="build"></div>
+
+
+
+
+    <div class="companylist">
+        <div class="namelist-container__activation-button">
+            <div class="activation-button__arrow"></div>
+        </div>
+        <div class="companylist-head"><h2 style="font-family: 'Unbounded'; color: rgb(255, 255, 255);">Наши клиенты</h2></div>
+        <div class="companylist-body">
+            <div class="companylist__body-wrapper" company-card-parent>
+
+                <template company-card-template>
+                    <div class="companylist__card">
+                        <div class="companylist__card-info">
+                            <h1 company-client-label>Название компании</h1>
+                            <span company-client-location>г. Пенза, Россия</span>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <section class="map-section">
+
+        <template card-popup-template>
+            <div class="card-popup-container" card-popup>
+                <div class="card-image">
+                    <img card-popup-img>
+                </div>
+                <div class="card-content">
+                  <div class="content-wrapper">
+                    <h3 card-popup-name></h3>
+                    <p class="location" card-popup-location></p>
+                    <div class="divider"></div>
+                    <p class="description" card-popup-desc></p>
+                    <a class="case-btn" card-popup-link>Кейс</a>
+                  </div>
+                </div>
+            </div>
+        </template>
+
+        <div class="map__pointer-label" style="left: -100px; bottom: 9.5vh; position: absolute;">
+            <svg width="20vw" height="30vh" xmlns="http://www.w3.org/2000/svg" viewBox="-5.1 -4.476 5.2 4.576">
+            <path d="M 0 0 C 0 -2 0 -4 -5 -4 L -5 -4 M -4.008 -3.48 L -5 -4 L -4.032 -4.376" 
+            stroke="#808080" 
+            stroke-width="0.06" 
+            fill="none"
+            />
+            </svg>
+
+            <span style="display: flex; height: 13.5vh; line-height: 35px; font-weight: 1000; font-size: 3rem; color: #808080;font-family: 'Unbounded'">
+                <br>География<br>наших<br>клиентов</span>
+        </div>
+
+<style>
+
+:root {
+    --title-text: 2em;
+    --company-list-item-height: 90px;
+    --company-list-head-height: 10%;
+    --company-list-body-height: 90%;
+    --company-list-width: 400px;
+}
+
+@media (max-width: 1366px) {
+    :root {
+        --title-text: 1.2em;
+        --company-list-item-height: 70px;
+        --company-list-head-height: 15%;
+        --company-list-body-height: 85%;
+        --company-list-width: 300px;
+    }
+}
+
+[company-client-label] {
+    font-size: var(--title-text);
+}
+
+.companylist {
+    width: var(--company-list-width);
+    height: 60vh;
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.479);
+    padding-left: 5px;
+
+    position: absolute;
+    left: calc(var(--company-list-width)*-1);
+    top: 20%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    z-index: 4;
+    transition: all 0.4s;
+}
+
+.companylist.active {
+    left: 15px;
+}
+.companylist-head {
+    background-color: rgba(41, 41, 41, 0.671);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+    height: var(--company-list-head-height) !important;
+}
+.companylist-body {
+    position: relative;
+    height: var(--company-list-body-height) !important;
+}
+
+.companylist-body::after {
+    content: "";
+    background-color: white;
+    top: 1px;
+    left: 4px;
+    width: 2px;
+    height: 99%;
+    position: absolute;
+    border: 0px solid white;
+}
+.companylist__body-wrapper {
+    overflow-y: scroll !important;
+    padding-left: 5px;
+    height: 100% !important;
+}
+
+
+.companylist__body-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.companylist__card-info h1 {
+    color: rgb(236, 236, 236);
+}
+.companylist__card {
+    width: 100%;
+    height: var(--company-list-item-height);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+    padding-left: 20px;
+}
+
+.companylist__card.activated {
+    background: #7777772f;
+    border-bottom: 2px solid white;
+}
+.companylist__card.activated:hover {
+    background: #7777772f;
+}
+.companylist__card.activated h1 {
+    color: rgb(255, 255, 255);
+}
+.companylist__card.activated:hover h1 {
+    color: rgb(255, 255, 255);
+}
+
+
+.companylist-body.disabled h1 {
+    color: rgb(70, 70, 70) !important;
+}
+.companylist-body.disabled .companylist__card::after {
+    background-color: rgb(119, 119, 119);
+    border: 1px solid rgb(119, 119, 119);
+}
+.companylist-body.disabled .companylist__card:hover {
+    background: none;
+}
+.companylist-body.disabled .companylist__card {
+    pointer-events: none;
+}
+
+
+.companylist__card:hover {
+    background: #5f5f5f2f;
+}
+.companylist__card:hover h1 {
+    color: rgb(207, 207, 207);
+}
+.companylist__card::after {
+    content: "";
+    background-color: white;
+    bottom: -4px;
+    left: -4px;
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    border: 1px solid white;
+    border-radius: 100%;
+}
+
+.companylist__card-info span {
+    color: rgb(153, 153, 153);
+    font-family: "Open Sans";
+}
+
+
+.companylist-head h2 {
+    padding-right: 15px;
+}
+
+
+</style>
+
+
+    <div class="map-background">
+    </div>
+        <div id="marker-msc" class="marker msc" style="top: 39%; left: 57%; width: 15px; height: 15px;" data-city="Москва"></div>
+        <div id="st-petersburg" class="marker big" style="top: 36.5%; left: 55%; width: 15px; height: 15px;" data-city="Санкт-Петербург"></div>
+        <div id="penza" class="marker big" style="top: 41%; left: 57.8%; width: 15px; height: 15px;" data-city="Пенза"></div>
+        <div id="ekaterinburg" class="marker big" style="top: 34.5%; left: 64%; width: 15px; height: 15px;" data-city="Екатеринбург"></div>
+        <div id="archangelsk" class="marker big" style="top: 31.9%; left: 56.3%; width: 15px; height: 15px;" data-city="Архангельск"></div>
+        <div id="kaluga" class="marker big" style="top: 40%; left: 55.9%; width: 15px; height: 15px;" data-city="Калуга"></div>
+        <div id="vladivostok" class="marker big" style="top: 44%; right: 20.3%; width: 15px; height: 15px;" data-city="Владивосток"></div>
+        <div id="tver" class="marker big" style="top: 37.3%; left: 56.3%; width: 15px; height: 15px;" data-city="Тверь"></div>
+
+        <div id="emirates" class="marker small" style="top: 56%; left: 61.3%; width: 10px; height: 10px;" data-city="Эмираты (ОАЭ)"></div>
+        <div id="switzerland" class="marker mid" style="top: 45.2%; left: 50.5%; width: 12px; height: 12px;" data-city="Швейцария"></div>
+        <div id="malaysia" class="marker small" style="top: 69.2%; left: 74.1%; width: 10px; height: 10px;" data-city="Малайзия"></div>
+        <div id="turkish" class="marker mid" style="top: 48.5%; left: 55%; width: 12px; height: 12px;" data-city="Турция"></div>
+        <div id="china" class="marker mid" style="top: 40%; left: 70%; width: 12px; height: 12px;" data-city="Китай"></div>
+        <div id="mavriki" class="marker small" style="top: 76%; left: 60.9%; width: 10px; height: 10px;" data-city="Остров Маврикий"></div>
+        <div id="alabama" class="marker mid" style="top: 51.3%; left: 31%; width: 12px; height: 12px;" data-city="Штат Алабама"></div>
+    </section>
+
+    <div class="abg-1"></div>
+    <div class="content-overlay">
+
+
+    <div id="map-modal" class="map-modal">
+        <div class="map-modal-content">
+            <span class="map-close">&times;</span>
+            <h2>Компании, с которыми мы работали</h2>
+            <ul id="map-company-list">
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+    <section id="about" class="info-section">
+
+        <div class="info-container">
+            <div class="text-block">
+                <img src="images/logo_evolution.png" alt="Логотип компании" class="company-logo-test">
+                <div class="company-info-wrapper">
+
+                    <p class="company-info">
+                        Мы являемся Эволюцией – Вашим новым дыханием будущего для управления бизнесом. Помогаем внедрить Битрикс24, CRM и ERP системы, которые упрощают организацию работы бизнеса.
+                        <br><br>
+                        Сотрудничая вместе с Битрикс24, мы помогаем владельцам бизнесов вести задачи и проекты, создавать интернет-магазины и сайты, вести складской учет, отслеживать показатели сайта, интегрировать телефонию, соц. сети, WhatsApp и многое другое.
+                        <br><br>
+                        Наша команда профессионалов обладает обширным опытом и экспертизой в области CRM и ERP систем, и мы постоянно отслеживаем новые тенденции и инновации в отрасли.
+                        <br><br>
+                        Будьте уверены, что Вы не ошиблись с выбором компании, поскольку уже сейчас мы успели доказать, что являемся экспертами и официальными партнерами большинства разработчиков CRM систем из ТОП-10 и 30+ сервисов автоматизации бизнеса.
+                        <h4 class="company-info-header">Подтолкните свой бизнес на один шаг в будущее, с Эволюцией возможно всё!</h4>
+                    </p>
+
+
+
+                    <div class="company-info-preview" style="display: none;">
+                        <p>
+                            Компания Эволюция является одними из лидеров в сфере внедрения CRM и ERP систем, 
+                            которые эволюционируют вместе с вашим бизнесом.<br><br>
+                        </p>
+                        <div class="company-info-full" style="display: none;">
+                            <p>
+                                Сотрудничая вместе с Битрикс24, мы помогаем владельцам бизнесов вести задачи и проекты, создавать интернет-магазины и сайты, вести складской учет, отслеживать показатели сайта, интегрировать телефонию, соц. сети, WhatsApp и многое другое.
+                                <br><br>
+                                Наша команда профессионалов обладает обширным опытом и экспертизой в области CRM и ERP систем, и мы постоянно отслеживаем новые тенденции и инновации в отрасли.
+                                <br><br>
+                                Будьте уверены, что Вы не ошиблись с выбором компании, поскольку уже сейчас мы успели доказать, что являемся экспертами и официальными партнерами большинства разработчиков CRM систем из ТОП-10 и 30+ сервисов автоматизации бизнеса.
+                                <br>
+                                <h4>Подтолкните свой бизнес на один шаг в будущее, с Эволюцией возможно всё!</h4>
+                            </p>
+                        </div>
+                        <div class="company-info-more"><span>Подробнее?</span></div>
+                    </div>
+            
+                        
+
+   
+                    
+                </div> 
+
+            </div>
+            <div class="button-block">
+                <button class="contact-button" data-open-modal>Связаться</button>
+            </div>
+        </div>
+
+        <div class="counter-container">
+            <div id="first-block" class="counter-block">
+                <div class="counter-number" id="middle-size-counter" data-target="50">0<span>+</span></div>
+                <p class="counter-text">Реализованно проектов<br></br></p>
+            </div>
+            <div id="last-block" class="counter-block">
+                <div class="counter-number" id="default-size-counter" data-target="6000+">0<span>+</span></div>
+                <p class="counter-text">Довольных пользователей<br></br></p>
+            </div>
+            <div class="counter-block">
+                <div class="counter-number" id="lesser-size-counter" data-target="300+">0<span>+</span></div>
+                <p class="counter-text">Автоматизированных<br> бизнесс-процессов</p>
+            </div>
+            <div class="counter-block">
+                <div class="counter-number" id="middle-size-counter" data-target="15+">0<span>+</span></div>
+                <p class="counter-text">Отраслей<br></br></p>
+            </div>
+        </div>
+
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div id="bitrixForm">
+                    <script data-b24-form="inline/50/u0zq74" data-skip-moving="true">
+                        (function(w,d,u){
+                            var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);
+                            var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+                        })(window, document,'https://cdn-ru.bitrix24.ru/b24162178/crm/form/loader_50.js');
+                    </script>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section id="clients" class="carousel-section">
+        <div class="carousel-header">
+            <h2>Нам доверяют</h2><span><a style="display: none; color: white; text-decoration: none;" href="pages/portfolio.html">Наши работы</a></span>
+        </div>
+
+        <div class="swiper-container swiper-carousel">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide slide-carousel">
+                    <img src="images/free.png" alt="Логотип компании 1">
+                </div>
+                <div class="swiper-slide slide-carousel">
+                    <img src="images/Logo_rudn_znak.png" alt="Логотип компании 2">
+                </div>
+                <div class="swiper-slide slide-carousel">
+                    <img src="images/morethansport_logo.png" alt="Больше чем спорт">
+                </div>
+                <div class="swiper-slide slide-carousel">
+                    <img src="images/scancode_logo.png" alt="Scan code">
+                </div>
+                <div class="swiper-slide slide-carousel">
+                    <img src="images/bezprobega_logo.png" alt="Без пробега по РФ">
+                </div>
+                <div class="swiper-slide slide-carousel">
+                    <img src="images/avatec_logo.png" alt="Avatec">
+                </div>
+                <div class="swiper-slide slide-carousel">
+                    <img src="images/berotek_logo.png" alt="Berotek">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="cost-section">
+        <div class="cost-container">
+            <h2>Рассчитать стоимость внедрения</h2>
+            <p class="subtitle">Ответьте на 5 вопросов и получите предложение от нашей команды профессионалов.</p>
+            <form class="cost-form">
+                <div class="question-block active" data-step="1">
+                    <p class="question">Количество сотрудников?</p>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="step1" value="less-10">
+                            <span class="custom-radio"></span>
+                            Меньше 10
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="step1" value="10-50">
+                            <span class="custom-radio"></span>
+                            От 10 до 50
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="step1" value="50-100">
+                            <span class="custom-radio"></span>
+                            От 50 до 100
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="step1" value="100-250">
+                            <span class="custom-radio"></span>
+                            От 100 до 250
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="step1" value="250-500">
+                            <span class="custom-radio"></span>
+                            От 250 до 500
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="step1" value="more-500">
+                            <span class="custom-radio"></span>
+                            Более 500
+                        </label>
+                    </div>
+                </div>
+    
+                <!-- Вопрос 2 -->
+                <div class="question-block" data-step="2">
+                    <p class="question">Какой функционал нужен?</p>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="step2" value="basic">
+                            <span class="custom-radio"></span>
+                            Базовый
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="step2" value="standard">
+                            <span class="custom-radio"></span>
+                            Стандартный
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="step2" value="advanced">
+                            <span class="custom-radio"></span>
+                            Продвинутый
+                        </label>
+                    </div>
+                </div>
+    
+                <!-- Вопрос 3 -->
+                <div class="question-block" data-step="3">
+                    <p class="question">Сроки внедрения?</p>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="step3" value="fast">
+                            <span class="custom-radio"></span>
+                            Быстро (до 1 месяца)
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="step3" value="medium">
+                            <span class="custom-radio"></span>
+                            Средне (1-3 месяца)
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="step3" value="long">
+                            <span class="custom-radio"></span>
+                            Долго (более 3 месяцев)
+                        </label>
+                    </div>
+                </div>
+    
+                <!-- Вопрос 4 -->
+                <div class="question-block" data-step="4">
+                    <p class="question">Бюджет проекта?</p>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="step4" value="low">
+                            <span class="custom-radio"></span>
+                            Небольшой
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="step4" value="medium">
+                            <span class="custom-radio"></span>
+                            Средний
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="step4" value="high">
+                            <span class="custom-radio"></span>
+                            Большой
+                        </label>
+                    </div>
+                </div>
+    
+                <!-- Вопрос 5 -->
+                <div class="question-block" data-step="5">
+                    <p class="question">Дополнительные пожелания?</p>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="step5" value="none">
+                            <span class="custom-radio"></span>
+                            Нет
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="step5" value="customization">
+                            <span class="custom-radio"></span>
+                            Да, нужны доработки
+                        </label>
+                    </div>
+                </div>
+    
+                <!-- Кнопка отправки формы -->
+                <button type="button" class="submit-btn" id="webhookButton">Получить предложение</button>
+
+                <script>
+                    document.getElementById('webhookButton').addEventListener('click', function () {
+  const webhookUrl = 'https://unitech.bitrix24.ru/rest/178/kwbs1iijnrj7wt4a/crm.deal.add.json';    
+
+  // Получаем значение выбранного radio
+  function getSelectedValue(stepName) {
+    const selected = document.querySelector(`input[name="${stepName}"]:checked`);
+    return selected ? selected.value : null;
+  }
+
+  const employees = getSelectedValue('step1');
+  const functionality = getSelectedValue('step2');
+  const timeline = getSelectedValue('step3');
+  const budgetLevel = getSelectedValue('step4');
+  const extra = getSelectedValue('step5');
+
+  if (!employees || !functionality || !timeline || !budgetLevel || !extra) {
+    // Не показываем alert
+    console.warn("Не все поля заполнены");
+    return;
+  }
+
+  // Маппинг для количества сотрудников
+  const employeeMapping = {
+    'less-10': 5,
+    '10-50': 30,
+    '50-100': 75,
+    '100-250': 175,
+    '250-500': 375,
+    'more-500': 600
+  };
+
+  const employeesValue = employeeMapping[employees];
+
+  if (typeof employeesValue !== 'number' || isNaN(employeesValue)) {
+    console.error("Ошибка: Количество сотрудников не распознано как число", employeesValue);
+    return;
+  }
+
+  const payload = {
+    fields: {
+      TITLE: `Лид с сайта`,
+      CATEGORY_ID: 38,
+      STAGE_ID: "C38:NEW",
+      CURRENCY_ID: "RUB",
+      UF_CRM_1731057256866: employeesValue,   
+      UF_CRM_1748873940360: functionality,
+      UF_CRM_1748873949849: timeline,
+      UF_CRM_1748873980839: extra
+    }
+  };
+
+  fetch(webhookUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(payload)
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP ошибка: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then(data => {
+    if (data && data.error) {
+      console.error('Ошибка Битрикс:', data);
+    } else {
+      alert('Ваш запрос отправлен');
+      location.reload();
+    }
+  })
+  .catch(error => {
+    console.error('❌ Ошибка при отправке:', error);
+  });
+});
+                </script>
+            </form>
+        </div>
+        </section>
+
+
+
+
+
+    <section id="faq" class="faq">
+        <div class="faq-container-new">
+            <div class="faq-title"><h2>Частые вопросы</h2></div>
+            <div class="faq-list-new">
+                <div class="faq-item-new">
+                    <div class="line"></div>
+                    <div class="faq-question-new"><span>Что такое Битрикс24?</span><button class="faq-toggle"></button></div>
+                    <div class="faq-answer-new">Битрикс24 – это набор полезных инструментов, которые помогают бизнесу работать: CRM, Видеозвонки, Документы Онлайн, Задачи и проекты, Контакт-центр, конструктор сайтов и Интернет-магазины.</div>
+                </div>
+                <div class="faq-item-new">
+                    <div class="line"></div>
+                    <div class="faq-question-new"><span>Какие основные функции предлагает Битрикс24?</span><button class="faq-toggle"></button></div>
+                    <div class="faq-answer-new">Основные функции включают CRM, управление задачами и проектами, внутренние коммуникации и видеозвонки, обучение персонала, автоматизация документооборота, аналитика и отчётность, мобильные приложения и интеграции с другими сервисами, такими как телефония, Telegram, WhatsApp и др.</div>
+                </div>
+                <div class="faq-item-new">
+                    <div class="line"></div>
+                    <div class="faq-question-new"><span>Можно ли использовать Битрикс24 бесплатно?</span><button class="faq-toggle"></button></div>
+                    <div class="faq-answer-new">Битрикс24 можно использовать бесплатно, поскольку он предлагает бесплатный тариф с базовыми функциями для небольших команд.</div>
+                </div>
+                <div class="faq-item-new">
+                    <div class="line"></div>
+                    <div class="faq-question-new"><span>Как Битрикс24 помогает в управлении проектами?</span><button class="faq-toggle"></button></div>
+                    <div class="faq-answer-new">Битрик24 предоставляет инструменты, которые упрощают согласование счетов, отпусков, командировок с помощью конструктора бизнес-процессов. Простые повторяющиеся задачи выполняют роботы — вовремя отправляют письмо, ссылку на оплату клиенту, добавляют или удаляют товарную позицию, поставляют задачу менеджеру.</div>
+                </div>
+                <div class="faq-item-new">
+                    <div class="line"></div>
+                    <div class="faq-question-new"><span>Какие интеграции доступны в Битрикс24?</span><button class="faq-toggle"></button></div>
+                    <div class="faq-answer-new">Битрикс24 легко подключить к тем сервисам, которыми вы уже пользуетесь: телефония, платежные системы и онлайн-кассы, Яндекс Доставка/Диск/Карты/Директ, SMS-провайдеры, соцсети и мессенджеры (Телеграмм, Вотсап, ВК и др.), СДЭК, голосовые помощники и другие. </div>
+                </div>
+                <div class="faq-item-new">
+                    <div class="line"></div>
+                    <div id="tariffs" class="faq-question-new"><span>Нужна ли вам CRM-система?</span><button class="faq-toggle"></button></div>
+                    <div class="faq-answer-new">CRM-система подходит для тех, кто нуждается в ведении и формировании единой клиентской базы, движении сделок от появления заявки до закрытия, коммуникации между сотрудниками, контроле исполнения за пределами отдела продаж, упорядоченном хранение информации и др.</div>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+    
+
+
+
+    <section class="tariffs-section-new">
+        <h2 class="title-h2">Тарифы Битрикс24</h2>
+
+
+        <div class="tariffs__button-container">
+            <div class="button-container__top-wrapper">
+                <div class="top-wrapper__left-button activated">Облачный Битрикс24</div>
+                <div class="top-wrapper__right-button">Коробочная версия Битрикс24</div>
+            </div>
+            <div class="button-container__bottom-wrapper">
+                <div class="bottom-wrapper__left-button activated">На месяц</div>
+                <div class="bottom-wrapper__right-button">На год</div>
+                <div class="bottom-wrapper__discount-cloud activated">Выгоднее на 30%</div>
+            </div>
+        </div>
+
+
+
+        <div class="tariff-buttons-container" style="height: 0;">
+            <button class="swiper-button-next to-enterprize">Энтерпрайз</button>
+            <button class="swiper-button-prev to-free">Бесплатный</button>
+        </div>
+        
+        <div class="tariff-box-container" id="market-container" style="display: none;">
+            <div class="swiper-container tariffs-container-new">
+                <div class="swiper-wrapper tariffs-wrapper">
+
+                    <div class="swiper-slide tariff-new">
+                        <div class="box-tariff">
+                
+                            <div class="swiper-card__title">
+                                <h2>Интернет-магазин<br> + CRM</h2>
+                            </div>
+            
+                            <div class="swiper-card__description">
+                                <div class="swiper-card__users">
+                                    <span class="swiper-users__quantity">12<br></span>
+                                    <span class="swiper-users__label">пользователей</span>
+                                </div>
+            
+                                <span class="swiper-card__price">109 000 ₽</span>
+                                <span class="swiper-card__price-description">на 12 месяцев</span>
+                            </div>
+            
+                            <div class="swiper-card__button-container"><button data-open-modal='{"Тип": "Б24 Коробка", "Тариф": "Интернет-магазин + CRM"}'>Получить</button></div>
+                        </div>
+                    </div>
+
+
+                    <div class="swiper-slide tariff-new">
+                        <div class="box-tariff">
+                            <div class="swiper-card__title">
+                                <h2>Корпоративный портал</h2>
+                            </div>
+            
+                            <div class="swiper-card__description">
+                                <div class="swiper-card__users">
+                                    <div class="users-possible">
+                                        <div class="useramount-buttons">
+                                            <button class="user-btn" data-users="50">50</button>
+                                            <button class="user-btn" data-users="100">100</button>
+                                            <button class="user-btn" data-users="250">250</button>
+                                            <button class="user-btn" data-users="500">500</button>
+                                        </div>    
+                                    </div>
+                                    <span class="swiper-users__label">пользователей</span>
+                                </div>
+            
+                                <span id="corporate-price" class="swiper-card__price">159 000 ₽</span>
+                                <span class="swiper-card__price-description">на 12 месяцев</span>
+                            </div>
+            
+                            <div class="swiper-card__button-container"><button data-open-modal='{"Тип": "Б24 Коробка", "Тариф": "Корпоративный портал"}'>Получить</button></div>
+                        </div>
+                    </div>
+
+
+                    <div class="swiper-slide tariff-new">
+                        <div id="enterprize" class="box-tariff">
+            
+                            <div class="swiper-card__title">
+                                <h2>Энтерпрайз</h2>
+                            </div>
+            
+                            <div class="swiper-card__description">
+                                <div class="swiper-card__users">
+                                    <span class="swiper-users__quantity">1000+<br></span>
+                                    <span class="swiper-users__label">пользователей</span>
+                                </div>
+            
+                                <span class="swiper-card__price">1 299 000+ ₽</span>
+                                <span class="swiper-card__price-description">на 12 месяцев</span>
+
+                            </div>
+            
+                            <div class="swiper-card__button-container"><button data-open-modal='{"Тип": "Б24 Коробка", "Тариф": "Энтерпрайз"}'>Получить</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="swiper-container tariffs-container" id="market-container-example">
+            <div class="swiper-wrapper tariffs-wrapper">
+
+                <div class="swiper-slide tariff-new">
+                    <div class="marketplace__swiper-card">
+                        <div class="swiper-card__title">
+                            <h2>Бесплатный</h2>
+                            <h4>Начните работать онлайн и продавать больше с CRM</h4>
+                        </div>
+        
+                        <div class="swiper-card__no-description">
+                            <div class="swiper-card__users">
+                                <span class="swiper-users__no-quantity">Неограниченно<br></span>
+                                <span class="swiper-users__label">пользователей</span>
+                            </div>
+        
+                            <span class="swiper-card__no-price">Бесплатно</span>
+
+                            <span class="swiper-card__weight">5 ГБ</span>
+                        </div>
+        
+                        <div class="swiper-card__button-container"><button data-open-modal='{"Тип": "Б24 Облако", "Тариф": "Бесплатный"}'>Получить</button></div>
+                    </div>
+                </div>
+
+
+                <div class="swiper-slide tariff-new">
+                    <div class="marketplace__swiper-card">
+                        <div class="swiper-card__title">
+                            <h2>Базовый</h2>
+                            <h4>CRM для небольших отделов продаж</h4>
+                        </div>
+        
+                        <div class="swiper-card__description">
+                            <div class="swiper-card__users">
+                                <span class="swiper-users__quantity">5<br></span>
+                                <span class="swiper-users__label">пользователей</span>
+                            </div>
+        
+                            <span class="swiper-card__price">2 490 ₽/мес.</span>
+        
+                            <span class="swiper-card__price canceled disabled ">2 490 ₽/мес.</span>
+                            <span class="swiper-card__price disabled">1 793 ₽/мес.</span>
+
+                            <span class="swiper-card__weight">24 ГБ</span>
+                        </div>
+        
+                        <div class="swiper-card__button-container"><button data-open-modal='{"Тип": "Б24 Облако", "Тариф": "Базовый"}'>Получить</button></div>
+                    </div>
+                </div>
+
+
+                <div class="swiper-slide tariff-new">
+                    <div class="marketplace__swiper-card">
+                        <div class="swiper-card__title">
+                            <h2>Стандартный</h2>
+                            <h4>Для совместной работы всей компании или рабочих групп</h4>
+                        </div>
+        
+                        <div class="swiper-card__description">
+                            <div class="swiper-card__users">
+                                <span class="swiper-users__quantity">50<br></span>
+                                <span class="swiper-users__label">пользователей</span>
+                            </div>
+        
+                            <span class="swiper-card__price">6 990 ₽/мес.</span>
+        
+                            <span class="swiper-card__price canceled disabled">6 990 ₽/мес.</span>
+                            <span class="swiper-card__price disabled">4 893 ₽/мес.</span>
+
+                            <span class="swiper-card__weight">100 ГБ</span>
+                        </div>
+        
+                        <div class="swiper-card__button-container"><button data-open-modal='{"Тип": "Б24 Облако", "Тариф": "Стандартный"}'>Получить</button></div>
+                    </div>
+                </div>
+
+
+                <div class="swiper-slide tariff-new">
+                    <div class="marketplace__swiper-card">
+                        <div class="swiper-card__title">
+                            <h2>Профессиональный</h2>
+                            <h4>Для максимальной автоматизации всех процессов в компании</h4>
+                        </div>
+        
+                        <div class="swiper-card__description">
+                            <div class="swiper-card__users">
+                                <span class="swiper-users__quantity">100<br></span>
+                                <span class="swiper-users__label">пользователей</span>
+                            </div>
+        
+                            <span class="swiper-card__price">13 990 ₽/мес.</span>
+        
+                            <span class="swiper-card__price canceled disabled">13 990 ₽/мес.</span>
+                            <span class="swiper-card__price disabled">9 793 ₽/мес.</span>
+
+                            <span class="swiper-card__weight">1024 ГБ</span>
+                        </div>
+        
+                        <div class="swiper-card__button-container"><button data-open-modal='{"Тип": "Б24 Облако", "Тариф": "Профессиональный"}'>Получить</button></div>
+                    </div>
+                </div>
+
+
+                <div id="enterprize" class="swiper-slide tariff-new">
+                    <div class="marketplace__swiper-card">
+                        <div class="swiper-card__title">
+                            <h2>Энтерпрайз</h2>
+                            <h4>Все возможности единого сервиса и максимальная скорость работы</h4>
+                        </div>
+        
+                        <div id="special-description" class="swiper-card__description">
+                            <div class="swiper-card__users">
+                                <div class="custom-select">
+                                    <select>
+                                      <option value="250">250</option>
+                                      <option value="500">500</option>
+                                      <option value="1000">1000</option>
+                                      <option value="2000">2000</option>
+                                      <option value="3000">3000</option>
+                                      <option value="4000">4000</option>
+                                      <option value="5000">5000</option>
+                                      <option value="6000">6000</option>
+                                      <option value="7000">7000</option>
+                                      <option value="8000">8000</option>
+                                      <option value="9000">9000</option>
+                                      <option value="10000">10000</option>
+                                    </select>
+                                  </div>
+                                <span class="users__label">пользователей</span>
+                            </div>
+        
+                            <span class="swiper-card__price">33 990 ₽/мес.</span>
+        
+                            <span class="swiper-card__price canceled disabled">33 990 ₽/мес.</span>
+                            <span class="swiper-card__price disabled year">23 793 ₽/мес.</span>
+                            
+                            <span id="weight-span" class="swiper-card__weight">3 ТБ</span>
+                        </div>
+        
+                        <div class="swiper-card__button-container"><button data-open-modal='{"Тип": "Б24 Облако", "Тариф": "Энтерпрайз"}'>Получить</button></div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        <div style="display: none;" class="market__bottom-container">
+            <div class="market__bottom-button">Условия акции</div>
+            <div class="market__bottom-text-wrapper disabled">
+                <div class="market__bottom-text">
+                    — Акция действует на территории России (для Битрикс24, созданных в зоне .RU) при покупке как напрямую, так и через партнеров компании «1С-Битрикс».
+                    <br><br>— Оформить заказ со скидкой по акции можно только с 26 марта 2025 года по 30 апреля 2025 года. Оплата должна поступить не позднее 30 апреля 2025 года.
+                    <br><br>— При покупке тарифа Битрикс24 и буста CoPilot по акции акционная скидка не суммируется с другими скидками.
+                    <br><br>— Акция действует для клиентов, покупающих тариф Битрикс24 впервые, на тарифы Базовый, Стандартный, Профессиональный и Энтерпрайз при покупке на 1 год. Буст CoPilot стоимостью 1 рубль добавится в корзину автоматически.
+                    <br><br>— Акция действует для клиентов, продлевающих тариф Битрикс24 на 1 год. Приобрести продление тарифа со скидкой можно будет не ранее, чем за 30 дней до окончания оплаченного текущего периода. Буст CoPilot стоимостью 1 рубль добавится в корзину автоматически.
+                    <br><br>— Акция действует для клиентов при переходе на старший тариф Битрикс24 на 1 год. Буст CoPilot стоимостью 1 рубль добавится в корзину автоматически
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <h2 class="title2-h2">Подписка Битрикс24 Маркетплейс</h2>
+        <div class="market__button-container" style="display: none;">
+            <div class="button-container__bottom-wrapper">
+                <div class="bottom-wrapper__left-button activated">На месяц</div>
+                <div class="bottom-wrapper__right-button">На год</div>
+            </div>
+        </div>
+
+        <div class="market__header">
+            <h4>В таблице цены со скидкой 50% для тех,<br>кто покупает подписку впервые</h4>
+            <div>
+                Цены для клиентов, оформивших подписку до 28.11.2024
+                <div class="market-header__button">Смотреть цены</div>
+            </div>
+            <span>Цены указаны без НДС. Окончательная стоимость будет сформирована при покупке</span>
+        </div>
+
+        <div class="market__header-old-clients">
+            <span>Если Вы уже покупали подписку до 28 ноября 2024 года,<br>то для Вас действуют актуальные цены и скидка на год 20%</span>
+            <div class="market-header__button">Покупаю впервые</div>
+        </div>
+
+
+        <div class="swiper-container marketplace-swiper-container">
+            <div class="swiper-wrapper marketplace-wrapper">
+
+                <div class="swiper-slide marketplace__card">
+
+                        <div class="card__title">
+                            <h4>Для тарифа</h4>
+                            <h2>Базовый</h2>
+                        </div>
+
+                        <div class="card__description">
+                            <div class="card__users">
+                                <span class="users__quantity">5<br></span>
+                                <span class="users__label">пользователей</span>
+                            </div>
+
+                            <span class="card__price canceled ">900 ₽/мес.</span>
+                            <span class="card__price promo">495 ₽/мес.</span>
+                            <span class="card__price-promo disabled">792 ₽/мес.</span>
+                        </div>
+
+                        <button data-open-modal='{"Тип": "Маркетплейс Облако", "Тариф": "Базовый"}'>Получить</button>
+
+                </div>
+
+                <div class="swiper-slide marketplace__card">
+                        <div class="card__title">
+                            <h4>Для тарифа</h4>
+                            <h2>Стандартный</h2>
+                        </div>
+
+                        <div class="card__description">
+                            <div class="card__users">
+                                <span class="users__quantity">50<br></span>
+                                <span class="users__label">пользователей</span>
+                            </div>
+
+                            <span class="card__price canceled">2 900 ₽/мес.</span>
+                            <span class="card__price promo">1 495 ₽/мес.</span>
+                            <span class="card__price-promo disabled">2 392 ₽/мес.</span>
+                        </div>
+
+                        <button data-open-modal='{"Тип": "Маркетплейс Облако", "Тариф": "Стандартный"}'>Получить</button>
+   
+                </div>
+
+                <div class="swiper-slide marketplace__card">
+
+                        <div class="card__title">
+                            <h4>Для тарифа</h4>
+                            <h2>Профессиональный</h2>
+                        </div>
+
+                        <div class="card__description">
+                            <div class="card__users">
+                                <span class="users__quantity">100<br></span>
+                                <span class="users__label">пользователей</span>
+                            </div>
+
+                            <span class="card__price canceled ">5 990 ₽/мес.</span>
+                            <span class="card__price promo ">2 995 ₽/мес.</span>
+                            <span class="card__price-promo disabled">4 792 ₽/мес.</span>
+                        </div>
+
+                        <button data-open-modal='{"Тип": "Маркетплейс Облако", "Тариф": "Профессиональный"}'>Получить</button>
+
+                </div>
+
+                <div class="swiper-slide marketplace__card">
+        
+                        <div class="card__title">
+                            <h4>Для тарифа</h4>
+                            <h2>Энтерпрайз</h2>
+                        </div>
+
+                        <div id="third-description" class="card__description">
+                            <div class="card__users">
+                                <div class="custom-select">
+                                    <select>
+                                    <option value="250">250</option>
+                                    <option value="500">500</option>
+                                    <option value="1000">1000</option>
+                                    <option value="2000">2000</option>
+                                    <option value="3000">3000</option>
+                                    <option value="4000">4000</option>
+                                    <option value="5000">5000</option>
+                                    <option value="6000">6000</option>
+                                    <option value="7000">7000</option>
+                                    <option value="9000">9000</option>
+                                    <option value="10000">10000</option>
+                                    </select>
+                                </div>
+                                <span class="users__label">пользователей</span>
+                            </div>
+
+                            <span class="card__price canceled">9 990 ₽/мес.</span>
+                            <span class="card__price promo year"><span>4 995 ₽/мес.</span></span>
+                            <span class="card__price-promo disabled">7 992 ₽/мес.</span>
+                        </div>
+
+                        <button data-open-modal='{"Тип": "Маркетплейс Облако", "Тариф": "Энтерпрайз"}'>Получить</button>
+                
+                </div>
+            </div>
+        </div>
+
+        <div style="display: none;" class="market__bottom-container">
+            <div class="market__bottom-button">Условия акции</div>
+            <div class="market__bottom-text-wrapper disabled">
+                <div class="market__bottom-text">
+                    — Акция действует на территории России (для Битрикс24, созданных в зоне .RU) при покупке как напрямую, так и через партнеров компании «1С-Битрикс».
+                    <br><br>— Акция на покупку подписки Битрикс24 Маркетплейс действует для клиентов, приобретающих ее впервые, при покупке на 1 месяц, с возможностью своевременного продления до 31 декабря 2025 года по акционной стоимости.
+                    <br><br>— Акция на покупку подписки Битрикс24 Маркетплейс действует для клиентов, приобретающих ее впервые, при покупке на 1 год.
+                    <br><br>— При покупке подписки на Битрикс24 Маркетплейс по акции акционная скидка не суммируется с другими скидками.
+                    <br><br>— Оформить заказ со скидкой по акции можно только с 23 декабря 2024 года по 31 декабря 2025 года. Оплата должна поступить не позднее 31 декабря 2025 года.
+                </div>
+            </div>
+        </div>
+
+
+        
+        <h2 class="title3-h2">Подписка Битрикс24 Маркетплейс для коробочных <br>редакций продается сроком на 12 месяцев.</h2>
+
+
+        <div class="swiper-container marketplace-box-container">
+            <div class="swiper-wrapper marketplace-wrapper">
+
+                <div class="swiper-slide marketplace__card">
+                    <div class="card__title">
+                        <h4>Для лицензии</h4>
+                        <h2>CRM</h2>
+                    </div>
+
+                    <div class="card__description">
+                        <div class="card__users">
+                            <span class="users__quantity">12<br></span>
+                            <span class="users__label">пользователей</span>
+                        </div>
+
+                        <span class="card__price canceled">19 500 ₽/мес.</span>
+                        <span class="card__price">9 750 ₽/мес.</span>
+                    </div>
+
+                    <button data-open-modal='{"Тип": "Маркетплейс Коробка", "Тариф": "CRM"}'>Получить</button>
+                </div>
+
+                <div class="swiper-slide marketplace__card">
+                    <div class="card__title">
+                        <h4>Для лицензии</h4>
+                        <h2>Интернет-магазин<br> + CRM</h2>
+                    </div>
+
+                    <div class="card__description">
+                        <div class="card__users">
+                            <span class="users__quantity">12<br></span>
+                            <span class="users__label">пользователей</span>
+                        </div>
+
+                        <span class="card__price canceled">39 990 ₽/мес.</span>
+                        <span class="card__price">19 995 ₽/мес.</span>
+                    </div>
+
+                    <button data-open-modal='{"Тип": "Маркетплейс Коробка", "Тариф": "Интернет-магазин + CRM"}'>Получить</button>
+                </div>
+
+                <div class="swiper-slide marketplace__card">
+                    <div id="card__title-smaller" class="card__title">
+                        <h4>Для лицензии</h4>
+                        <h2>Корпоративный портал</h2>
+                    </div>
+
+                    <div class="card__description">
+                        <div class="users-amount">
+                            <div class="useramount-buttons">
+                                <button class="user-btn" data-users="50">50</button>
+                                <button class="user-btn" data-users="100">100</button>
+                                <button class="user-btn" data-users="250">250</button>
+                                <button class="user-btn" data-users="500">500</button>
+                            </div>    
+                            <div class="users__label">пользователей</div>
+                        </div>
+                        
+
+                        <span class="card__price canceled" id="special_price">59 990 ₽/мес.</span>
+                        <span class="card__price"><span id="marketplace-corporate-price">29 995 ₽/мес.</span></span>
+                    </div>
+
+                    <button data-open-modal='{"Тип": "Маркетплейс Коробка", "Тариф": "Корпоративный портал"}'>Получить</button>
+                </div>
+
+                <div class="swiper-slide marketplace__card">
+                    <div class="card__title">
+                        <h4>Для лицензии</h4>
+                        <h2>Энтерпрайз</h2>
+                    </div>
+
+                    <div class="card__description" id="select-card">
+
+                        <div class="card__users">
+                            <span class="users__quantity">1000+<br></span>
+                            <span class="users__label">пользователей</span>
+                        </div>
+
+                        <span class="card__price canceled">99 500 ₽/мес.</span>
+                        <span class="card__price year">49 750 ₽/мес. </span>
+                    </div>
+
+                    <button data-open-modal='{"Тип": "Маркетплейс Коробка", "Тариф": "Энтерпрайз"}'>Получить</button>
+                </div>
+            </div>
+        </div>
+        <div style="display: none;" class="market__bottom-container">
+            <div class="market__bottom-button">Условия акции</div>
+            <div class="market__bottom-text-wrapper disabled">
+                <div class="market__bottom-text">
+                    — Акция действует на территории России (для Битрикс24, созданных в зоне .RU) при покупке как напрямую, так и через партнеров компании «1С-Битрикс».
+                    <br><br>— Акция на покупку подписки Битрикс24 Маркетплейс действует для клиентов, приобретающих ее впервые, при покупке на 1 месяц, с возможностью своевременного продления до 31 декабря 2025 года по акционной стоимости.
+                    <br><br>— Акция на покупку подписки Битрикс24 Маркетплейс действует для клиентов, приобретающих ее впервые, при покупке на 1 год.
+                    <br><br>— При покупке подписки на Битрикс24 Маркетплейс по акции акционная скидка не суммируется с другими скидками.
+                    <br><br>— Оформить заказ со скидкой по акции можно только с 23 декабря 2024 года по 31 декабря 2025 года. Оплата должна поступить не позднее 31 декабря 2025 года.
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <section id="faq" class="faq" style="margin-top: 45px;">
+        <div class="faq-container-new">
+            <div class="faq-title"><h2>Автоматизация бизнеса: комплексные решения для роста эффективности</h2></div>
+            <div class="faq-list-new">
+
+
+                <p>
+                    Автоматизация бизнес-процессов — это ключевой инструмент для современных компаний, позволяющий оптимизировать управление, повысить продуктивность и снизить затраты. 
+                    Внедрение автоматизации бизнеса охватывает все уровни: от учета и анализа до управления клиентскими отношениями (CRM).
+                </p>
+
+
+                <div class="faq-item-new">
+                    <div class="line"></div>
+                    <div class="faq-question-new"><span>Основные направления автоматизации</span><button class="faq-toggle">∨</button></div>
+                    <div class="faq-answer-new">
+                        — Автоматизация бизнес-процессов предприятия Внедрение CRM, ERP и других систем управления Оптимизация документооборота и отчетности Интеграция с 1С для автоматизации учета 
+                        <br>— Технологии для малого и среднего бизнеса Готовые платформы для автоматизации (например, Битрикс24, amoCRM) Решения для автоматизации продаж, маркетинга и поддержки клиентов Инструменты бизнес-анализа и прогнозирования 
+                        <br>— Комплексная автоматизация компаний Разработка индивидуальных систем для организаций Автоматизация логистики, складов и производства Внедрение ИИ для обработки данных и чат-ботов</div>
+                </div>
+                <div class="faq-item-new">
+                    <div class="line"></div>
+                    <div class="faq-question-new"><span>Преимущества автоматизации</span><button class="faq-toggle">∨</button></div>
+                    <div class="faq-answer-new">
+                        — Снижение ошибок – минимизация ручного ввода данных 
+                        <br>— Экономия времени – автоматические отчеты и напоминания 
+                        <br>— Повышение прибыли – рост продаж за счет аналитики и CRM 
+                        <br>— Масштабируемость – готовые решения для бизнеса любого уровня</div>
+                </div>
+                <div class="faq-item-new">
+                    <div class="line"></div>
+                    <div class="faq-question-new"><span>Как внедрить автоматизацию</span><button class="faq-toggle">∨</button></div>
+                    <div class="faq-answer-new">
+                        — Анализ – аудит текущих бизнес-процессов Выбор инструментов – CRM, ERP, скрипты, 
+                        <br>— ИИ Интеграция – подключение к существующим системам 
+                        <br>— Обучение сотрудников – работа с новыми технологиями 
+                        <br>— Поддержка и доработки – адаптация под изменения</div>
+                </div>
+                <div class="faq-item-new">
+                    <div class="line"></div>
+                    <div class="faq-question-new"><span>Примеры задач</span><button class="faq-toggle">∨</button></div>
+                    <div class="faq-answer-new">
+                        — Автоматизация email-рассылок 
+                        <br>— Роботизация рутинных операций 
+                        <br>— Сквозная аналитика продаж 
+                        <br>— Чат-боты для поддержки клиентов</div>
+                </div>
+
+                <p>
+                    Итог: автоматизация бизнеса — это не просто технологии, а стратегия роста. Современные системы (1С, CRM, ИИ) позволяют компаниям сократить издержки, ускорить процессы и повысить лояльность клиентов.
+                </p>
+
+    
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-info">
+            <p>ООО "Юнитех" © 2022-2025 г.</p>
+            <p>Все права защищены, любое копирование преследуется по закону</p>
+            <p>г. Пенза, ул. Московская 27</p>
+        </div>
+        <div class="footer-contacts">
+            <p><a href="mailto:Info@evolution-soft.ru">Info@evolution-soft.ru</a></p>
+            <p><a href="tel:+79960805045">+7 996 080 50 45</a></p>
+        </div>
+    </div>
+    </footer>
+
+
+    <script src="scripts.js?v=2"></script>
+    <script src="swiper-bundle.min.js"></script>
+</body>
+</html>

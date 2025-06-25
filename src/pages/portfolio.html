@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <title>Эволюция - Битрикс 24. Автоматизация бизнеса, создание сайтов, внедрение CRM систем</title>
+    <link rel="icon" href="/images/icon_evolution.png" type="/images/icon_evolution.png">
+</head>
+<body>
+    <style>
+/*-------------------- default styles ----------------------*/
+        body {
+            margin: 0;
+            font-family: 'Open Sans';
+            background-color: rgb(35, 37, 45);
+            overflow-x: hidden;
+            color: white;
+        }
+        h1, h2, h3, h4, h5 {
+            font-family: 'Unbounded';
+        }
+        a {
+            text-decoration: none;
+            color: white;
+        }
+        * {
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
+            border: none;
+            margin: 0;
+        }
+
+
+
+/*-------------------- header & navs ----------------------*/
+        .header {
+            padding: 15px 100px;
+            z-index: 10; 
+            top: 0;
+            left: 0;
+            right: 0;
+            position: fixed; 
+            display: -webkit-box; 
+            display: -ms-flexbox; 
+            display: flex;
+            -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            background-color: rgba(26, 26, 26, 0.466); 
+            -webkit-backdrop-filter: blur(5px); 
+                    backdrop-filter: blur(5px); 
+            -webkit-transition: 0.5s;
+            -o-transition: 0.5s;
+            transition: 0.5s; 
+        }
+        .nav-phone {display: none;}
+        .logo-container {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+        }
+        .logo-img {
+            width: 50px;
+            height: auto; 
+            padding-right: 5px;
+        }
+        .logo-text {
+            margin: 8px 0 8px 0;
+        }
+        .logo-text h2 {
+            font-size: 1.14rem;
+            margin: 0 0 5px 0;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            -webkit-box-align: start;
+                -ms-flex-align: start;
+                    align-items: flex-start;
+        }
+        .logo {
+            font-size: 24px;
+            margin-bottom: 5px;
+            color: #ffffff;; 
+        }
+        .phone {
+            font-size: 16px;
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .nav {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+        }
+        .nav ul {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            gap: 70px;
+            list-style: none;
+            font-size: var(--fullhd-text);
+        }
+        .nav ul li {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+        }
+        .nav ul li a {
+            color: #ffffff; 
+            text-decoration: none;
+            -webkit-transition: color 0.3s;
+            -o-transition: color 0.3s;
+            transition: color 0.3s;
+        }
+        .nav ul li a:hover {
+            color: #009999; 
+        }
+        .header.scrolled {
+            padding: 15px 250px; 
+            z-index: 5;
+        }
+        .header.took-off {
+            -webkit-transition: 1s;
+            -o-transition: 1s;
+            transition: 1s;
+            top: -100px;
+        }
+
+
+
+/*-------------------- body container styles ----------------------*/
+        section {
+            min-width: 350px;
+            max-width: 1600px;
+            min-height: 800px;
+            margin: 150px auto 40px auto;
+            background: rgba(0, 0, 0, 0.438);
+            -webkit-backdrop-filter: blur(15px);
+                    backdrop-filter: blur(15px);
+            border-radius: 15px;
+            padding: 30px 50px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+        }
+
+
+
+/*-------------------- filter styles ----------------------*/
+        .search-container {
+            padding-left: 25px;
+        }
+        .search-container label {
+            margin: 7px 0;
+            display: block;
+            font-size: 1.4rem;
+        }
+        .search-container input {
+            background-color: transparent;
+            border-bottom: 2px solid rgb(116, 190, 195);
+            color: white;
+            font-size: 1.3rem;
+        }
+        .left-wrapper-buttons button {
+            background-color: rgb(103, 158, 161);
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: white;
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+        .left-wrapper-buttons button:hover {
+            background-color: rgb(103, 158, 161);
+        }
+
+
+
+/*-------------------- company cards section ----------------------*/
+        .card-container {
+            display: -ms-grid;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(min(305px, 400px), 1fr));
+            gap: 25px;
+            padding: 40px 10px;
+            overflow-y: scroll;
+        }
+        .card-container::-webkit-scrollbar {
+            display: none;
+        }
+
+
+
+/*-------------------- company card styles ----------------------*/
+        .card {
+            background: rgba(255, 255, 255, 0.062);
+            border-radius: 15px;
+            max-width: 410px;
+            max-height: 530px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            padding: 15px;
+        }
+        .card.hidden {
+            display: none;
+        }
+        .card__description {
+            overflow: hidden;
+            text-align: center;
+            -webkit-box-pack: left;
+                -ms-flex-pack: left;
+                    justify-content: left;
+            -webkit-box-align: left;
+                -ms-flex-align: left;
+                    align-items: left;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            background: rgba(255, 255, 255, 0.055);
+            border-radius: 15px;
+            padding: 10px 15px;
+        }
+        .card__description a {
+            margin: 10px 0;
+            text-decoration: none;
+            color: white;
+            background-color: rgb(103, 158, 161);
+            padding: 5px 15px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .card label {
+            font-size: 2rem;
+        }
+        .card img {
+            padding-bottom: 5px;
+            display: block;
+            width: 100%;
+            height: auto;
+            position: relative;
+            border-top-right-radius: 15px;
+            border-top-left-radius: 15px;
+        }
+        .card__category {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.144);
+            border-radius: 15px;
+            padding: 10px 15px;
+            pointer-events: none;
+        }
+        .card__link.disabled {
+            background: gray;
+            pointer-events: none;
+        }
+    </style>
+    
+
+<!-------------------- header nav & logo container -------------------->
+    <header class="header" id="header">
+        <div class="logo-container">
+            <a href="https://evolution-soft.ru/index.html"><img src="/images/icon_evolution.png" class="logo-img"></a> 
+            <div class="logo-text">
+                <div class="logo"><a href="https://evolution-soft.ru/index.html" style="text-decoration: none; color: white;"><h2>ЭВОЛЮЦИЯ</h2></a></div>
+                <a href="tel:+79960505045" class="phone"><img src="/images/phone2.png" alt="modal_phone"><span> +7 996 050 50 45</span></a>
+            </div>
+        </div>
+        <div class="header__burger-icon">
+            <div class="burger-icon__menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="https://evolution-soft.ru/index.html#about">О компании</a></li>
+                <li><a href="https://evolution-soft.ru/index.html#clients">Наши клиенты</a></li>
+                <li><a href="https://evolution-soft.ru/index.html#faq">Частые вопросы</a></li>
+                <li><a href="https://evolution-soft.ru/index.html#tariffs">Тарифы Битрикс24</a></li>
+                <li><a href="https://evolution-soft.ru/pages/portfolio.html">Наши работы</a></li>
+            </ul>
+        </nav>
+
+<!-------------------- header mobile sidemenu -------------------->
+        <nav class="nav-phone disabled">
+            <div class="burger-icon__menu-close">+</div>
+            <ul>         
+                <li><a href="https://evolution-soft.ru/index.html#about">О компании</a></li>
+                <li><a href="https://evolution-soft.ru/index.html#clients">Наши клиенты</a></li>
+                <li><a href="https://evolution-soft.ru/index.html#faq">Частые вопросы</a></li>
+                <li><a href="https://evolution-soft.ru/index.html#tariffs">Тарифы Битрикс24</a></li>
+                <li><a href="https://evolution-soft.ru/pages/portfolio.html">Наши работы</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+<!-------------------- background image -------------------->
+    <div class="map-background" 
+    style=
+    "
+    position: fixed; 
+    top: 54%;
+    left: 50%; 
+    width: 100vw; 
+    height: 100vh; 
+    background-image: url('/images/map.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    z-index: -1; 
+    -webkit-transform: translate(-50%, -50%) scale(1);
+        -ms-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+    ">
+    </div>
+
+
+    <section>
+<!-------------------- company cards filter input&buttons -------------------->
+        <div class="search-container">
+            <label>Название компании:<br></label>
+            <input type="text" class="left-wrapper__input" data-search>
+            <label><br>Отрасль компании:<br></label>
+            <div class="left-wrapper-buttons">
+                <button clear-active-category>Все</button>
+                <button>Логистика</button>
+                <button>Услуги</button>
+                <button>Торговля</button>
+                <button>Строительство</button>
+                <button>Туризм</button>
+                <button>Гостиницы</button>
+            </div>
+      
+        </div>
+
+<!-------------------- company card template, cards are being created with fetch from json file -------------------->
+        <div class="card-container" data-card-container>
+            <template company-template>
+                <div class="card">
+                    <img class="card__logo" company-logo>
+                        <div class="card__category"><span company-category></span></div>
+                    </img>
+                    <div class="card__description">
+                        <label class="card__name" company-name></label>
+                        <a class="card__link" company-link>Перейти</a>
+                    </div>
+                </div>
+            </template>
+        </div>
+
+    </section>
+
+    <script>
+
+
+//-------------------- filter section input event listener --------------------
+        const companyCardTemplate = document.querySelector("[company-template]");
+        const companyCardContainer = document.querySelector("[data-card-container]");
+        let companys = []
+
+        const dataSearchbar = document.querySelector("[data-search]");
+        dataSearchbar.addEventListener("input", (event) => {
+            const value = event.target.value.toLowerCase();
+            companys.forEach(company => {
+                let companyLoweredName = company.name.toLowerCase();
+                
+                const isVisible = companyLoweredName.includes(value);
+
+                company.element.classList.toggle("hidden", !isVisible);
+            });
+        });
+
+//-------------------- filter section buttons event listener --------------------
+        const buttonContainer = document.querySelector(".left-wrapper-buttons");
+        const buttons = buttonContainer.querySelectorAll("button");
+        const returnButton = document.querySelector("[clear-active-category]");
+
+        buttons.forEach(button => {
+            button.addEventListener("click", (event) => {
+                companys.forEach(company => {
+                    if (button == returnButton) {
+                        company.element.classList.remove("hidden");
+                    }
+                    else {
+                        if (company.category != button.textContent) {
+                            company.element.classList.add("hidden");
+                        } else company.element.classList.remove("hidden");
+                    }
+                });
+            })
+        });
+
+//-------------------- creating cards from template --------------------
+/* 
+get json file with fetch API, clone DOM card template, change its content with data from json file
+returns name and category for filter's event listener, div element for hiding cards
+*/
+        fetch("/pages/card-companies-data.json")
+            .then(res => res.json())
+            .then(data => {
+                companys = data.map(data => {
+                    const card = companyCardTemplate.content.cloneNode(true).children[0]
+                    
+                    const cardLogo = card.querySelector("[company-logo]");
+                    const cardName = card.querySelector("[company-name]");
+                    const cardLink = card.querySelector("[company-link]");
+                    const cardCategory = card.querySelector("[company-category]");
+                    
+                    if (data.link == "/") {
+                        cardLink.classList.add("disabled");
+                    }
+
+                    cardLogo.src = data.img;
+                    cardName.textContent = data.name;
+                    cardLink.href = data.link;
+                    cardCategory.textContent = data.category;
+                    
+                    companyCardContainer.append(card);
+
+                    return { name: data.name, category: data.category, element: card };
+                });
+            });
+    
+    </script>
+</body>
+</html>

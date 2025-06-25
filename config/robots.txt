@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /search/
+Disallow: /*.php$
+Disallow: /*.json$
+
+User-agent: Yandex
+Allow: /
+Clean-param: utm_source /pages/
+Clean-param: utm_medium /
+Clean-param: utm_campaign /
+Host: https://evolution-soft.ru/
+Sitemap: https://evolution-soft.ru/sitemap.xml
