@@ -382,13 +382,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   button.addEventListener('click', () => {
-      sideMenu.classList.toggle("disabled");
-
+	sideMenu.classList.toggle("disabled");
   });
 
   closeButton.addEventListener('click', () => {
     sideMenu.classList.toggle("disabled");
-});
+  });
+
 });
 
 

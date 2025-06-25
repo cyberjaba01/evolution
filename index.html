@@ -6,6 +6,7 @@
     <title>Эволюция - Битрикс 24. Автоматизация бизнеса, создание сайтов, внедрение CRM систем</title>
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="/src/css/styles.css">
     <link rel="stylesheet" href="/src/css/_var.css">
     <link rel="stylesheet" href="/src/css/header.css">
@@ -17,6 +18,10 @@
     <link rel="stylesheet" href="/src/css/cost.css">
     <link rel="stylesheet" href="/src/css/footer.css">
     <link rel="stylesheet" href="/src/libs/swiper11.2.6/swiper-bundle.min.css"/>
+
+    <script defer src="/src/components/Header.js"></script>
+    <script defer src="/src/components/Footer.js"></script>
+    <script defer src="/src/components/Background.js"></script>
     
     <link rel="icon" href="/src/images/icon_evolution.png" type="/src/images/icon_evolution.png">
 
@@ -36,57 +41,22 @@
 
     <noscript><div><img src="https://mc.yandex.ru/watch/98757917" style="position:absolute; left:-9999px;" alt="" /></div></noscript> 
 </head>
+
 <body>
-
-    <header class="header" id="header">
-        <div class="logo-container">
-            <a href="https://evolution-soft.ru"><img src="/src/images/icon_evolution.png" class="logo-img"></a> 
-            <div class="logo-text">
-                <div class="logo"><a href="https://evolution-soft.ru/index.html" style="text-decoration: none; color: white;"><h2>ЭВОЛЮЦИЯ</h2></a></div>
-                <a href="tel:+79960505045" class="phone"><img src="/src/images/phone2.png" alt="modal_phone"><span> +7 996 050 50 45</span></a>
-            </div>
-        </div>
-        <div class="header__burger-icon">
-            <div class="burger-icon__menu-icon">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-
-        </div>
-        <nav class="nav">
-            <ul>
-                <li><a class="nav-link" href="https://evolution-soft.ru/#about">О компании</a></li>
-                <li><a class="nav-link" href="https://evolution-soft.ru/#clients">Наши клиенты</a></li>
-                <li><a class="nav-link" href="https://evolution-soft.ru/#faq">Частые вопросы</a></li>
-                <li><a class="nav-link" href="https://evolution-soft.ru/#tariffs">Тарифы Битрикс24</a></li>
-                <li><a class="nav-link" href="https://evolution-soft.ru/pages/portfolio.html">Наши работы</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <nav class="nav-phone disabled">
-        <div class="burger-icon__menu-close">+</div>
-        <ul>         
-            <li><a class="nav-link" href="https://evolution-soft.ru/#about">О компании</a></li>
-            <li><a class="nav-link" href="https://evolution-soft.ru/#clients">Наши клиенты</a></li>
-            <li><a class="nav-link" href="https://evolution-soft.ru/#faq">Частые вопросы</a></li>
-            <li><a class="nav-link" href="https://evolution-soft.ru/#tariffs">Тарифы Битрикс24</a></li>
-            <li><a class="nav-link" href="https://evolution-soft.ru/pages/portfolio.html">Наши работы</a></li>
-        </ul>
-    </nav>
-
-
+    <component-header></component-header>
+    <component-background></component-background>
 
     <script>
-        (function(w,d,u){
-            var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/60000|0);
-            var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
-        })(window,document,'https://cdn-ru.bitrix24.ru/b24162178/crm/site_button/loader_2_p343mi.js');
+        (function(w,d,u) {
+            var s=d.createElement('script');
+            s.async=true;s.src=u+'?'+(Date.now()/60000|0);
+            var h=d.getElementsByTagName('script')[0];
+            h.parentNode.insertBefore(s,h);
+        })
+        (window,document,'https://cdn-ru.bitrix24.ru/b24162178/crm/site_button/loader_2_p343mi.js');
     </script>
-    <div id="build"></div>
 
+    <div id="build"></div>
 
 
 
@@ -110,226 +80,36 @@
         </div>
     </div>
 
-
-
-
-    <section class="map-section">
-
-        <template card-popup-template>
-            <div class="card-popup-container" card-popup>
-                <div class="card-image">
-                    <img card-popup-img>
-                </div>
-                <div class="card-content">
-                  <div class="content-wrapper">
-                    <h3 card-popup-name></h3>
-                    <p class="location" card-popup-location></p>
-                    <div class="divider"></div>
-                    <p class="description" card-popup-desc></p>
-                    <a class="case-btn" card-popup-link>Кейс</a>
-                  </div>
+    <template card-popup-template>
+        <div class="card-popup-container" card-popup>
+            <div class="card-image">
+                <img card-popup-img>
+            </div>
+            <div class="card-content">
+                <div class="content-wrapper">
+                <h3 card-popup-name></h3>
+                <p class="location" card-popup-location></p>
+                <div class="divider"></div>
+                <p class="description" card-popup-desc></p>
+                <a class="case-btn" card-popup-link>Кейс</a>
                 </div>
             </div>
-        </template>
-
-        <div class="map__pointer-label" style="left: -100px; bottom: 9.5vh; position: absolute;">
-            <svg width="20vw" height="30vh" xmlns="http://www.w3.org/2000/svg" viewBox="-5.1 -4.476 5.2 4.576">
-            <path d="M 0 0 C 0 -2 0 -4 -5 -4 L -5 -4 M -4.008 -3.48 L -5 -4 L -4.032 -4.376" 
-            stroke="#808080" 
-            stroke-width="0.06" 
-            fill="none"
-            />
-            </svg>
-
-            <span style="display: flex; height: 13.5vh; line-height: 35px; font-weight: 1000; font-size: 3rem; color: #808080;font-family: 'Unbounded'">
-                <br>География<br>наших<br>клиентов</span>
         </div>
+    </template>
 
-<style>
+    <div class="map__pointer-label" style="left: 20px; bottom: 9.5vh; position: absolute;">
+        <svg width="20vw" height="30vh" xmlns="http://www.w3.org/2000/svg" viewBox="-5.1 -4.476 5.2 4.576">
+        <path d="M 0 0 C 0 -2 0 -4 -5 -4 L -5 -4 M -4.008 -3.48 L -5 -4 L -4.032 -4.376" 
+        stroke="#808080" 
+        stroke-width="0.06" 
+        fill="none"
+        />
+        </svg>
 
-:root {
-    --title-text: 2em;
-    --company-list-item-height: 90px;
-    --company-list-head-height: 10%;
-    --company-list-body-height: 90%;
-    --company-list-width: 400px;
-}
-
-@media (max-width: 1366px) {
-    :root {
-        --title-text: 1.2em;
-        --company-list-item-height: 70px;
-        --company-list-head-height: 15%;
-        --company-list-body-height: 85%;
-        --company-list-width: 300px;
-    }
-}
-
-[company-client-label] {
-    font-size: var(--title-text);
-}
-
-.companylist {
-    width: var(--company-list-width);
-    height: 60vh;
-    -webkit-backdrop-filter: blur(5px);
-            backdrop-filter: blur(5px);
-    background: rgba(0, 0, 0, 0.479);
-    padding-left: 5px;
-
-    position: absolute;
-    left: calc(var(--company-list-width)*-1);
-    top: 20%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    z-index: 4;
-    transition: all 0.4s;
-}
-
-.companylist.active {
-    left: 15px;
-}
-.companylist-head {
-    background-color: rgba(41, 41, 41, 0.671);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-            -webkit-box-align: center;
-                -ms-flex-align: center;
-                    align-items: center;
-    height: var(--company-list-head-height) !important;
-}
-.companylist-body {
-    position: relative;
-    height: var(--company-list-body-height) !important;
-}
-
-.companylist-body::after {
-    content: "";
-    background-color: white;
-    top: 1px;
-    left: 4px;
-    width: 2px;
-    height: 99%;
-    position: absolute;
-    border: 0px solid white;
-}
-.companylist__body-wrapper {
-    overflow-y: scroll !important;
-    padding-left: 5px;
-    height: 100% !important;
-}
-
-
-.companylist__body-wrapper::-webkit-scrollbar {
-    display: none;
-}
-
-.companylist__card-info h1 {
-    color: rgb(236, 236, 236);
-}
-.companylist__card {
-    width: 100%;
-    height: var(--company-list-item-height);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    position: relative;
-    padding-left: 20px;
-}
-
-.companylist__card.activated {
-    background: #7777772f;
-    border-bottom: 2px solid white;
-}
-.companylist__card.activated:hover {
-    background: #7777772f;
-}
-.companylist__card.activated h1 {
-    color: rgb(255, 255, 255);
-}
-.companylist__card.activated:hover h1 {
-    color: rgb(255, 255, 255);
-}
-
-
-.companylist-body.disabled h1 {
-    color: rgb(70, 70, 70) !important;
-}
-.companylist-body.disabled .companylist__card::after {
-    background-color: rgb(119, 119, 119);
-    border: 1px solid rgb(119, 119, 119);
-}
-.companylist-body.disabled .companylist__card:hover {
-    background: none;
-}
-.companylist-body.disabled .companylist__card {
-    pointer-events: none;
-}
-
-
-.companylist__card:hover {
-    background: #5f5f5f2f;
-}
-.companylist__card:hover h1 {
-    color: rgb(207, 207, 207);
-}
-.companylist__card::after {
-    content: "";
-    background-color: white;
-    bottom: -4px;
-    left: -4px;
-    width: 6px;
-    height: 6px;
-    position: absolute;
-    border: 1px solid white;
-    border-radius: 100%;
-}
-
-.companylist__card-info span {
-    color: rgb(153, 153, 153);
-    font-family: "Open Sans";
-}
-
-
-.companylist-head h2 {
-    padding-right: 15px;
-}
-
-
-</style>
-
-
-    <div class="map-background">
+        <span style="display: flex; height: 13.5vh; line-height: 35px; font-weight: 1000; font-size: 3rem; color: #808080;font-family: 'Unbounded'">
+            <br>География<br>наших<br>клиентов</span>
     </div>
-        <div id="marker-msc" class="marker msc" style="top: 39%; left: 57%; width: 15px; height: 15px;" data-city="Москва"></div>
-        <div id="st-petersburg" class="marker big" style="top: 36.5%; left: 55%; width: 15px; height: 15px;" data-city="Санкт-Петербург"></div>
-        <div id="penza" class="marker big" style="top: 41%; left: 57.8%; width: 15px; height: 15px;" data-city="Пенза"></div>
-        <div id="ekaterinburg" class="marker big" style="top: 34.5%; left: 64%; width: 15px; height: 15px;" data-city="Екатеринбург"></div>
-        <div id="archangelsk" class="marker big" style="top: 31.9%; left: 56.3%; width: 15px; height: 15px;" data-city="Архангельск"></div>
-        <div id="kaluga" class="marker big" style="top: 40%; left: 55.9%; width: 15px; height: 15px;" data-city="Калуга"></div>
-        <div id="vladivostok" class="marker big" style="top: 44%; right: 20.3%; width: 15px; height: 15px;" data-city="Владивосток"></div>
-        <div id="tver" class="marker big" style="top: 37.3%; left: 56.3%; width: 15px; height: 15px;" data-city="Тверь"></div>
 
-        <div id="emirates" class="marker small" style="top: 56%; left: 61.3%; width: 10px; height: 10px;" data-city="Эмираты (ОАЭ)"></div>
-        <div id="switzerland" class="marker mid" style="top: 45.2%; left: 50.5%; width: 12px; height: 12px;" data-city="Швейцария"></div>
-        <div id="malaysia" class="marker small" style="top: 69.2%; left: 74.1%; width: 10px; height: 10px;" data-city="Малайзия"></div>
-        <div id="turkish" class="marker mid" style="top: 48.5%; left: 55%; width: 12px; height: 12px;" data-city="Турция"></div>
-        <div id="china" class="marker mid" style="top: 40%; left: 70%; width: 12px; height: 12px;" data-city="Китай"></div>
-        <div id="mavriki" class="marker small" style="top: 76%; left: 60.9%; width: 10px; height: 10px;" data-city="Остров Маврикий"></div>
-        <div id="alabama" class="marker mid" style="top: 51.3%; left: 31%; width: 12px; height: 12px;" data-city="Штат Алабама"></div>
-    </section>
 
 
 
@@ -711,7 +491,7 @@
 
 
 
-    <section class="tariffs-section-new">
+    <section class="tariffs-section-new" style="display: none;">
         <h2 class="title-h2">Тарифы Битрикс24</h2>
 
 
@@ -1235,7 +1015,7 @@
 
 
 
-    <section id="faq" class="faq" style="margin-top: 45px;">
+    <section id="faq" class="faq" style="margin-top: 45px; display:none">
         <div class="faq-container-new">
             <div class="faq-title"><h2>Автоматизация бизнеса: комплексные решения для роста эффективности</h2></div>
             <div class="faq-list-new">
@@ -1292,27 +1072,9 @@
         </div>
     </section>
 
+    <component-footer></component-footer>
 
-
-
-
-
-    <footer class="footer">
-    <div class="footer-container">
-        <div class="footer-info">
-            <p>ООО "Юнитех" © 2022-2025 г.</p>
-            <p>Все права защищены, любое копирование преследуется по закону</p>
-            <p>г. Пенза, ул. Московская 27</p>
-        </div>
-        <div class="footer-contacts">
-            <p><a href="mailto:Info@evolution-soft.ru">Info@evolution-soft.ru</a></p>
-            <p><a href="tel:+79960805045">+7 996 080 50 45</a></p>
-        </div>
-    </div>
-    </footer>
-
-
-    <script src="/src/js/scripts.js"></script>
+    <script defer src="/src/js/scripts.js"></script>
     <script src="/src/libs/swiper11.2.6/swiper-bundle.min.js"></script>
 </body>
 </html>
