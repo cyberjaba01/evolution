@@ -1,0 +1,273 @@
+/*-------------------- default styles ----------------------*/
+body {
+    margin: 0;
+    font-family: 'Open Sans';
+    background-color: rgb(35, 37, 45);
+    overflow-x: hidden;
+    color: white;
+}
+h1, h2, h3, h4, h5 {
+    font-family: 'Unbounded';
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+* {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    border: none;
+    margin: 0;
+}
+
+
+
+/*-------------------- header & navs ----------------------*/
+.header {
+    padding: 15px 100px;
+    z-index: 10; 
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed; 
+    display: -webkit-box; 
+    display: -ms-flexbox; 
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: rgba(26, 26, 26, 0.466); 
+    -webkit-backdrop-filter: blur(5px); 
+            backdrop-filter: blur(5px); 
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s; 
+}
+.nav-phone {display: none;}
+.logo-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.logo-img {
+    width: 50px;
+    height: auto; 
+    padding-right: 5px;
+}
+.logo-text {
+    margin: 8px 0 8px 0;
+}
+.logo-text h2 {
+    font-size: 1.14rem;
+    margin: 0 0 5px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+}
+.logo {
+    font-size: 24px;
+    margin-bottom: 5px;
+    color: #ffffff;; 
+}
+.phone {
+    font-size: 16px;
+    text-decoration: none;
+    color: #ffffff;
+}
+.nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 70px;
+    list-style: none;
+    font-size: var(--fullhd-text);
+}
+.nav ul li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.nav ul li a {
+    color: #ffffff; 
+    text-decoration: none;
+    -webkit-transition: color 0.3s;
+    -o-transition: color 0.3s;
+    transition: color 0.3s;
+}
+.nav ul li a:hover {
+    color: #009999; 
+}
+.header.scrolled {
+    padding: 15px 250px; 
+    z-index: 5;
+}
+.header.took-off {
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+    top: -100px;
+}
+
+
+
+/*-------------------- body container styles ----------------------*/
+section {
+    min-width: 350px;
+    max-width: 1600px;
+    min-height: 800px;
+    margin: 150px auto 40px auto;
+    background: rgba(0, 0, 0, 0.438);
+    -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
+    border-radius: 15px;
+    padding: 30px 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+
+
+
+/*-------------------- filter styles ----------------------*/
+.search-container {
+    padding-left: 25px;
+}
+.search-container label {
+    margin: 7px 0;
+    display: block;
+    font-size: 1.4rem;
+}
+.search-container input {
+    background-color: transparent;
+    border-bottom: 2px solid rgb(116, 190, 195);
+    color: white;
+    font-size: 1.3rem;
+}
+.left-wrapper-buttons button {
+    background-color: rgb(103, 158, 161);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.left-wrapper-buttons button:hover {
+    background-color: rgb(103, 158, 161);
+}
+
+
+
+/*-------------------- company cards section ----------------------*/
+.card-container {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(305px, 400px), 1fr));
+    gap: 25px;
+    padding: 40px 10px;
+    overflow-y: scroll;
+}
+.card-container::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+/*-------------------- company card styles ----------------------*/
+.card {
+    background: rgba(255, 255, 255, 0.062);
+    border-radius: 15px;
+    max-width: 410px;
+    max-height: 530px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 15px;
+}
+.card.hidden {
+    display: none;
+}
+.card__description {
+    overflow: hidden;
+    text-align: center;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+    -webkit-box-align: left;
+        -ms-flex-align: left;
+            align-items: left;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background: rgba(255, 255, 255, 0.055);
+    border-radius: 15px;
+    padding: 10px 15px;
+}
+.card__description a {
+    margin: 10px 0;
+    text-decoration: none;
+    color: white;
+    background-color: rgb(103, 158, 161);
+    padding: 5px 15px;
+    text-align: center;
+    border-radius: 5px;
+}
+.card label {
+    font-size: 2rem;
+}
+.card img {
+    padding-bottom: 5px;
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+.card__category {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.144);
+    border-radius: 15px;
+    padding: 10px 15px;
+    pointer-events: none;
+}
+.card__link.disabled {
+    background: gray;
+    pointer-events: none;
+}
