@@ -284,518 +284,337 @@ function changeMarketState(buttonContainer, arrWrapper) {
 }
 
 
-    containerNewButton.addEventListener("click", () => {
-      containerNew.style.display = "none";
-      containerOld.style.display = "flex";
-      changeMarketState(marketContainer, marketWrapper);
+containerNewButton.addEventListener("click", () => {
+	containerNew.style.display = "none";
+	containerOld.style.display = "flex";
+	changeMarketState(marketContainer, marketWrapper);
 
-      promoPrices.forEach(element => {
-        element.classList.toggle("disabled");
-      });
+	promoPrices.forEach(element => {
+		element.classList.toggle("disabled");
+	});
 
-      pricesCloud.forEach(element => {
+	pricesCloud.forEach(element => {
 
-        if (element.classList.contains("promo")) {
-          element.style.display = "none";
-          
-        };
+		if (element.classList.contains("promo")) {
+		element.style.display = "none";
+		
+		};
 
-      });
-      
-      pricesBox.forEach(element => {
-        if (!element.classList.contains("canceled")) {
-          element.classList.toggle("disabled");
-        }
-        else {element.classList.toggle("canceled")}
-      });
+	});
+	
+	pricesBox.forEach(element => {
+		if (!element.classList.contains("canceled")) {
+		element.classList.toggle("disabled");
+		}
+		else {element.classList.toggle("canceled")}
+	});
 
-      
-    });
-    containerOldButton.addEventListener("click", () => {
-      containerNew.style.display = "block";
-      containerOld.style.display = "none";
-      changeMarketState(marketContainer, marketWrapper);
-      promoPrices.forEach(element => {
-        element.classList.toggle("disabled");
-      });
+	
+	});
+	containerOldButton.addEventListener("click", () => {
+	containerNew.style.display = "block";
+	containerOld.style.display = "none";
+	changeMarketState(marketContainer, marketWrapper);
+	promoPrices.forEach(element => {
+		element.classList.toggle("disabled");
+	});
 
-      pricesCloud.forEach(element => {
-        if (element.classList.contains("promo")) {
-          element.style.display = "flex";
-        };
+	pricesCloud.forEach(element => {
+		if (element.classList.contains("promo")) {
+		element.style.display = "flex";
+		};
 
-      });
-    
-      pricesBox.forEach(element => {
-        if (!element.classList.contains("disabled")) {
-          element.classList.toggle("canceled");
-        }
-        else {element.classList.toggle("disabled")}
-      });
-    });
+	});
+	
+	pricesBox.forEach(element => {
+		if (!element.classList.contains("disabled")) {
+		element.classList.toggle("canceled");
+		}
+		else {element.classList.toggle("disabled")}
+	});
+	});
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const button = document.querySelector(".burger-icon__menu-icon");
-  const closeButton = document.querySelector(".burger-icon__menu-close");
-  const sideMenu = document.querySelector(".nav-phone");
+	const button = document.querySelector(".burger-icon__menu-icon");
+	const closeButton = document.querySelector(".burger-icon__menu-close");
+	const sideMenu = document.querySelector(".nav-phone");
 
 
-  const aboutUsMore = document.querySelector(".company-info-more span");
-  const text = document.querySelector(".company-info-full");
+	const aboutUsMore = document.querySelector(".company-info-more span");
+	const text = document.querySelector(".company-info-full");
 
-  aboutUsMore.addEventListener('click', () => {
-    if (text.style.display == "block") {
+	aboutUsMore.addEventListener('click', () => {
+		if (text.style.display == "block") {
 
-      aboutUsMore.textContent = "Подробнее?"
-      text.style.display = "none";
-    } else {    
+		aboutUsMore.textContent = "Подробнее?"
+		text.style.display = "none";
+		} else {    
 
-      aboutUsMore.textContent = "Закрыть?"
-      text.style.display = "block";
-    }
-  
-  });
+		aboutUsMore.textContent = "Закрыть?"
+		text.style.display = "block";
+		}
+	});
 
 
-  button.addEventListener('click', () => {
-	sideMenu.classList.toggle("disabled");
-  });
+	button.addEventListener('click', () => {
+		sideMenu.classList.toggle("disabled");
+	});
 
-  closeButton.addEventListener('click', () => {
-    sideMenu.classList.toggle("disabled");
-  });
+	closeButton.addEventListener('click', () => {
+		sideMenu.classList.toggle("disabled");
+	});
 
 });
 
 
 const marketButtonContainer = document.querySelectorAll(".market__bottom-container");
 
-
 marketButtonContainer.forEach(element => {
-  element.addEventListener("click", (event) => {
-    const marketBottomText = element.querySelector(".market__bottom-text-wrapper");
-    const button = element.querySelector(".market__bottom-button");
-    if (event.target == button) {
-      marketBottomText.classList.toggle("disabled");}
+	element.addEventListener("click", (event) => {
+	const marketBottomText = element.querySelector(".market__bottom-text-wrapper");
+	const button = element.querySelector(".market__bottom-button");
+	if (event.target == button) {
+		marketBottomText.classList.toggle("disabled");}
 
-  });  
+	});  
 });
 
 
 
 
 
-// Находим все маркеры
-const markers = document.querySelectorAll('.marker');
-const markerGreen = document.getElementById('marker-msc');
-
-
-// Находим модальное окно и кнопку закрытия
-const mapModal = document.getElementById('map-modal');
-const mapCloseBtn = document.querySelector('.map-close');
-const companyList = document.getElementById('map-company-list');
-const modalTitle = document.querySelector('.map-modal-content h2'); // Заголовок модального окна
-
-// Данные о клиентах для каждого маркера
-const clientsData = {
-    "Москва": [
-      { name: "Компания 1", logo: "/src/images/logos/company1.png" },
-      { name: "Компания 2", logo: "/src/images/logos/company2.png" },
-      { name: "Компания 3", logo: "/src/images/logos/company3.png" }
-    ],
-    "Санкт-Петербург": [
-      { name: "Компания 4", logo: "/src/images/logos/company4.png" },
-      { name: "Компания 5", logo: "/src/images/logos/company5.png" }
-    ],
-    "Пенза": [
-      { name: "ООО Эволюция", logo: "/src/images/logos/company6.png" }
-    ],
-    "Калуга": [
-      { name: "Компания 7", logo: "/src/images/logos/company7.png" },
-      { name: "Компания 8", logo: "/src/images/logos/company8.png" }
-    ],
-    "Екатеринбург": [
-      { name: "Компания 9", logo: "/src/images/logos/company9.png" }
-    ],
-    "Иркутск": [
-      { name: "Компания 10", logo: "/src/images/logos/company10.png" }
-    ],
-    "Красноярск": [
-      { name: "Компания 11", logo: "/src/images/logos/company11.png" },
-      { name: "Компания 12", logo: "/src/images/logos/company12.png" }
-    ],
-    "Чита": [
-      { name: "Компания 13", logo: "/src/images/logos/company13.png" }
-    ],
-    "Архангельск": [
-      { name: "Компания 14", logo: "/src/images/logos/company14.png" }
-    ],
-    "Эмираты (ОАЭ)": [
-      { name: "Компания 15", logo: "/src/images/logos/company15.png" }
-    ],
-    "Швейцария": [
-      { name: "Компания 16", logo: "/src/images/logos/company16.png" }
-    ],
-    "Малайзия": [
-      { name: "Компания 17", logo: "/src/images/logos/company17.png" }
-    ],
-    "Турция": [
-      { name: "Компания 18", logo: "/src/images/logos/company18.png" }
-    ],
-    "Китай": [
-      { name: "Компания 19", logo: "/src/images/logos/company19.png" },
-      { name: "Компания 20", logo: "/src/images/logos/company20.png" }
-    ],
-    "Остров Маврикий": [
-      { name: "Компания 21", logo: "/src/images/logos/company21.png" }
-    ]
-  };
-
-
-  function openMapModal(event) {
-    event.stopPropagation(); // Останавливаем всплытие события
-  
-    // Получаем город из атрибута data-city
-    const city = this.getAttribute('data-city');
-  
-    // Меняем заголовок модального окна
-    modalTitle.textContent = `Компании в ${city}`;
-  
-    // Заполняем модальное окно данными
-    companyList.innerHTML = ''; // Очищаем список
-    clientsData[city].forEach(client => {
-      const li = document.createElement('li');
-  
-      // Добавляем логотип
-      const img = document.createElement('img');
-      img.src = client.logo;
-      img.alt = `Логотип ${client.name}`;
-      img.classList.add('company-logo');
-  
-      // Добавляем название компании
-      const span = document.createElement('span');
-      span.textContent = client.name;
-  
-      // Добавляем логотип и название в список
-      li.appendChild(img);
-      li.appendChild(span);
-      companyList.appendChild(li);
-    });
-  /*
-    // Показываем модальное окно
-    mapModal.style.display = 'flex';
-    setTimeout(() => {
-      mapModal.classList.add('active');
-    }, 10);
-  */
-  }
-
-
-  
-  
-  // Добавляем обработчик клика для каждого маркера
-  markers.forEach(marker => {
-    marker.addEventListener('click', openMapModal);
-  });
-  
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Счет цифр
-
 document.addEventListener("DOMContentLoaded", () => {
-  const counters = document.querySelectorAll(".counter-number");
-
-  const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-              const target = entry.target;
-              const targetNumber = parseInt(target.getAttribute("data-target"));
-              let currentNumber = 0;
-
-              const interval = setInterval(() => {
-                  currentNumber += Math.ceil(targetNumber / 100); // Шаг анимации
-                  target.textContent = currentNumber;
-
-                  if (currentNumber >= targetNumber) {
-                      target.textContent = targetNumber; // Останавливаем на целевом значении
-                      clearInterval(interval);
-                  }
-
-                  // Добавляем символ + обратно после завершения анимации
-                  if (currentNumber >= targetNumber) {
-                      target.innerHTML = targetNumber + '<span>+</span>';
-                  }
-              }, 20); // Скорость анимации
-
-              observer.unobserve(target); // Прекращаем наблюдение после запуска анимации
-          }
-      });
-  }, { threshold: 0.5 }); // Анимация начинается, когда блок виден на 50%
-
-  counters.forEach((counter) => observer.observe(counter));
+	const swiper = new Swiper('.swiper-carousel', {
+		autoplay: {
+			delay: 3000,
+			disableOnInteraction: false,
+		},
+		slidesPerView: 5,
+		spaceBetween: 20,
+		loop: true, 
+		grabCursor: true, 
+		centeredSlides: false, 
+		breakpoints: {
+		320: {
+			centeredSlides: true, 
+			slidesPerView: 2.5, 
+		},
+		660: {
+			centeredSlides: true,
+			slidesPerView: 4, 
+		},
+		930: {
+			centeredSlides: false, 
+			slidesPerView: 5,
+			}
+		}
+	});
 });
 
 
 
-
-
-//карусель
 document.addEventListener("DOMContentLoaded", () => {
-  const swiper = new Swiper('.swiper-carousel', {
-      // Автоматическая прокрутка
-      autoplay: {
-          delay: 3000, // Уменьшим интервал до 3 секунд для динамичности
-          disableOnInteraction: false, // Продолжать автопрокрутку после взаимодействия
-      },
-      // Навигация
-      // Настройки скролла
-      slidesPerView: 5, // Количество видимых слайдов
-      spaceBetween: 20, // Уменьшим расстояние между слайдами
-      loop: true, // Бесконечная прокрутка
-      grabCursor: true, // Курсор "рука" для перетаскивания
-      centeredSlides: false, // Центрирование активного слайда
-
-        breakpoints: {
-        320: {
-          centeredSlides: true, // Центрирование активного слайда
-          slidesPerView: 2.5, // Количество видимых слайдов
-        },
-        660: {
-          centeredSlides: true, // Центрирование активного слайда
-          slidesPerView: 4, // Количество видимых слайдов
-        },
-        930: {
-          centeredSlides: false, // Центрирование активного слайда
-          slidesPerView: 5, // Количество видимых слайдов
-        }
-      }
-  });
+	const swiper = new Swiper('.tariffs-container', {
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+		slidesPerView: 4, 
+		loop: false, // Бесконечная прокрутка
+		grabCursor: false, // Курсор "рука" для перетаскивания
+		centeredSlides: false, // Центрирование активного слайда
+		noSwiping: true,
+		noSwipingClass: 'swiper-slide',
+		breakpoints: {
+			0: {
+				spaceBetween: 20,
+				noSwiping: false,
+				slidesPerView: 1.1, 
+				centeredSlides: false,
+			},
+			350: {
+				spaceBetween: 20,
+				noSwiping: false,
+				slidesPerView: 1.1, 
+				centeredSlides: false,
+			},
+			500: {
+				spaceBetween: 20,
+				noSwiping: false,
+				slidesPerView: 1.1, 
+				centeredSlides: false,
+			},
+			660: {
+				spaceBetween: 15,
+				noSwiping: false,
+				slidesPerView: 2, 
+				centeredSlides: false,
+			},
+			929: {
+				spaceBetween: 5,
+				noSwiping: true,
+				slidesPerView: 4, 
+				centeredSlides: false,
+			},        
+			1600: {
+				spaceBetween: 25,
+				noSwiping: true,
+				slidesPerView: 4, 
+				centeredSlides: false,
+			}
+		}
+	});
 });
 
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
-  const swiper = new Swiper('.tariffs-container', {
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-      },
-      slidesPerView: 4, 
-      loop: false, // Бесконечная прокрутка
-      grabCursor: false, // Курсор "рука" для перетаскивания
-      centeredSlides: false, // Центрирование активного слайда
-      noSwiping: true,
-      noSwipingClass: 'swiper-slide',
-      breakpoints: {
-
-
-        0: {
-          spaceBetween: 20,
-          noSwiping: false,
-          slidesPerView: 1.1, 
-          centeredSlides: false,
-        },
-        350: {
-          spaceBetween: 20,
-          noSwiping: false,
-          slidesPerView: 1.1, 
-          centeredSlides: false,
-        },
-        500: {
-          spaceBetween: 20,
-          noSwiping: false,
-          slidesPerView: 1.1, 
-          centeredSlides: false,
-        },
-        660: {
-          spaceBetween: 15,
-          noSwiping: false,
-          slidesPerView: 2, 
-          centeredSlides: false,
-        },
-        929: {
-          spaceBetween: 5,
-          noSwiping: true,
-          slidesPerView: 4, 
-          centeredSlides: false,
-        },        
-        1600: {
-          spaceBetween: 25,
-          noSwiping: true,
-          slidesPerView: 4, 
-          centeredSlides: false,
-        }
-      }
-    })});
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const swiper = new Swiper('.tariffs-container-new', {
-          slidesPerView: 4, 
-          loop: false, // Бесконечная прокрутка
-          grabCursor: false, // Курсор "рука" для перетаскивания
-          centeredSlides: false, // Центрирование активного слайда
-          noSwiping: true,
-          noSwipingClass: 'swiper-slide',
-          breakpoints: {
-    
-    
-            0: {
-              spaceBetween: 20,
-              noSwiping: false,
-              slidesPerView: 1.1, 
-              centeredSlides: false,
-            },
-            350: {
-              spaceBetween: 20,
-              noSwiping: false,
-              slidesPerView: 1.1, 
-              centeredSlides: false,
-            },
-            500: {
-              spaceBetween: 20,
-              noSwiping: false,
-              slidesPerView: 1.1, 
-              centeredSlides: false,
-            },
-            660: {
-              spaceBetween: 15,
-              noSwiping: false,
-              slidesPerView: 2, 
-              centeredSlides: false,
-            },
+	const swiper = new Swiper('.tariffs-container-new', {
+		slidesPerView: 4, 
+		loop: false, // Бесконечная прокрутка
+		grabCursor: false, // Курсор "рука" для перетаскивания
+		centeredSlides: false, // Центрирование активного слайда
+		noSwiping: true,
+		noSwipingClass: 'swiper-slide',
+		breakpoints: {
+			0: {
+				spaceBetween: 20,
+				noSwiping: false,
+				slidesPerView: 1.1, 
+				centeredSlides: false,
+			},
+			350: {
+				spaceBetween: 20,
+				noSwiping: false,
+				slidesPerView: 1.1, 
+				centeredSlides: false,
+			},
+			500: {
+				spaceBetween: 20,
+				noSwiping: false,
+				slidesPerView: 1.1, 
+				centeredSlides: false,
+			},
+			660: {
+				spaceBetween: 15,
+				noSwiping: false,
+				slidesPerView: 2, 
+				centeredSlides: false,
+			},
             929: {
-              spaceBetween: 25,
-              noSwiping: true,
-              slidesPerView: 3, 
-              centeredSlides: false,
+				spaceBetween: 25,
+				noSwiping: true,
+				slidesPerView: 3, 
+				centeredSlides: false,
             },        
             1600: {
-              spaceBetween: 25,
-              noSwiping: true,
-              slidesPerView: 3, 
-              centeredSlides: false,
-            }
+				spaceBetween: 25,
+				noSwiping: true,
+				slidesPerView: 3, 
+				centeredSlides: false,
+			}
+		}
+	});
+});
 
-          }
-        })});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+	const swiper = new Swiper('.marketplace-swiper-container', {
+		slidesPerView: 3, 
+		spaceBetween: 15,
+		loop: false, // Бесконечная прокрутка
+		grabCursor: false, // Курсор "рука" для перетаскивания
+		centeredSlides: false, // Центрирование активного слайда
+		breakpoints: {
+			0: {
+				spaceBetween: 20,
+				noSwiping: false,
+				slidesPerView: 1.1, 
+				centeredSlides: false,
+			},
+			350: {
+				spaceBetween: 20,
+				noSwiping: false,
+				slidesPerView: 1.1, 
+				centeredSlides: false,
+			},
+			500: {
+				spaceBetween: 20,
+				noSwiping: false,
+				slidesPerView: 1.1, 
+				centeredSlides: false,
+			},
+			660: {
+				spaceBetween: 15,
+				noSwiping: false,
+				slidesPerView: 2, 
+				centeredSlides: false,
+			},
+			929: {
+				spaceBetween: 25,
+				noSwiping: true,
+				slidesPerView: 4, 
+				centeredSlides: false,
+			},        
+			1600: {
+				spaceBetween: 25,
+				noSwiping: true,
+				slidesPerView: 4, 
+				centeredSlides: false,
+			}
+		}
+	});
+});
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  const swiper = new Swiper('.marketplace-swiper-container', {
-      slidesPerView: 3, 
-      spaceBetween: 15,
-      loop: false, // Бесконечная прокрутка
-      grabCursor: false, // Курсор "рука" для перетаскивания
-      centeredSlides: false, // Центрирование активного слайда
-      breakpoints: {
-        0: {
-          spaceBetween: 20,
-          noSwiping: false,
-          slidesPerView: 1.1, 
-          centeredSlides: false,
-        },
-        350: {
-          spaceBetween: 20,
-          noSwiping: false,
-          slidesPerView: 1.1, 
-          centeredSlides: false,
-        },
-        500: {
-          spaceBetween: 20,
-          noSwiping: false,
-          slidesPerView: 1.1, 
-          centeredSlides: false,
-        },
-        660: {
-          spaceBetween: 15,
-          noSwiping: false,
-          slidesPerView: 2, 
-          centeredSlides: false,
-        },
-        929: {
-          spaceBetween: 25,
-          noSwiping: true,
-          slidesPerView: 4, 
-          centeredSlides: false,
-        },        
-        1600: {
-          spaceBetween: 25,
-          noSwiping: true,
-          slidesPerView: 4, 
-          centeredSlides: false,
-        }
-      }
-})});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const swiper = new Swiper('.marketplace-box-container', {
-      slidesPerView: 3, 
-      spaceBetween: 15,
-      loop: false, // Бесконечная прокрутка
-      grabCursor: false, // Курсор "рука" для перетаскивания
-      centeredSlides: false, // Центрирование активного слайда
-      breakpoints: {
-        0: {
-          spaceBetween: 20,
-          noSwiping: false,
-          slidesPerView: 1.1, 
-          centeredSlides: false,
-        },
-        350: {
-          spaceBetween: 20,
-          noSwiping: false,
-          slidesPerView: 1.1, 
-          centeredSlides: false,
-        },
-        500: {
-          spaceBetween: 20,
-          noSwiping: false,
-          slidesPerView: 1.1, 
-          centeredSlides: false,
-        },
-        660: {
-          spaceBetween: 15,
-          noSwiping: false,
-          slidesPerView: 2, 
-          centeredSlides: false,
-        },
-        929: {
-          spaceBetween: 25,
-          noSwiping: true,
-          slidesPerView: 4, 
-          centeredSlides: false,
-        },        
-        1600: {
-          spaceBetween: 25,
-          noSwiping: true,
-          slidesPerView: 4, 
-          centeredSlides: false,
-        }
-      }
-})});
+	const swiper = new Swiper('.marketplace-box-container', {
+		slidesPerView: 3, 
+		spaceBetween: 15,
+		loop: false, // Бесконечная прокрутка
+		grabCursor: false, // Курсор "рука" для перетаскивания
+		centeredSlides: false, // Центрирование активного слайда
+		breakpoints: {
+			0: {
+				spaceBetween: 20,
+				noSwiping: false,
+				slidesPerView: 1.1, 
+				centeredSlides: false,
+			},
+			350: {
+				spaceBetween: 20,
+				noSwiping: false,
+				slidesPerView: 1.1, 
+				centeredSlides: false,
+			},
+			500: {
+				spaceBetween: 20,
+				noSwiping: false,
+				slidesPerView: 1.1, 
+				centeredSlides: false,
+			},
+			660: {
+				spaceBetween: 15,
+				noSwiping: false,
+				slidesPerView: 2, 
+				centeredSlides: false,
+			},
+			929: {
+				spaceBetween: 25,
+				noSwiping: true,
+				slidesPerView: 4, 
+				centeredSlides: false,
+			},        
+			1600: {
+				spaceBetween: 25,
+				noSwiping: true,
+				slidesPerView: 4, 
+				centeredSlides: false,
+			}
+		}
+	});
+});
 
 
 //Вопрос ответ
@@ -827,79 +646,65 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
+	const container = document.querySelector(".tariff-box-container");
+	const userButtons = container.querySelectorAll('.user-btn');
+	const corporatePrice = document.getElementById('corporate-price');
 
-  const container = document.querySelector(".tariff-box-container");
-  const userButtons = container.querySelectorAll('.user-btn');
-  const corporatePrice = document.getElementById('corporate-price');
+	// Объект с ценами
+	const prices = {
+		'50': '159 000 ₽',
+		'100': '229 000 ₽',
+		'250': '349 000 ₽',
+		'500': '599 000 ₽'
+	};
 
-  // Объект с ценами
-  const prices = {
-      '50': '159 000 ₽',
-      '100': '229 000 ₽',
-      '250': '349 000 ₽',
-      '500': '599 000 ₽'
-  };
+	// Добавляем обработчики событий для кнопок
+	userButtons.forEach(button => {
+		button.addEventListener('click', () => {
+			// Убираем класс active у всех кнопок
+			userButtons.forEach(btn => btn.classList.remove('active'));
 
-  // Добавляем обработчики событий для кнопок
-  userButtons.forEach(button => {
-      button.addEventListener('click', () => {
-          // Убираем класс active у всех кнопок
-          userButtons.forEach(btn => btn.classList.remove('active'));
+			// Добавляем класс active текущей кнопке
+			button.classList.add('active');
 
-          // Добавляем класс active текущей кнопке
-          button.classList.add('active');
+			// Получаем выбранное количество пользователей
+			const selectedUsers = button.dataset.users;
 
-          // Получаем выбранное количество пользователей
-          const selectedUsers = button.dataset.users;
+			// Обновляем цену
+			corporatePrice.textContent = prices[selectedUsers];
+		});
+	});
 
-          // Обновляем цену
-          corporatePrice.textContent = prices[selectedUsers];
-      });
-  });
-
-  // Инициализация первой активной кнопки
-  userButtons[0].classList.add('active');
+	// Инициализация первой активной кнопки
+	userButtons[0].classList.add('active');
 });
 
 
 
-
-
-
-
-//Для маркета
 document.addEventListener("DOMContentLoaded", () => {
-  // Логика для новой секции "Подписка Битрикс24 Маркетплейс"
-  const subscriptionTypeButtons = document.querySelectorAll('.subscription-type-btn');
-  const cloudSubscription = document.querySelector('.cloud-subscription');
-  const boxSubscription = document.querySelector('.box-subscription');
+	const subscriptionTypeButtons = document.querySelectorAll('.subscription-type-btn');
+	const cloudSubscription = document.querySelector('.cloud-subscription');
+	const boxSubscription = document.querySelector('.box-subscription');
 
-  const container = document.querySelector(".marketplace-box-container");
-  const userButtons = container.querySelectorAll('.user-btn');
-  const corporatePrice = document.getElementById('marketplace-corporate-price');
+	const container = document.querySelector(".marketplace-box-container");
+	const userButtons = container.querySelectorAll('.user-btn');
+	const corporatePrice = document.getElementById('marketplace-corporate-price');
 
+	subscriptionTypeButtons.forEach(button => {
+		button.addEventListener('click', () => {
+			subscriptionTypeButtons.forEach(btn => btn.classList.remove('active'));
+			button.classList.add('active');
 
-  // Переключение между облачной и коробочной версиями
-  subscriptionTypeButtons.forEach(button => {
-      button.addEventListener('click', () => {
-          subscriptionTypeButtons.forEach(btn => btn.classList.remove('active'));
-          button.classList.add('active');
-
-          if (button.dataset.type === 'cloud') {
-              cloudSubscription.style.display = 'flex';
-              boxSubscription.style.display = 'none';
-          } else {
-              cloudSubscription.style.display = 'none';
-              boxSubscription.style.display = 'flex';
-          }
-      });
-  });
+			if (button.dataset.type === 'cloud') {
+				cloudSubscription.style.display = 'flex';
+				boxSubscription.style.display = 'none';
+			} else {
+				cloudSubscription.style.display = 'none';
+				boxSubscription.style.display = 'flex';
+			}
+		});
+	});
 
     const canceledPrice = document.getElementById("special_price");
 
@@ -933,17 +738,349 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Инициализация первой активной кнопки
     userButtons[0].click();
 
 });
 
 
 
+const tariffSection = document.querySelector(".tariffs-section-new");
+const topWrapper = tariffSection.querySelector(".button-container__top-wrapper");
+const topWrapperButtons = topWrapper.querySelectorAll("div");
+const topRightButton = topWrapper.querySelector(".top-wrapper__right-button");
+const topLeftButton = topWrapper.querySelector(".top-wrapper__left-button");
+
+const boxSection = document.getElementById("market-container");
+const cloudSection = document.getElementById("market-container-example");
+const marketContainer = document.querySelector(".market__button-container");
+const marketSection = document.querySelector(".marketplace-swiper-container");
+
+const marketWrapper = marketContainer.querySelector(".button-container__bottom-wrapper");
+const marketWrapperButtons = marketWrapper.querySelectorAll("div");
+const marketPrices = marketSection.querySelectorAll(".card__price");
+
+marketWrapper.addEventListener("click", (event) => {
+	const target = event.target.closest('.market-button');
+
+	if (target && !event.target.classList.contains("activated")) {
+		marketWrapperButtons.forEach(element => {
+			element.classList.toggle("activated");
+		});
+
+		marketPrices.forEach(element => {
+			element.classList.toggle("disabled");
+		});
+	} 
+});
+
+
+const bottomWrapper = document.querySelector(".button-container__bottom-wrapper");
+const bottomWrapperButtons = bottomWrapper.querySelectorAll("div");
+const bottomRightButton = bottomWrapper.querySelector(".bottom-wrapper__right-button");
+const bottomLeftButton = bottomWrapper.querySelector(".bottom-wrapper__left-button");
+const cloudDiv = bottomWrapper.querySelector(".bottom-wrapper__discount-cloud");
+const swiperButtonsContainer = document.querySelector(".tariff-buttons-container");
+const swiperPrices = document.querySelectorAll(".swiper-card__price");
+
+
+topWrapper.addEventListener("click", (event) => {
+	if (event.target == topRightButton && !event.target.classList.contains("activated")) {
+		topWrapperButtons.forEach(element => {
+			if (element != cloudDiv) {
+				element.classList.toggle("activated");
+			}
+			boxSection.style.display = "flex";
+			cloudSection.style.display = "none";
+			swiperButtonsContainer.style.display = "none";
+
+			bottomWrapperButtons.forEach(el => {
+				el.classList.add("disabled");
+				bottomWrapper.classList.add("disabled");
+			});
+		});
+	} 
+
+	if (event.target == topLeftButton && !event.target.classList.contains("activated")) {
+		topWrapperButtons.forEach(element => {
+			if (element != cloudDiv) {
+				element.classList.toggle("activated");
+			}
+			boxSection.style.display = "none";
+			cloudSection.style.display = "flex";
+			swiperButtonsContainer.style.display = "flex";
+
+			bottomWrapperButtons.forEach(el => {
+				el.classList.remove("disabled");
+				bottomWrapper.classList.remove("disabled");
+			});
+		});
+	} 
+});
+
+
+bottomWrapper.addEventListener("click", (event) => {
+	if (event.target == bottomRightButton && !event.target.classList.contains("activated")) {
+		bottomWrapperButtons.forEach(element => {
+		if (element != cloudDiv) {
+			element.classList.toggle("activated");
+		}
+
+		swiperPrices.forEach(element => {
+			element.classList.toggle("disabled");
+		});
+
+		});
+	} 
+
+	if (event.target == bottomLeftButton && !event.target.classList.contains("activated")) {
+		bottomWrapperButtons.forEach(element => {
+		if (element != cloudDiv) {
+			element.classList.toggle("activated");
+		}
+
+		swiperPrices.forEach(element => {
+			element.classList.toggle("disabled");
+		});
+
+		});
+	} 
+});
+
+
+
+// rewrite this piss of crap
+var x, i, j, l, ll, selElmnt, a, b, c;
+x = document.getElementsByClassName("custom-select");
+l = x.length;
+for (i = 0; i < l; i++) {
+	selElmnt = x[i].getElementsByTagName("select")[0];
+
+	ll = selElmnt.length;
+
+	a = document.createElement("DIV");
+	a.setAttribute("class", "select-selected");
+	a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+	x[i].appendChild(a);
+
+	b = document.createElement("DIV");
+	b.setAttribute("class", "select-items select-hide");
+	for (j = 0; j < ll; j++) {
+
+	c = document.createElement("DIV");
+	c.innerHTML = selElmnt.options[j].innerHTML;
+	c.addEventListener("click", function(e) {
+		var y, i, k, s, h, sl, yl;
+		s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+		sl = s.length;
+		h = this.parentNode.previousSibling;
+
+
+
+		for (i = 0; i < sl; i++) {
+			if (s.options[i].innerHTML == this.innerHTML) {
+			s.selectedIndex = i;
+			h.innerHTML = this.innerHTML;
+			y = this.parentNode.getElementsByClassName("same-as-selected");
+			yl = y.length;
+			for (k = 0; k < yl; k++) {
+				y[k].removeAttribute("class");
+			}            
+			this.setAttribute("class", "same-as-selected");
+
+			const card = document.getElementById("special-description");
+			const text = card.querySelectorAll(".swiper-card__price");
+
+			const secondCard = document.getElementById("third-description");
+			const textSecond = secondCard.querySelectorAll(".card__price");
+
+			const thirdCard = document.getElementById("select-card");
+			const textThird = thirdCard.querySelectorAll(".card__price");
+
+
+			const marketHeader = document.querySelector(".market__header-old-clients");
+
+			textSecond.forEach(element => {
+				if (element.classList.contains("disabled")) {  
+				} else {
+				let selectedItem = secondCard.querySelector(".select-selected");
+
+			
+				const marketplaceYear = {
+					'250': '7 992 ₽/мес.',
+					'500': '9 592 ₽/мес.',
+					'1000': '11 992 ₽/мес.',
+					'2000': '11 992 ₽/мес.',
+					'3000': '11 992 ₽/мес.',
+
+					'4000': '11 992 ₽/мес.',
+					'5000': '11 992 ₽/мес.',
+					'6000': '11 992 ₽/мес.',
+					'7000': '11 992 ₽/мес.',
+					'8000': '11 992 ₽/мес.',
+		
+					'9000': '11 992 ₽/мес.',
+					'10000': '11 992 ₽/мес.'
+				};
+
+				const marketplaceYear2 = {
+					'250': '4 995 ₽/мес.',
+					'500': '5 995 ₽/мес.',
+					'1000': '7 495 ₽/мес.',
+					'2000': '7 495 ₽/мес.',
+					'3000': '7 495 ₽/мес.',
+					
+					'4000': '7 495 ₽/мес.',
+					'5000': '7 495 ₽/мес.',
+					'6000': '7 495 ₽/мес.',
+					'7000': '7 495 ₽/мес.',
+					'8000': '7 495 ₽/мес.',
+
+					'9000': '7 495 ₽/мес.',
+					'10000': '7 495 ₽/мес.'
+				};
+
+				
+				const marketplaceMonth = {
+					'250': '9 990 ₽/мес.',
+					'500': '11 990 ₽/мес.',
+					'1000': '14 990 ₽/мес.',
+					'2000': '14 992 ₽/мес.',
+					'3000': '14 992 ₽/мес.',
+
+					'4000': '14 992 ₽/мес.',
+					'5000': '14 992 ₽/мес.',
+					'6000': '14 992 ₽/мес.',
+					'7000': '14 992 ₽/мес.',
+					'8000': '14 992 ₽/мес.',
+		
+					'9000': '14 992 ₽/мес.',
+					'10000': '14 992 ₽/мес.'
+				};
+
+				const selectedUsers = selectedItem.textContent;
+				if (element.classList.contains("year")) {
+					if (marketHeader.style.display == "flex") {
+					element.textContent = marketplaceYear[selectedUsers];
+					}
+					else {
+					element.textContent = marketplaceYear2[selectedUsers];
+					}
+				} else 
+				element.textContent = marketplaceMonth[selectedUsers];
+				}        
+			});
+
+			text.forEach(element => {
+				if (element.classList.contains("disabled")) {
+				} else {
+				let selectedItem = card.querySelector(".select-selected");
+
+				const pricesMonth = {
+					'250': '33 990 ₽/мес.',
+					'500': '59 990 ₽/мес.',
+					'1000': '99 990 ₽/мес.',
+					'2000': '199 990 ₽/мес.',
+					'3000': '299 990 ₽/мес.',
+
+					'4000': '399 990 ₽/мес.',
+					'5000': '499 990 ₽/мес.',
+					'6000': '599 990 ₽/мес.',
+					'7000': '699 990 ₽/мес.',
+					'8000': '799 990 ₽/мес.',
+		
+					'9000': '999 990 ₽/мес.',
+					'10000': '999 990 ₽/мес.'
+				};
+				const pricesYear = {
+					'250': '23 793 ₽/мес.',
+					'500': '41 993 ₽/мес.',
+					'1000': '69 993 ₽/мес.',
+					'2000': '139 993 ₽/мес.',
+					'3000': '209 993 ₽/мес.',
+					
+					'4000': '279 793 ₽/мес.',
+					'5000': '349 993 ₽/мес.',
+					'6000': '419 993 ₽/мес.',
+					'7000': '489 993 ₽/мес.',
+					'8000': '559 993 ₽/мес.',
+
+					'9000': '629 993 ₽/мес.',
+					'10000': '699 993 ₽/мес.'
+				};
+				const weight = {
+					'250': '3 ТБ',
+					'500': '5 ТБ',
+					'1000': '10 ТБ',
+					'2000': '20 ТБ',
+					'3000': '30 ТБ',
+					
+					'4000': '40 ТБ',
+					'5000': '50 ТБ',
+					'6000': '60 ТБ',
+					'7000': '70 ТБ',
+					'8000': '80 ТБ',
+
+					'9000': '90 ТБ',
+					'10000': '100 ТБ'
+				}
+				const weightSpan = document.getElementById("weight-span");
+				
+				const selectedUsers = selectedItem.textContent;
+				
+				weightSpan.textContent = weight[selectedUsers];
+				if (element.classList.contains("year")) {
+					element.textContent = pricesYear[selectedUsers];
+				} else 
+				element.textContent = pricesMonth[selectedUsers];
+
+				}        
+			});
+
+			break;
+			}
+		}
+		h.click();
+	});
+	b.appendChild(c);
+	}
+	x[i].appendChild(b);
+	a.addEventListener("click", function(e) {
+		e.stopPropagation();
+		closeAllSelect(this);
+		this.nextSibling.classList.toggle("select-hide");
+		this.classList.toggle("select-arrow-active");
+	});
+}
+
+function closeAllSelect(elmnt) {
+	var x, y, i, xl, yl, arrNo = [];
+	x = document.getElementsByClassName("select-items");
+	y = document.getElementsByClassName("select-selected");
+
+	xl = x.length;
+	yl = y.length;
+	
+	for (i = 0; i < yl; i++) {
+		if (elmnt == y[i]) {
+			arrNo.push(i)
+		} else {
+			y[i].classList.remove("select-arrow-active");
+		}
+	}
+	for (i = 0; i < xl; i++) {
+		if (arrNo.indexOf(i)) {
+			x[i].classList.add("select-hide");
+		}
+	}
+}
+
+document.addEventListener("click", closeAllSelect);
 
 
 
 
+
+// not mine
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -999,356 +1136,35 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 50);
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll(".counter-number");
 
+  const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+              const target = entry.target;
+              const targetNumber = parseInt(target.getAttribute("data-target"));
+              let currentNumber = 0;
 
+              const interval = setInterval(() => {
+                  currentNumber += Math.ceil(targetNumber / 100); // Шаг анимации
+                  target.textContent = currentNumber;
 
-const tariffSection = document.querySelector(".tariffs-section-new");
-const topWrapper = tariffSection.querySelector(".button-container__top-wrapper");
-const topWrapperButtons = topWrapper.querySelectorAll("div");
-const topRightButton = topWrapper.querySelector(".top-wrapper__right-button");
-const topLeftButton = topWrapper.querySelector(".top-wrapper__left-button");
-
-
-const boxSection = document.getElementById("market-container");
-const cloudSection = document.getElementById("market-container-example");
-const marketContainer = document.querySelector(".market__button-container");
-const marketSection = document.querySelector(".marketplace-swiper-container");
-
-
-
-const marketWrapper = marketContainer.querySelector(".button-container__bottom-wrapper");
-const marketWrapperButtons = marketWrapper.querySelectorAll("div");
-const marketPrices = marketSection.querySelectorAll(".card__price");
-
-marketWrapper.addEventListener("click", (event) => {
-	const target = event.target.closest('.market-button');
-
-	if (target && !event.target.classList.contains("activated")) {
-		marketWrapperButtons.forEach(element => {
-			element.classList.toggle("activated");
-		});
-
-		marketPrices.forEach(element => {
-			element.classList.toggle("disabled");
-		});
-	} 
-});
-
-  const bottomWrapper = document.querySelector(".button-container__bottom-wrapper");
-
-  const bottomWrapperButtons = bottomWrapper.querySelectorAll("div");
-
-  const bottomRightButton = bottomWrapper.querySelector(".bottom-wrapper__right-button");
-  const bottomLeftButton = bottomWrapper.querySelector(".bottom-wrapper__left-button");
-  const cloudDiv = bottomWrapper.querySelector(".bottom-wrapper__discount-cloud");
-
-  const swiperButtonsContainer = document.querySelector(".tariff-buttons-container");
-  const swiperPrices = document.querySelectorAll(".swiper-card__price");
-
-
-  topWrapper.addEventListener("click", (event) => {
-
-    if (event.target == topRightButton && !event.target.classList.contains("activated")) {
-      topWrapperButtons.forEach(element => {
-        if (element != cloudDiv) {
-          element.classList.toggle("activated");
-        }
-        boxSection.style.display = "flex";
-        cloudSection.style.display = "none";
-        swiperButtonsContainer.style.display = "none";
-
-        bottomWrapperButtons.forEach(el => {
-            el.classList.add("disabled");
-            bottomWrapper.classList.add("disabled");
-        });
-        
-      });
-    } 
-
-    if (event.target == topLeftButton && !event.target.classList.contains("activated")) {
-      topWrapperButtons.forEach(element => {
-        if (element != cloudDiv) {
-          element.classList.toggle("activated");
-        }
-        boxSection.style.display = "none";
-        cloudSection.style.display = "flex";
-        swiperButtonsContainer.style.display = "flex";
-
-        bottomWrapperButtons.forEach(el => {
-          el.classList.remove("disabled");
-          bottomWrapper.classList.remove("disabled");
-      });
-
-
-      });
-    } 
-  });
-
-
-  bottomWrapper.addEventListener("click", (event) => {
-    if (event.target == bottomRightButton && !event.target.classList.contains("activated")) {
-      bottomWrapperButtons.forEach(element => {
-        if (element != cloudDiv) {
-          element.classList.toggle("activated");
-        }
-
-        swiperPrices.forEach(element => {
-          element.classList.toggle("disabled");
-        });
-
-      });
-    } 
-
-    if (event.target == bottomLeftButton && !event.target.classList.contains("activated")) {
-      bottomWrapperButtons.forEach(element => {
-        if (element != cloudDiv) {
-          element.classList.toggle("activated");
-        }
-
-        swiperPrices.forEach(element => {
-          element.classList.toggle("disabled");
-        });
-
-      });
-    } 
-  });
-
-
-
-
-var x, i, j, l, ll, selElmnt, a, b, c;
-/* Look for any elements with the class "custom-select": */
-x = document.getElementsByClassName("custom-select");
-
-l = x.length;
-for (i = 0; i < l; i++) {
-  selElmnt = x[i].getElementsByTagName("select")[0];
-
-  ll = selElmnt.length;
-  /* For each element, create a new DIV that will act as the selected item: */
-  a = document.createElement("DIV");
-  a.setAttribute("class", "select-selected");
-  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
-  x[i].appendChild(a);
-  /* For each element, create a new DIV that will contain the option list: */
-  b = document.createElement("DIV");
-  b.setAttribute("class", "select-items select-hide");
-  for (j = 0; j < ll; j++) {
-    /* For each option in the original select element,
-    create a new DIV that will act as an option item: */
-    c = document.createElement("DIV");
-    c.innerHTML = selElmnt.options[j].innerHTML;
-    c.addEventListener("click", function(e) {
-        /* When an item is clicked, update the original select box,
-        and the selected item: */
-        var y, i, k, s, h, sl, yl;
-        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
-        sl = s.length;
-        h = this.parentNode.previousSibling;
-
-
-
-        for (i = 0; i < sl; i++) {
-          if (s.options[i].innerHTML == this.innerHTML) {
-            s.selectedIndex = i;
-            h.innerHTML = this.innerHTML;
-            y = this.parentNode.getElementsByClassName("same-as-selected");
-            yl = y.length;
-            for (k = 0; k < yl; k++) {
-              y[k].removeAttribute("class");
-            }            
-            this.setAttribute("class", "same-as-selected");
-
-            const card = document.getElementById("special-description");
-            const text = card.querySelectorAll(".swiper-card__price");
-    
-            const secondCard = document.getElementById("third-description");
-            const textSecond = secondCard.querySelectorAll(".card__price");
-
-            const thirdCard = document.getElementById("select-card");
-            const textThird = thirdCard.querySelectorAll(".card__price");
-
-
-            const marketHeader = document.querySelector(".market__header-old-clients");
-
-            textSecond.forEach(element => {
-              if (element.classList.contains("disabled")) {  
-              } else {
-                let selectedItem = secondCard.querySelector(".select-selected");
-
-            
-                const marketplaceYear = {
-                  '250': '7 992 ₽/мес.',
-                  '500': '9 592 ₽/мес.',
-                  '1000': '11 992 ₽/мес.',
-                  '2000': '11 992 ₽/мес.',
-                  '3000': '11 992 ₽/мес.',
-
-                  '4000': '11 992 ₽/мес.',
-                  '5000': '11 992 ₽/мес.',
-                  '6000': '11 992 ₽/мес.',
-                  '7000': '11 992 ₽/мес.',
-                  '8000': '11 992 ₽/мес.',
-      
-                  '9000': '11 992 ₽/мес.',
-                  '10000': '11 992 ₽/мес.'
-                };
-  
-                const marketplaceYear2 = {
-                  '250': '4 995 ₽/мес.',
-                  '500': '5 995 ₽/мес.',
-                  '1000': '7 495 ₽/мес.',
-                  '2000': '7 495 ₽/мес.',
-                  '3000': '7 495 ₽/мес.',
-                  
-                  '4000': '7 495 ₽/мес.',
-                  '5000': '7 495 ₽/мес.',
-                  '6000': '7 495 ₽/мес.',
-                  '7000': '7 495 ₽/мес.',
-                  '8000': '7 495 ₽/мес.',
-
-                  '9000': '7 495 ₽/мес.',
-                  '10000': '7 495 ₽/мес.'
-                };
-   
-                
-                const marketplaceMonth = {
-                  '250': '9 990 ₽/мес.',
-                  '500': '11 990 ₽/мес.',
-                  '1000': '14 990 ₽/мес.',
-                  '2000': '14 992 ₽/мес.',
-                  '3000': '14 992 ₽/мес.',
-
-                  '4000': '14 992 ₽/мес.',
-                  '5000': '14 992 ₽/мес.',
-                  '6000': '14 992 ₽/мес.',
-                  '7000': '14 992 ₽/мес.',
-                  '8000': '14 992 ₽/мес.',
-      
-                  '9000': '14 992 ₽/мес.',
-                  '10000': '14 992 ₽/мес.'
-                };
-
-                const selectedUsers = selectedItem.textContent;
-                if (element.classList.contains("year")) {
-                  if (marketHeader.style.display == "flex") {
-                    element.textContent = marketplaceYear[selectedUsers];
+                  if (currentNumber >= targetNumber) {
+                      target.textContent = targetNumber; // Останавливаем на целевом значении
+                      clearInterval(interval);
                   }
-                  else {
-                    element.textContent = marketplaceYear2[selectedUsers];
+
+                  // Добавляем символ + обратно после завершения анимации
+                  if (currentNumber >= targetNumber) {
+                      target.innerHTML = targetNumber + '<span>+</span>';
                   }
-                } else 
-                element.textContent = marketplaceMonth[selectedUsers];
-              }        
-            });
+              }, 20); // Скорость анимации
 
-            text.forEach(element => {
-              if (element.classList.contains("disabled")) {
-              } else {
-                let selectedItem = card.querySelector(".select-selected");
-    
-                const pricesMonth = {
-                  '250': '33 990 ₽/мес.',
-                  '500': '59 990 ₽/мес.',
-                  '1000': '99 990 ₽/мес.',
-                  '2000': '199 990 ₽/мес.',
-                  '3000': '299 990 ₽/мес.',
-
-                  '4000': '399 990 ₽/мес.',
-                  '5000': '499 990 ₽/мес.',
-                  '6000': '599 990 ₽/мес.',
-                  '7000': '699 990 ₽/мес.',
-                  '8000': '799 990 ₽/мес.',
-       
-                  '9000': '999 990 ₽/мес.',
-                  '10000': '999 990 ₽/мес.'
-                };
-                const pricesYear = {
-                  '250': '23 793 ₽/мес.',
-                  '500': '41 993 ₽/мес.',
-                  '1000': '69 993 ₽/мес.',
-                  '2000': '139 993 ₽/мес.',
-                  '3000': '209 993 ₽/мес.',
-                  
-                  '4000': '279 793 ₽/мес.',
-                  '5000': '349 993 ₽/мес.',
-                  '6000': '419 993 ₽/мес.',
-                  '7000': '489 993 ₽/мес.',
-                  '8000': '559 993 ₽/мес.',
-
-                  '9000': '629 993 ₽/мес.',
-                  '10000': '699 993 ₽/мес.'
-                };
-                const weight = {
-                  '250': '3 ТБ',
-                  '500': '5 ТБ',
-                  '1000': '10 ТБ',
-                  '2000': '20 ТБ',
-                  '3000': '30 ТБ',
-                  
-                  '4000': '40 ТБ',
-                  '5000': '50 ТБ',
-                  '6000': '60 ТБ',
-                  '7000': '70 ТБ',
-                  '8000': '80 ТБ',
-
-                  '9000': '90 ТБ',
-                  '10000': '100 ТБ'
-                }
-                const weightSpan = document.getElementById("weight-span");
-              
-                const selectedUsers = selectedItem.textContent;
-              
-                weightSpan.textContent = weight[selectedUsers];
-                if (element.classList.contains("year")) {
-                  element.textContent = pricesYear[selectedUsers];
-                } else 
-                element.textContent = pricesMonth[selectedUsers];
-
-              }        
-            });
-
-            break;
+              observer.unobserve(target); // Прекращаем наблюдение после запуска анимации
           }
-        }
-        h.click();
-    });
-    b.appendChild(c);
-  }
-  x[i].appendChild(b);
-  a.addEventListener("click", function(e) {
-    /* When the select box is clicked, close any other select boxes,
-    and open/close the current select box: */
-    e.stopPropagation();
-    closeAllSelect(this);
-    this.nextSibling.classList.toggle("select-hide");
-    this.classList.toggle("select-arrow-active");
-  });
-}
+      });
+  }, { threshold: 0.5 }); // Анимация начинается, когда блок виден на 50%
 
-function closeAllSelect(elmnt) {
-  /* A function that will close all select boxes in the document,
-  except the current select box: */
-  var x, y, i, xl, yl, arrNo = [];
-  x = document.getElementsByClassName("select-items");
-  y = document.getElementsByClassName("select-selected");
-  xl = x.length;
-  yl = y.length;
-  for (i = 0; i < yl; i++) {
-    if (elmnt == y[i]) {
-      arrNo.push(i)
-    } else {
-      y[i].classList.remove("select-arrow-active");
-    }
-  }
-  for (i = 0; i < xl; i++) {
-    if (arrNo.indexOf(i)) {
-      x[i].classList.add("select-hide");
-    }
-  }
-}
-
-/* If the user clicks anywhere outside the select box,
-then close all select boxes: */
-document.addEventListener("click", closeAllSelect);
-
+  counters.forEach((counter) => observer.observe(counter));
+});
