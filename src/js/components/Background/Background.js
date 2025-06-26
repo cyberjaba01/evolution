@@ -8,8 +8,8 @@ class Background extends HTMLElement {
             <div class="abg-1"></div>
             <div class="content-overlay">
 
-            <div id="marker-msc" class="marker msc" style="top: 39%; left: 57%; width: 15px; height: 15px;" data-city="Москва"></div>
-            <div id="st-petersburg" class="marker big" style="top: 36.5%; left: 55%; width: 15px; height: 15px;" data-city="Санкт-Петербург"></div>
+            <div id="moscow" class="marker msc" style="top: 39%; left: 57%; width: 15px; height: 15px;" data-city="Москва"></div>
+            <div id="petersburg" class="marker big" style="top: 36.5%; left: 55%; width: 15px; height: 15px;" data-city="Санкт-Петербург"></div>
             <div id="penza" class="marker big" style="top: 41%; left: 57.8%; width: 15px; height: 15px;" data-city="Пенза"></div>
             <div id="ekaterinburg" class="marker big" style="top: 34.5%; left: 64%; width: 15px; height: 15px;" data-city="Екатеринбург"></div>
             <div id="archangelsk" class="marker big" style="top: 31.9%; left: 56.3%; width: 15px; height: 15px;" data-city="Архангельск"></div>
