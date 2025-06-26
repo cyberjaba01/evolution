@@ -1,3 +1,12 @@
+import CompaniesTable from "./companiesTable/CompaniesTable.js"
+
+document.addEventListener("DOMContentLoaded", async () => {
+	const companiesTable = new CompaniesTable;
+	companiesTable.databaseBranch = "companies_v2";
+	await companiesTable.initializeTable(); 
+})
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("modal");
   const closeModalButton = document.querySelector(".close-modal");
@@ -57,11 +66,14 @@ function toggleClass(divEl, classEl) {
 const namelistButton = document.querySelector(".namelist-container__activation-button");
 const namelistContainer = document.querySelector(".companylist");
 namelistButton.addEventListener('click', () => {
-  toggleClass(namelistContainer, "active");
-  const cont = document.querySelector(".card-popup-container");
-  const line = document.querySelector(".company-list__line");
-  if (line) line.remove();
-  if (cont) cont.remove();
+	toggleClass(namelistContainer, "active");
+	const cont = document.querySelector(".card-popup-container");
+	const line = document.querySelector(".company-list__line");
+
+	const activeRow = document.querySelector(".companylist__card.activated");
+	if (activeRow) activeRow.classList.toggle("activated");
+	if (line) line.remove();
+	if (cont) cont.remove();
 
 } );
 
