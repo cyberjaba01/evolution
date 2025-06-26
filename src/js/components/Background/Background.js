@@ -1,5 +1,3 @@
-
-
 class Background extends HTMLElement {
     constructor() {
         super();
@@ -7,6 +5,8 @@ class Background extends HTMLElement {
             <div class="map-background">
             </div>
 
+            <div class="abg-1"></div>
+            <div class="content-overlay">
 
             <div id="marker-msc" class="marker msc" style="top: 39%; left: 57%; width: 15px; height: 15px;" data-city="Москва"></div>
             <div id="st-petersburg" class="marker big" style="top: 36.5%; left: 55%; width: 15px; height: 15px;" data-city="Санкт-Петербург"></div>

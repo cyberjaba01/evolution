@@ -86,7 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const marketButtons = document.querySelector(".market__button-container");
   const marketContainer = marketButtons.querySelector(".button-container__bottom-wrapper");
   const marketWrapper = marketContainer.querySelectorAll("div");
-  const specialButtons = marketButtons.querySelector(".bottom-wrapper__left-button");
 
 
   

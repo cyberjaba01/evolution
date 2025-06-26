@@ -1,3 +1,52 @@
+  .abg-wr-1 {
+    position: relative;
+    height: 100%;
+    margin: 20px 0;
+    overflow: hidden;
+    background: url(photo.jpg);
+    background-color: #000;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;    
+}
+.abg-1 {
+    position: fixed; /* Меняем absolute на fixed */
+    z-index: -1; /* Убедитесь, что z-index ниже основного контента */
+    top: 0;
+    left: 0;
+    height: 100vh; /* На всю высоту viewport */
+    width: 100%;
+    background-size: 300% 300%;
+    background-image: -o-linear-gradient(135deg, #ffcb3d 0%, #FFB900 25%, #102ca5 51%, #081652 100%);
+    background-image: linear-gradient(-45deg, #ffcb3d 0%, #FFB900 25%, #102ca5 51%, #081652 100%);
+    -webkit-animation: animationbg-1 28s ease infinite;
+            animation: animationbg-1 28s ease infinite;
+    opacity: 0.1;
+    pointer-events: none; /* Чтобы не блокировал взаимодействие */
+}    
+@-webkit-keyframes animationbg-1 {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}    
+@keyframes animationbg-1 {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
 
 .map-section {
     position: relative; 

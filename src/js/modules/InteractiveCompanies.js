@@ -1,3 +1,7 @@
+const companyCardTemplate = document.querySelector("[company-card-template]");
+const companyCardContainer = document.querySelector("[company-card-parent]");
+var companiesData
+
 function createDescription(data, coords) {
 	const cardPopupTemplate = document.querySelector("[card-popup-template]");
 	const cardPopup = cardPopupTemplate.content.cloneNode(true).children[0];
@@ -10,26 +14,27 @@ function createDescription(data, coords) {
 		const cardDesc = cardPopup.querySelector("[card-popup-desc]")
 		const cardLink = cardPopup.querySelector("[card-popup-link]");
 
-		cardImg.src = data.img;
+		cardImg.style.backgroundImage = `url('${data.img}')`;
 		cardName.textContent = data.name;
 		cardLocation.textContent = data.location;
 		cardDesc.textContent = data.description;
-
+	
 		cardLink.href = data.link;
 		if (data.link == "/") {
-			cardLink.classList.add("disabled");
+		cardLink.classList.add("disabled");
 		}
 
 		document.body.appendChild(cardPopup);
 
 		let x, y = 0;
 
-		if ((coords[1]+(cardPopup.offsetHeight)) > window.screen.height-15) {
-			y = coords[1] - cardPopup.offsetHeight*1.2;
+		if ((coords[1]+(cardPopup.offsetHeight)) > window.screen.height-55) {
+		y = coords[1] - cardPopup.offsetHeight*1.3;
 		} else y = coords[1] + cardPopup.offsetHeight/4
 
-		if (window.screen.width - coords[0] < cardPopup.offsetWidth) {
-			x = window.screen.width - cardPopup.offsetWidth*1.05;
+		
+		if (coords[0] + cardPopup.offsetWidth > window.screen.width-55) {
+		x = window.screen.width - cardPopup.offsetWidth*1.15;
 		} else x = coords[0];
 
 		cardPopup.style.cssText = `
@@ -113,7 +118,6 @@ function documentScroll(index, currentCard, marker) {
 
 async function draw() {
 	companiesData.map(data => {
-		
 		const card = companyCardTemplate.content.cloneNode(true).children[0];
 		const cardName = card.querySelector("[company-client-label]");
 		cardName.textContent = data.name;   
@@ -161,10 +165,6 @@ async function draw() {
 		});
 	});
 }
-
-const companyCardTemplate = document.querySelector("[company-card-template]");
-const companyCardContainer = document.querySelector("[company-card-parent]");
-var companiesData
 
 fetch("/src/data/evolution_db.json")
     .then(res => res.json())
