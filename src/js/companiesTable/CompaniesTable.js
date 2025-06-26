@@ -11,6 +11,8 @@ export default class CompaniesTable {
 		this.companyData;
 		this.isActive = false;
 		this.wrapper;
+		this.wrapperScrollhandler = null;
+        this.documentScrollhandler = null;
 	}
 
 	async initializeTable() {
@@ -39,6 +41,8 @@ export default class CompaniesTable {
 	}
 
 	createRows() {
+		const fragment = document.createDocumentFragment();
+
 		this.companiesData.forEach(companyData => {
 			const companyRow = document.createElement('div');
 			companyRow.classList.add("companylist__card");
@@ -49,9 +53,10 @@ export default class CompaniesTable {
 					<span company-client-location>${companyData.data.location}</span>
 				</div>
 			`;
-
-			this.wrapper.append(companyRow);
+			fragment.appendChild(companyRow);
 		})
+
+		this.wrapper.append(fragment);
 	}
 
 	handleRowClick() {
@@ -74,15 +79,20 @@ export default class CompaniesTable {
 
 		appendLine(this.coords);
 		appendPopup(this.companyData, this.coords.markerX, this.coords.markerY);
-		
-		this.wrapper.addEventListener("scroll", () => {
+
+		this.cleanupEventListeners();
+
+		this.wrapperScrollhandler = () => {
 			this.getAllCoords();
-			this.wrapperScroll()
-		});
-		document.addEventListener("scroll", () => {
+			this.wrapperScroll();
+		};
+		this.documentScrollhandler = () => {
 			this.getAllCoords();
-			this.documentScroll()
-		});
+			this.documentScroll();
+		};
+
+        this.wrapper.addEventListener("scroll", this.wrapperScrollhandler);
+        document.addEventListener("scroll", this.documentScrollhandler);
 	}
 
 	documentScroll() {
@@ -161,5 +171,18 @@ export default class CompaniesTable {
 
 		if (isDuplicate) return this.isActive = true;
 		this.isActive = false;
+	}
+
+	cleanupEventListeners() {
+
+        if (this.wrapperScrollhandler) {
+            this.wrapper.removeEventListener("scroll", this.wrapperScrollhandler);
+        }
+        if (this.documentScrollhandler) {
+            document.removeEventListener("scroll", this.documentScrollhandler);
+        }
+        this.wrapperScrollhandler = null;
+        this.documentScrollhandler = null;
+
 	}
 }
