@@ -29,7 +29,12 @@
     --quadhd-container-width: 1800px;
     --ultrahd-container-width: 3000px;
 
-    --marker-pulse-size: 15px
+    --marker-pulse-size: 15px;
+
+    --company-list-item-height: 80px;
+    --company-list-head-height: 10%;
+    --company-list-body-height: 90%;
+    --company-list-width: 400px;
 }
 
 
@@ -140,6 +145,12 @@
     --font-card-weight-amount: 24px;
     --font-card-actual-price: 30px;
     --font-card-users-amount: 42px;
+
+    --company-list-item-height: 70px;
+    --company-list-head-height: 15%;
+    --company-list-body-height: 85%;
+    --company-list-width: 300px;
+
 }
 }
 

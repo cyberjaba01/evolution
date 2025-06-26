@@ -16,6 +16,7 @@ export default class CompaniesTable {
 	}
 
 	async initializeTable() {
+		
 		this.wrapper = document.querySelector("[company-card-parent]");
 
 		await this.fetchCompaniesData();
