@@ -118,5 +118,162 @@
             "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sed deleniti reprehenderit"
         }
     ],
-    "tariffs": []
+    "companies_v2": [
+        {
+            "id": 1,
+            "marker": "kaluga",
+            "scope": ["food"],
+            "data": {
+                "name": "Ташир пицца",
+                "desc": "Ресторан быстрого обслуживания «Ташир Пицца» предлагает доставку еды, в том числе и доставка пиццы, на дом или в офис самого высокого качества.",
+                "location": "г. Калуга, Россия",
+                "image": "/src/images/tashir.png",
+                "link": "/pages/companys/tashir.html"
+            }
+        },
+        {
+            "id": 2,
+            "marker": "petersburg",
+            "scope": ["logistics"],
+            "data": {
+                "name": "Сфера+",
+                "desc": "Группа компаний Сфера+ более 13 лет на рынке организации логистических цепочек, а также погрузо-разгрузочных работ техники и имущества.",
+                "location": "г. Санкт-Петербург, Россия",
+                "image": "/src/images/sphere.png",
+                "link": "/pages/companys/sphere.html"
+            }
+        },
+        {
+            "id": 3,
+            "marker": "mavriki",
+            "scope": ["real-estate"],
+            "data": {
+                "name": "RVI",
+                "desc": "Компания занимается продажей и арендой недвижимости на острове Маврикий",
+                "location": "о. Маврикий",
+                "image": "/src/images/RVI.png",
+                "link": "/"
+            }
+        },
+        {
+            "id": 4,
+            "marker": "moscow",
+            "scope": ["logistics"],
+            "data": {
+                "name": "Benefit",
+                "desc": "Компания оказывает полный спектр услуг по доставке грузов, включая оформление документов, таможенное и складское хранение.",
+                "location": "г. Москва, Россия",
+                "image": "/src/images/avatec_logo.png",
+                "link": "/"
+            }
+        },
+        {
+            "id": 5,
+            "marker": "vladivostok",
+            "scope": ["logistics"],
+            "data": {
+                "name": "Oulin",
+                "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sed deleniti reprehenderit",
+                "location": "г. Владивосток, Россия",
+                "image": "/src/images/berotek_logo.png",
+                "link": "/"
+            }
+        },
+        {
+            "id": 6,
+            "marker": "moscow",
+            "scope": ["logistics"],
+            "data": {
+                "name": "Free Lines",
+                "desc": "Free Lines Company осуществляет импортные перевозки с 2003 года и является одним из лидеров на рынке международной транспортировки сборных грузов в Россию.",
+                "location": "г. Москва, Россия",
+                "image": "/src/images/free.png",
+                "link": "/"
+            }
+        },
+        {
+            "id": 7,
+            "marker": "moscow",
+            "scope": ["education"],
+            "data": {
+                "name": "РУДН",
+                "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sed deleniti reprehenderit",
+                "location": "г. Москва, Россия",
+                "image": "/src/images/Logo_rudn_znak.png",
+                "link": "/"
+            }
+        },
+        {
+            "id": 8,
+            "marker": "ekaterinburg",
+            "scope": ["retail"],
+            "data": {
+                "name": "Без пробега по РФ",
+                "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sed deleniti reprehenderit",
+                "location": "г. Екатеринбург, Россия",
+                "image": "/src/images/bezprobega_logo.png",
+                "link": "/"
+            }
+        },
+        {
+            "id": 9,
+            "marker": "penza",
+            "scope": ["services"],
+            "data": {
+                "name": "Больше чем спорт",
+                "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sed deleniti reprehenderit",
+                "location": "г. Пенза, Россия",
+                "image": "/src/images/morethansport_logo.png",
+                "link": "/"
+            }
+        },
+        {
+            "id": 10,
+            "marker": "moscow",
+            "scope": ["services"],
+            "data": {
+                "name": "Scan code",
+                "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sed deleniti reprehenderit",
+                "location": "г. Москва, Россия",
+                "image": "/src/images/scancode_logo.png",
+                "link": "/"
+            }
+        },
+        {
+            "id": 11,
+            "marker": "moscow",
+            "scope": ["logistics"],
+            "data": {
+                "name": "Транспортал",
+                "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sed deleniti reprehenderit",
+                "location": "г. Москва, Россия",
+                "image": "/src/images/transportal.png",
+                "link": "/"
+            }
+        },
+        {
+            "id": 12,
+            "marker": "tver",
+            "scope": ["retail"],
+            "data": {
+                "name": "Артконфи",
+                "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sed deleniti reprehenderit",
+                "location": "г. Тверь, Россия",
+                "image": "/src/images/artconfi.png",
+                "link": "/"
+            }
+        },
+        {
+            "id": 13,
+            "marker": "moscow",
+            "scope": ["construction"],
+            "data": {
+                "name": "Люксстрой",
+                "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sed deleniti reprehenderit",
+                "location": "г. Москва, Россия",
+                "image": "/src/images/luxstroy.png",
+                "link": "/"
+            }
+        }
+    ]
 }
