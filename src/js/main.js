@@ -8,38 +8,38 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  const modal = document.getElementById("modal");
-  const closeModalButton = document.querySelector(".close-modal");
-  const header = document.getElementById('header');
+	const modal = document.getElementById("modal");
+	const closeModalButton = document.querySelector(".close-modal");
+	const header = document.getElementById('header');
 
-  function openModal(btn) {
+	function openModal(btn) {
 
-    header.classList.add('took-off');
-    document.body.style.overflow = 'hidden';
-    modal.style.display = "flex";
-  }
+		header.classList.add('took-off');
+		document.body.style.overflow = 'hidden';
+		modal.style.display = "flex";
+	}
 
-  function closeModal() {
-      modal.style.display = "none";
-      header.classList.remove('took-off');
-      header.classList.add('scrolled');
-      document.body.style.overflowY = 'auto';
-  }
+	function closeModal() {
+		modal.style.display = "none";
+		header.classList.remove('took-off');
+		header.classList.add('scrolled');
+		document.body.style.overflowY = 'auto';
+	}
 
-  const openModalButtons = document.querySelectorAll('[data-open-modal]');
+	const openModalButtons = document.querySelectorAll('[data-open-modal]');
 
-  openModalButtons.forEach(button => {
-      button.addEventListener("click", () => {openModal(button)});
-    });
+	openModalButtons.forEach(button => {
+		button.addEventListener("click", () => {openModal(button)});
+		});
 
-  closeModalButton.addEventListener("click", closeModal);
+	closeModalButton.addEventListener("click", closeModal);
 
 
-  window.addEventListener("click", (event) => {
-      if (event.target === modal) {
-        closeModal();
-      }
-  });
+	window.addEventListener("click", (event) => {
+		if (event.target === modal) {
+			closeModal();
+		}
+	});
 });
 
 const companylistBody = document.querySelector(".companylist-body");
@@ -80,53 +80,53 @@ namelistButton.addEventListener('click', () => {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  const containerNew = document.querySelector(".market__header");
-  const containerNewButton = containerNew.querySelector(".market-header__button");
+	const containerNew = document.querySelector(".market__header");
+	const containerNewButton = containerNew.querySelector(".market-header__button");
 
-  const containerOld = document.querySelector(".market__header-old-clients");
-  const containerOldButton = containerOld.querySelector(".market-header__button");
-
-
-
-  const containerCloud = document.querySelector(".marketplace-swiper-container");
-  const containerBox =  document.querySelector(".marketplace-box-container");
-
-  const pricesCloud = containerCloud.querySelectorAll(".card__price");
-  const pricesBox = containerBox.querySelectorAll(".card__price");
-  const promoPrices = document.querySelectorAll(".card__price-promo");
-
-  const marketButtons = document.querySelector(".market__button-container");
-  const marketContainer = marketButtons.querySelector(".button-container__bottom-wrapper");
-  const marketWrapper = marketContainer.querySelectorAll("div");
+	const containerOld = document.querySelector(".market__header-old-clients");
+	const containerOldButton = containerOld.querySelector(".market-header__button");
 
 
-  
 
-function changeMarketState(buttonContainer, arrWrapper) {
-	buttonContainer.classList.toggle("disabled");
-	arrWrapper.forEach(el => {
-		el.classList.toggle("disabled");
-	});
-}
+	const containerCloud = document.querySelector(".marketplace-swiper-container");
+	const containerBox =  document.querySelector(".marketplace-box-container");
+
+	const pricesCloud = containerCloud.querySelectorAll(".card__price");
+	const pricesBox = containerBox.querySelectorAll(".card__price");
+	const promoPrices = document.querySelectorAll(".card__price-promo");
+
+	const marketButtons = document.querySelector(".market__button-container");
+	const marketContainer = marketButtons.querySelector(".button-container__bottom-wrapper");
+	const marketWrapper = marketContainer.querySelectorAll("div");
 
 
-containerNewButton.addEventListener("click", () => {
-	containerNew.style.display = "none";
-	containerOld.style.display = "flex";
-	changeMarketState(marketContainer, marketWrapper);
 
-	promoPrices.forEach(element => {
-		element.classList.toggle("disabled");
-	});
 
-	pricesCloud.forEach(element => {
+	function changeMarketState(buttonContainer, arrWrapper) {
+		buttonContainer.classList.toggle("disabled");
+		arrWrapper.forEach(el => {
+			el.classList.toggle("disabled");
+		});
+	}
 
-		if (element.classList.contains("promo")) {
-		element.style.display = "none";
-		
-		};
 
-	});
+	containerNewButton.addEventListener("click", () => {
+		containerNew.style.display = "none";
+		containerOld.style.display = "flex";
+		changeMarketState(marketContainer, marketWrapper);
+
+		promoPrices.forEach(element => {
+			element.classList.toggle("disabled");
+		});
+
+		pricesCloud.forEach(element => {
+
+			if (element.classList.contains("promo")) {
+			element.style.display = "none";
+			
+			};
+
+		});
 	
 	pricesBox.forEach(element => {
 		if (!element.classList.contains("canceled")) {
