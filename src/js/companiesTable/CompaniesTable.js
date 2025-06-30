@@ -1,9 +1,27 @@
 import { appendLine } from "./companiesLine.js"
 import { appendPopup } from "./companiesPopup.js"
 
+/**
+ * @class CompaniesTable
+ * @classdesc Represents a table of rows, with some visual logic onclick
+ */
 export default class CompaniesTable {
+	/**
+	 * @constructor 
+	 * @param {} marker - Marker element associated with targeted item
+	 * @param {} target - Targeted by click element from table of rows
+	 * @param {} coords - Object with various coordinates 
+	 * 
+	 * @param {} databaseBranch - Used for easy db location migration
+	 * @param {} companiesData - All companies
+	 * @param {} companyData - Targeted one
+	 * 
+	 * @param {} wrapper - Wrapper of all table items
+	 * @param {} wrapperScrollhandler - Functions for scroll events, 
+	 * @param {} documentScrollhandler - represented as props for usage of _cleanupEventListeners()
+	 */
 	constructor() {
-		this.marker;
+		this.marker; 
 		this.target;
 		this.coords;
 		this.databaseBranch = "companies_v2";
@@ -19,49 +37,30 @@ export default class CompaniesTable {
 		
 		this.wrapper = document.querySelector("[company-card-parent]");
 
-		await this.fetchCompaniesData();
-		this.createRows();
+		await this._fetchCompaniesData();
+		this._createRows();
 
 		this.wrapper.addEventListener('click', (event) => {
 			if (event.target.closest(".companylist__card")) {
 				this.target = event.target.closest(".companylist__card");
-				this.handleRowClick()
+				this._handleRowClick()
 			}
 		});
 	}
 
-	async fetchCompaniesData() {
+	async _fetchCompaniesData() {
 		try {
 			const response = await fetch("/src/data/evolution_db.json");
 			const data = await response.json();
 			this.companiesData = data[this.databaseBranch];
 		}
-		catch (error) {throw new Error("Unseccesful connection to json", error)}
+		catch (error) {throw new Error("Unseccesful connection to json")}
 
 		if (!this.companiesData) throw new Error("Companies data not found or null")
 	}
 
-	createRows() {
-		const fragment = document.createDocumentFragment();
-
-		this.companiesData.forEach(companyData => {
-			const companyRow = document.createElement('div');
-			companyRow.classList.add("companylist__card");
-			companyRow.dataset.index = companyData.id;
-			companyRow.innerHTML = `
-				<div class="companylist__card-info">
-					<h1 company-client-label>${companyData.data.name}</h1>
-					<span company-client-location>${companyData.data.location}</span>
-				</div>
-			`;
-			fragment.appendChild(companyRow);
-		})
-
-		this.wrapper.append(fragment);
-	}
-
-	handleRowClick() {
-		this.removeAll();
+	_handleRowClick() {
+		this._removeAll();
 		if (this.isActive) return;
 		
 		this.companyData = this.companiesData[this.target.dataset.index - 1]
@@ -72,31 +71,26 @@ export default class CompaniesTable {
 		this.marker = document.querySelector(`#${this.companyData.marker}`);
 		if (!this.marker) throw new Error(`Marker with name ${this.companyData.marker} doesnt exist`);
 
-		this.markCompanyLocation();
+		this._markCompanyLocation();
 	}
 
-	markCompanyLocation() {
-		this.getAllCoords();
+	_markCompanyLocation() {
+		this._getAllCoords();
 
 		appendLine(this.coords);
 		appendPopup(this.companyData, this.coords.markerX, this.coords.markerY);
 
-		this.cleanupEventListeners();
+		this._cleanupEventListeners();
 
-		this.wrapperScrollhandler = () => {
-			this.getAllCoords();
-			this.wrapperScroll();
-		};
-		this.documentScrollhandler = () => {
-			this.getAllCoords();
-			this.documentScroll();
-		};
-
+		this.wrapperScrollhandler = () => {this._wrapperScroll()};
+		this.documentScrollhandler = () => {this._documentScroll()};
         this.wrapper.addEventListener("scroll", this.wrapperScrollhandler);
         document.addEventListener("scroll", this.documentScrollhandler);
 	}
 
-	documentScroll() {
+	_documentScroll() {
+		this._getAllCoords();
+
 		[...document.querySelectorAll(".company-list__line"), 
 		...document.querySelectorAll(".card-popup-container")].forEach(el => el.remove());
 		
@@ -110,7 +104,9 @@ export default class CompaniesTable {
 		}
 	}
 
-	wrapperScroll() {
+	_wrapperScroll() {
+		this._getAllCoords();
+
 		const drawedLines = document.querySelectorAll(".company-list__line")
 
 		let wrapperXY = this.wrapper.getBoundingClientRect()  
@@ -134,20 +130,23 @@ export default class CompaniesTable {
 		}
 	}
 
-	getAllCoords() {
+	_getAllCoords() {
+		const WIDTH_OFFSET = 7;
+		const HEIGHT_OFFSET = 5;
+		const ROW_HEIGHT_OFFSET = 2;
 		let width, height, angle;
 
 		const rowCoords = this.target.getBoundingClientRect();
 		const markerCoords = this.marker.getBoundingClientRect();
 
-		width = (markerCoords.x + (markerCoords.width - 7) - rowCoords.right);
-		height = (markerCoords.y + (Math.sqrt(markerCoords.height) + 5) - rowCoords.bottom);
-		angle = Math.atan2((height),(width))*(180/Math.PI);
+		width = (markerCoords.x + (markerCoords.width - WIDTH_OFFSET) - rowCoords.right);
+		height = (markerCoords.y + (Math.sqrt(markerCoords.height) + HEIGHT_OFFSET) - rowCoords.bottom);
+		angle = Math.atan2((height), (width)) * (180 / Math.PI);
 		width = width / Math.cos(Math.abs(angle) * Math.PI / 180);
 
 		return this.coords = {
 			"rowX": rowCoords.right,
-			"rowY": rowCoords.bottom-2+window.scrollY,
+			"rowY": rowCoords.bottom- ROW_HEIGHT_OFFSET +window.scrollY,
 			"markerX": markerCoords.x,
 			"markerY": markerCoords.y+window.scrollY,
 			"width": width,
@@ -155,7 +154,9 @@ export default class CompaniesTable {
 		}
 	}
 
-	removeAll() {
+	_removeAll() {
+		if (this.wrapperScrollhandler) this._cleanupEventListeners();
+
 		const drawedLines = document.querySelectorAll(".company-list__line")
 		const drawedCards = document.querySelectorAll(".card-popup-container")
 		const activeRows = document.querySelectorAll(".companylist__card.activated")
@@ -174,8 +175,7 @@ export default class CompaniesTable {
 		this.isActive = false;
 	}
 
-	cleanupEventListeners() {
-
+	_cleanupEventListeners() {
         if (this.wrapperScrollhandler) {
             this.wrapper.removeEventListener("scroll", this.wrapperScrollhandler);
         }
@@ -184,6 +184,5 @@ export default class CompaniesTable {
         }
         this.wrapperScrollhandler = null;
         this.documentScrollhandler = null;
-
 	}
 }
